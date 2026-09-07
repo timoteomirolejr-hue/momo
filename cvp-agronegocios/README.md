@@ -26,14 +26,17 @@ actualização mantém a arquitectura narrativa mas reconstrói o conteúdo:
 ## Ficheiros
 
 - **[`DOSSIER-empresas-agro-mocambique.md`](DOSSIER-empresas-agro-mocambique.md)** — o dossier
-  completo: macro actualizado, as três alavancas Absa, as ~34 empresas por sector com escala,
+  completo: macro actualizado, as três alavancas Absa, as 34 empresas por sector com escala,
   accionista e oportunidade de negócio, e a segmentação de cobertura.
+- **`CVP_Agronegocios_Absa_Mocambique_2026.pptx`** — a apresentação em 19 slides, editável.
+- **`build_deck.js`** — o gerador do deck (`node build_deck.js`). Editar aqui e voltar a correr
+  é mais fiável do que editar o `.pptx` à mão quando os dados mudarem.
 
-## Deliverables
+## Deliverables publicados
 
-- **Aplicação web interactiva (Lovable)** — explorador de empresas com pesquisa e filtros por
-  sector, tier e província.
-- **Apresentação (Canva)** — 19 slides em português para uso em reunião.
+- **Aplicação web interactiva (Lovable)** — explorador das 34 empresas com pesquisa e filtros por
+  sector, tier e província: <https://cvp-agronegocios-absa-mocambique.lovable.app>
+- **Apresentação (PowerPoint)** — 19 slides em português, neste directório.
 
 ## Nota metodológica
 
