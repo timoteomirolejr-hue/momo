@@ -28,9 +28,15 @@ actualização mantém a arquitectura narrativa mas reconstrói o conteúdo:
 - **[`DOSSIER-empresas-agro-mocambique.md`](DOSSIER-empresas-agro-mocambique.md)** — o dossier
   completo: macro actualizado, as três alavancas Absa, as 34 empresas por sector com escala,
   accionista e oportunidade de negócio, e a segmentação de cobertura.
-- **`CVP_Agronegocios_Absa_Mocambique_2026.pptx`** — a apresentação em 19 slides, editável.
+- **`CVP_Agronegocios_Absa_Mocambique_2026.pptx`** — a apresentação em 22 slides, editável.
+  Herda do deck original a paleta (`DC0037` / `3A3535` / `5D5757`), a tipografia (Brave Sans),
+  o logótipo e as fotografias, para que assente na mesma identidade.
 - **`build_deck.js`** — o gerador do deck (`node build_deck.js`). Editar aqui e voltar a correr
-  é mais fiável do que editar o `.pptx` à mão quando os dados mudarem.
+  é mais fiável do que editar o `.pptx` à mão quando os dados mudarem. Lê as imagens de
+  `unpacked/ppt/media/`, obtido descompactando o deck original.
+- **`render_pptx.py`** — rasteriza o `.pptx` a partir da geometria real das formas
+  (`python render_pptx.py deck.pptx pasta prefixo`) e assinala texto a transbordar. Foi escrito
+  porque o LibreOffice deste ambiente não tem o Impress instalado e não converte apresentações.
 
 ## Deliverables publicados
 
