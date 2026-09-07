@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap">
+  <style>
+    :root{
+      --ink:#1E242B; --ink-soft:#2B333C; --paper:#F5F4F1;
+      --gray:#9E9E9E; --gray-2:#B9BBBD; --accent:#C79A4B; --accent-soft:#E0C489;
+    }
+    *{box-sizing:border-box;}
+    body{margin:0;}
+    a{color:var(--accent);} a:hover{color:var(--accent-soft);}
+    .serif{font-family:'Spectral',Georgia,'Times New Roman',serif;}
+    .sans{font-family:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;}
+  </style>
+</helmet>
+<div class="sans" style="position:relative;width:1080px;height:1080px;background:var(--ink);color:#fff;overflow:hidden;">
+  <!-- decorative corner arcs -->
+  <svg width="520" height="520" viewBox="0 0 520 520" fill="none" style="position:absolute;top:-150px;right:-150px;opacity:0.14;">
+    <circle cx="260" cy="260" r="150" stroke="#C79A4B" stroke-width="1.5"/>
+    <circle cx="260" cy="260" r="210" stroke="#C79A4B" stroke-width="1.5"/>
+    <circle cx="260" cy="260" r="259" stroke="#C79A4B" stroke-width="1.5"/>
+  </svg>
+  <div style="position:absolute;left:0;top:0;width:8px;height:100%;background:var(--accent);"></div>
+
+  <div style="position:relative;height:100%;display:flex;flex-direction:column;justify-content:space-between;padding:80px 88px 80px 96px;">
+    <!-- brand -->
+    <div style="display:flex;flex-direction:column;align-items:flex-start;gap:22px;">
+      <span style="display:flex;align-items:center;justify-content:center;background:#FFFFFF;border-radius:20px;padding:20px 30px;">
+        <img src="logo.png" alt="AVANZA GROUP SOLUTIONS" style="display:block;height:100px;width:auto;">
+      </span>
+      <span style="font-weight:700;letter-spacing:0.3em;font-size:21px;color:#EDEDEA;">GROUP SOLUTIONS</span>
+    </div>
+
+    <!-- hero -->
+    <div>
+      <div style="display:inline-flex;align-items:center;gap:12px;margin-bottom:32px;">
+        <span style="width:34px;height:2px;background:var(--accent);display:inline-block;"></span>
+        <span style="font-weight:700;letter-spacing:0.28em;font-size:17px;color:var(--accent);">CONSULTORIA EMPRESARIAL</span>
+      </div>
+      <h1 class="serif" style="margin:0;font-weight:600;font-size:82px;line-height:1.05;letter-spacing:-0.01em;color:#FFFFFF;text-wrap:balance;">
+        Ajudamos PME a nascer, formalizar-se e crescer
+      </h1>
+      <p style="margin:32px 0 0;font-size:29px;line-height:1.5;color:var(--gray-2);max-width:780px;text-wrap:pretty;">
+        Conhecimento fiscal, jurídico e de gestão para pequenos e médios negócios em Moçambique.
+      </p>
+    </div>
+
+    <!-- footer -->
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;">
+      <div style="display:flex;align-items:center;gap:14px;color:#EDEDEA;">
+        <span style="font-weight:700;font-size:24px;letter-spacing:0.02em;">Desliza</span>
+        <svg width="46" height="20" viewBox="0 0 46 20" fill="none"><path d="M2 10h40m0 0l-8-7m8 7l-8 7" stroke="#C79A4B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <span class="serif" style="font-size:24px;color:var(--gray);letter-spacing:0.05em;">01 / 08</span>
+    </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap">
+  <style>
+    :root{--ink:#1E242B;--ink-soft:#2B333C;--paper:#F5F4F1;--gray:#9E9E9E;--gray-2:#B9BBBD;--accent:#C79A4B;--accent-soft:#E0C489;}
+    *{box-sizing:border-box;} body{margin:0;}
+    a{color:var(--accent);} a:hover{color:var(--accent-soft);}
+    .serif{font-family:'Spectral',Georgia,'Times New Roman',serif;}
+    .sans{font-family:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;}
+  </style>
+</helmet>
+<div class="sans" style="position:relative;width:1080px;height:1080px;background:var(--ink);color:#fff;overflow:hidden;">
+  <svg width="520" height="520" viewBox="0 0 520 520" fill="none" style="position:absolute;top:-160px;right:-160px;opacity:0.13;">
+    <circle cx="260" cy="260" r="150" stroke="#C79A4B" stroke-width="1.5"/>
+    <circle cx="260" cy="260" r="210" stroke="#C79A4B" stroke-width="1.5"/>
+    <circle cx="260" cy="260" r="259" stroke="#C79A4B" stroke-width="1.5"/>
+  </svg>
+  <div style="position:absolute;left:0;top:0;width:8px;height:100%;background:var(--accent);"></div>
+
+  <div style="position:relative;height:100%;display:flex;flex-direction:column;justify-content:space-between;padding:76px 88px 76px 96px;">
+    <!-- header -->
+    <div style="display:flex;align-items:center;justify-content:space-between;">
+      <div style="display:flex;align-items:center;gap:18px;">
+        <span style="display:flex;align-items:center;justify-content:center;background:#FFFFFF;border-radius:12px;padding:9px 15px;">
+          <img src="logo.png" alt="AVANZA" style="display:block;height:42px;width:auto;">
+        </span>
+        <span style="width:1px;height:30px;background:rgba(255,255,255,0.22);display:inline-block;"></span>
+        <span style="font-weight:700;letter-spacing:0.2em;font-size:16px;color:#C6C8CA;">GROUP SOLUTIONS</span>
+      </div>
+      <span class="serif" style="font-size:22px;color:var(--gray);letter-spacing:0.05em;">07 / 08</span>
+    </div>
+
+    <!-- middle -->
+    <div>
+      <div style="display:inline-flex;align-items:center;gap:12px;margin-bottom:30px;">
+        <span style="width:34px;height:2px;background:var(--accent);display:inline-block;"></span>
+        <span style="font-weight:700;letter-spacing:0.28em;font-size:17px;color:var(--accent);">A NOSSA MISSÃO</span>
+      </div>
+      <h2 class="serif" style="margin:0;font-weight:600;font-size:74px;line-height:1.05;letter-spacing:-0.01em;color:#FFFFFF;text-wrap:balance;">
+        Reduzir a informalidade empresarial em Moçambique
+      </h2>
+      <p style="margin:34px 0 0;font-size:30px;line-height:1.5;color:var(--gray-2);max-width:840px;text-wrap:pretty;">
+        Ligamos empresários a financiamento, mercado e conhecimento de gestão. Queremos que mais negócios em Inhambane, Maputo e no resto do país tenham bases legais e financeiras sólidas para crescer.
+      </p>
+    </div>
+
+    <!-- footer -->
+    <div>
+      <div style="height:1px;background:rgba(255,255,255,0.12);margin-bottom:26px;"></div>
+      <span class="serif" style="font-size:26px;color:var(--accent-soft);letter-spacing:0.01em;">Ajudamos o seu negócio a crescer em Moçambique.</span>
+    </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>
