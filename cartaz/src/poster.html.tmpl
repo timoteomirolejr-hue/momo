@@ -1,0 +1,122 @@
+<meta charset="utf-8">
+<title>Avanza Group Solutions — 7 de Setembro</title>
+<style>
+  @font-face{font-family:'Anton';src:url(__ANTON__) format('truetype');font-weight:400;font-style:normal}
+  @font-face{font-family:'Montserrat';src:url(__MONT__) format('truetype-variations');font-weight:100 900;font-style:normal}
+
+  :root{
+    /* palette sampled pixel-for-pixel from the Avanza logotype */
+    --navy:#132F5E;  --blue:#0878BA;  --cyan:#0AA1DD;
+    --teal:#37B1AC;  --green:#84C044; --lime:#B0CE3F;
+    --amber:#FABF1C; --orange:#F9A823;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{background:#fff}
+  .poster{
+    position:relative;width:1170px;height:1451px;overflow:hidden;
+    background:#fff url(__PLATE__) no-repeat top center / 1170px 1451px;
+    font-family:'Montserrat',sans-serif;-webkit-font-smoothing:antialiased;
+    text-rendering:geometricPrecision;
+  }
+
+  /* ---------- masthead ---------- */
+  .masthead{position:absolute;top:108px;left:0;right:0;text-align:center}
+  .masthead .name{
+    font-weight:800;font-size:58px;line-height:1;letter-spacing:.075em;text-indent:.075em;
+    color:var(--navy);text-transform:uppercase;
+  }
+  .masthead .name em{
+    font-style:normal;
+    background:linear-gradient(155deg,var(--cyan) 0%,var(--teal) 48%,var(--green) 100%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .masthead .rule{
+    width:168px;height:4px;margin:20px auto 17px;border-radius:2px;
+    background:linear-gradient(90deg,var(--green),var(--teal),var(--cyan),var(--blue));
+  }
+  .masthead .sub{
+    font-weight:600;font-size:20px;line-height:1;letter-spacing:.46em;text-indent:.46em;
+    color:var(--blue);text-transform:uppercase;
+  }
+
+  /* ---------- editorial block (geometry mirrors the reference poster) ---------- */
+  .eyebrow{
+    position:absolute;left:118px;top:803px;
+    font-weight:700;font-size:27px;line-height:1;letter-spacing:.25em;text-indent:.25em;
+    color:var(--orange);text-transform:uppercase;
+  }
+  .headline{
+    position:absolute;left:118px;top:844px;
+    font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;
+    font-size:99px;line-height:101px;letter-spacing:-.048em;white-space:nowrap;
+  }
+  .headline span{margin-right:.20em}
+  .headline .w1{color:var(--green)}
+  .headline .w2{color:var(--teal)}
+  .headline .w3{color:var(--cyan)}
+  .headline .w4{color:var(--blue)}
+  .headline .w5{color:var(--navy)}
+
+  .message{position:absolute;left:118px;top:1055px;display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+  .message span{
+    background:var(--navy);color:#fff;
+    font-weight:500;font-size:33px;line-height:33px;letter-spacing:.004em;
+    padding:10px 18px 11px;
+  }
+
+  /* ---------- signature logotype ---------- */
+  .mark{position:absolute;right:112px;bottom:258px;width:308px}
+  .mark img{display:block;width:100%;height:auto}
+
+  /* ---------- footer band ---------- */
+  .band{
+    position:absolute;left:0;right:0;bottom:0;height:222px;
+    background:linear-gradient(110deg,
+      var(--lime) 0%, var(--green) 14%, var(--teal) 33%,
+      var(--cyan) 53%, var(--blue) 73%, var(--navy) 100%);
+    display:flex;align-items:center;justify-content:space-between;padding:0 118px;
+  }
+  .band .brand{font-weight:600;font-size:30px;line-height:1;letter-spacing:.015em;color:#fff}
+  .band .social{display:flex;gap:20px;margin-top:22px}
+  .band .social svg{width:37px;height:37px;fill:#fff;display:block}
+  /* replace with the real website / social handle once available */
+  .band .tagline{
+    font-weight:700;font-size:24px;line-height:1.45;letter-spacing:.16em;text-indent:.16em;
+    color:#fff;text-align:right;text-transform:uppercase;
+  }
+</style>
+
+<div class="poster">
+  <div class="masthead">
+    <div class="name">A<em>V</em>ANZA</div>
+    <div class="rule"></div>
+    <div class="sub">Group Solutions</div>
+  </div>
+
+  <div class="eyebrow">7 de Setembro</div>
+
+  <div class="headline">
+    <div><span class="w1">Feliz</span><span class="w2">Dia</span><span class="w3">dos</span></div>
+    <div><span class="w4">Acordos</span><span class="w5">de Lusaka</span></div>
+  </div>
+
+  <div class="message">
+    <span>Do passado que nos uniu nasce</span>
+    <span>a força que nos faz avançar.</span>
+  </div>
+
+  <div class="mark"><img src="__LOGO__" alt="Avanza Group Solutions"></div>
+
+  <div class="band">
+    <div>
+      <div class="brand">Avanza Group Solutions</div>
+      <div class="social">
+        <svg viewBox="0 0 24 24"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06C2 17.08 5.66 21.25 10.44 22v-7.03H7.9v-2.91h2.54V9.85c0-2.52 1.49-3.91 3.77-3.91 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.89h2.78l-.44 2.91h-2.34V22C18.34 21.25 22 17.08 22 12.06z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.8 3.8 0 01-1.38-.9 3.8 3.8 0 01-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.3-1.46.72-2.12 1.39A5.9 5.9 0 00.63 4.14c-.3.76-.5 1.64-.56 2.91C.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.3.79.72 1.46 1.39 2.12a5.9 5.9 0 002.12 1.39c.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.9 5.9 0 002.12-1.39 5.9 5.9 0 001.39-2.12c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.9 5.9 0 00-1.39-2.12A5.9 5.9 0 0019.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1018.16 12 6.16 6.16 0 0012 5.84zM12 16a4 4 0 114-4 4 4 0 01-4 4zm7.85-10.4a1.44 1.44 0 11-1.44-1.44 1.44 1.44 0 011.44 1.44z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05a3.74 3.74 0 013.37-1.85c3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 112.06-2.07 2.07 2.07 0 01-2.06 2.07zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77A1.75 1.75 0 000 1.73v20.54A1.75 1.75 0 001.77 24h20.45A1.76 1.76 0 0024 22.27V1.73A1.76 1.76 0 0022.22 0z"/></svg>
+      </div>
+    </div>
+    <div class="tagline">Soluções que<br>fazem avançar</div>
+  </div>
+</div>

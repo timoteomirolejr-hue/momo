@@ -1,0 +1,13 @@
+{
+  "name": "avanza-cartaz",
+  "private": true,
+  "scripts": {
+    "plate": "python3 src/build_plate.py",
+    "render": "node src/render.js 2",
+    "pdf": "node src/pdf.js",
+    "export": "python3 src/export.py && python3 src/flatten_pdf.py",
+    "build": "npm run plate && npm run render && npm run export && npm run pdf",
+    "measure": "python3 src/measure.py build/poster@2x.png"
+  },
+  "dependencies": { "playwright": "^1.49.0" }
+}
