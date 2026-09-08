@@ -126,535 +126,50 @@ function pill(s, x, y, w, text, fill) {
   });
 }
 
-// =====================================================================
-// 1. CAPA
-// =====================================================================
-{
+// ---------------------------------------------------------------------
+// Divisor de pergunta: as sete perguntas que estruturam o documento,
+// cada uma como um separador de página inteira antes das respostas.
+// ---------------------------------------------------------------------
+function questionDivider(num, question, subtitle, photo, kpis) {
   const s = pres.addSlide();
   s.background = { color: RED };
   pageNo++;
-  s.addImage({ path: IMG.cover, x: 6.2, y: 0, w: W - 6.2, h: H, sizing: { type: "cover", w: W - 6.2, h: H } });
-  s.addShape(pres.ShapeType.rect, { x: 0, y: 0, w: 6.9, h: H, fill: { color: RED }, line: { width: 0 } });
-
-  s.addImage({ path: IMG.logoWhite, x: M, y: 0.66, w: 1.86, h: 0.54 });
-
-  s.addText("PROPOSTA DE VALOR PARA O CLIENTE  ·  2026", {
-    x: M, y: 2.16, w: 5.7, h: 0.30, isTextBox: true, margin: 0,
-    fontFace: F, fontSize: 11, bold: true, charSpacing: 1.8, color: CREAM,
-  });
-  s.addText("O Agronegócio\nem Moçambique", {
-    x: M, y: 2.58, w: 5.7, h: 1.76, isTextBox: true, margin: 0,
-    fontFace: F, fontSize: 40, bold: true, color: WHITE, lineSpacingMultiple: 1.06,
-  });
-  s.addText("Uma proposta integrada de financiamento, pagamentos, protecção de risco e acesso ao mercado, concebida em função do calendário agrícola e das trinta e quatro empresas que estruturam o sector.", {
-    x: M, y: 4.46, w: 5.5, h: 1.22, isTextBox: true, margin: 0,
-    fontFace: F, fontSize: 13, color: CREAM, lineSpacingMultiple: 1.26,
-  });
-  s.addText("Absa Bank Moçambique, S.A.\nBanca de Negócios  ·  Banca Corporativa e de Investimento", {
-    x: M, y: 6.02, w: 5.7, h: 0.66, isTextBox: true, margin: 0,
-    fontFace: F, fontSize: 10.5, color: PINK, lineSpacingMultiple: 1.22,
-  });
-  s.addNotes("Documento institucional. Destina-se a apresentação a clientes empresariais, parceiros de desenvolvimento e interlocutores internacionais. Todos os dados citados provêm de fontes públicas identificadas no slide final.");
-}
-
-// =====================================================================
-// 2. COMO LER ESTE DOCUMENTO
-// =====================================================================
-{
-  const s = slide({
-    eyebrow: "Nota preliminar",
-    title: "Como ler este documento",
-    lede: "Dirige-se igualmente a quem conhece o sector agrícola moçambicano e a quem hoje o encontra pela primeira vez.",
-  });
-
-  const blocks = [
-    ["O que é uma Proposta de Valor",
-     "Em banca, uma Proposta de Valor para o Cliente, ou CVP, do inglês Customer Value Proposition, é o documento que estabelece o que a instituição oferece a um segmento, por que razão essa oferta é pertinente e em que se distingue da concorrência."],
-    ["A quem se dirige",
-     "A três destinatários: às equipas comerciais do Banco, que dele se servem em reunião; aos clientes empresariais do sector agrícola; e a parceiros institucionais e internacionais que avaliem a actuação do Banco neste domínio."],
-    ["Como está organizado",
-     "A primeira parte estabelece o contexto do país e do sector. A segunda apresenta, empresa a empresa, as trinta e quatro contrapartes que estruturam o agronegócio nacional. A terceira descreve a oferta do Banco e o modo de a accionar."],
-  ];
-  const gap = 0.36, cw = colW(3, gap);
-  blocks.forEach((b, i) => {
-    const x = M + i * (cw + gap);
-    panel(s, x, 2.46, cw, 2.16);
-    s.addText(b[0], {
-      x: x + 0.28, y: 2.66, w: cw - 0.56, h: 0.46, isTextBox: true, margin: 0,
-      fontFace: F, fontSize: 13.5, bold: true, color: RED, valign: "top", lineSpacingMultiple: 1.06,
-    });
-    s.addText(b[1], {
-      x: x + 0.28, y: 3.14, w: cw - 0.56, h: 1.34, isTextBox: true, margin: 0,
-      fontFace: F, fontSize: 9.8, color: BODY, valign: "top", lineSpacingMultiple: 1.18,
-    });
-  });
-
-  panel(s, M, 4.78, CONTENT, 1.68);
-  s.addText("Glossário essencial", {
-    x: M + 0.32, y: 4.92, w: 3.2, h: 0.30, isTextBox: true, margin: 0,
-    fontFace: F, fontSize: 12.5, bold: true, color: INK,
-  });
-  const gloss = [
-    ["Capital de exploração", "Financiamento do custo da campanha (semente, adubo, mão de obra) até à venda da colheita."],
-    ["Produtor integrado", "Agricultor que produz ao abrigo de contrato celebrado com uma empresa compradora."],
-    ["Financiamento de activos", "Crédito para aquisição de equipamento: tractores, sistemas de rega, câmaras de frio."],
-    ["Financiamento ao comércio", "Instrumentos que permitem importar e exportar com segurança de pagamento entre as partes."],
-    ["Crédito sobre mercadoria", "Crédito garantido por produto armazenado, libertado à medida que a mercadoria é vendida."],
-    ["Fileira, ou cadeia de valor", "O percurso completo de um produto, do insumo agrícola ao consumidor final."],
-  ];
-  const gw = (CONTENT - 0.64 - 2 * 0.30) / 3;
-  gloss.forEach((g, i) => {
-    const col = i % 3, row = Math.floor(i / 3);
-    const x = M + 0.32 + col * (gw + 0.30), y = 5.28 + row * 0.56;
-    s.addText(g[0], {
-      x, y, w: gw, h: 0.24, isTextBox: true, margin: 0,
-      fontFace: F, fontSize: 10, bold: true, color: RED,
-    });
-    s.addText(g[1], {
-      x, y: y + 0.22, w: gw, h: 0.32, isTextBox: true, margin: 0,
-      fontFace: F, fontSize: 8.8, color: BODY, lineSpacingMultiple: 1.1,
-    });
-  });
-}
-
-// =====================================================================
-// 3. MOÇAMBIQUE NUM RELANCE
-// =====================================================================
-{
-  const s = slide({
-    eyebrow: "Contexto do país",
-    title: "Moçambique num relance",
-    lede: "País costeiro da África Austral, com cerca de 2.700 quilómetros de litoral e três corredores logísticos que servem o interior do continente.",
-    photo: IMG.irrigation,
-  });
-
-  const facts = [
-    ["~34 M", "habitantes", "População estimada, maioritariamente rural e jovem."],
-    ["3", "corredores logísticos", "Maputo, Beira e Nacala ligam o interior austral ao oceano Índico."],
-    ["~23%", "do Produto Interno Bruto", "É quanto a agricultura representa na economia nacional."],
-    ["75,4%", "da força de trabalho", "Proporção da população activa ocupada na agricultura."],
-  ];
-  const gap = 0.30, cw = colW(4, gap);
-  facts.forEach((f, i) => {
-    const x = M + i * (cw + gap);
-    panel(s, x, 2.46, cw, 2.06);
-    s.addText(f[0], {
-      x: x + 0.26, y: 2.66, w: cw - 0.52, h: 0.66, isTextBox: true, margin: 0,
-      fontFace: F, fontSize: 34, bold: true, color: RED, valign: "middle",
-    });
-    s.addText(f[1], {
-      x: x + 0.26, y: 3.32, w: cw - 0.52, h: 0.40, isTextBox: true, margin: 0,
-      fontFace: F, fontSize: 11.5, bold: true, color: INK, valign: "top", lineSpacingMultiple: 1.06,
-    });
-    s.addText(f[2], {
-      x: x + 0.26, y: 3.76, w: cw - 0.52, h: 0.58, isTextBox: true, margin: 0,
-      fontFace: F, fontSize: 10, color: BODY, lineSpacingMultiple: 1.16,
-    });
-  });
-
-  statement(s, 5.30,
-    "As principais fileiras de exportação, do tabaco e do açúcar ao algodão, à castanha de caju e à banana, distribuem-se por todo o território, do sul agrícola de Maputo ao norte produtivo de Nampula e do Niassa.",
-    { h: 1.00, size: 13.5 });
-  footnote(s, "Fontes: Instituto Nacional de Estatística · Banco de Moçambique · Ministério da Agricultura, Ambiente e Pescas.");
-}
-
-// =====================================================================
-// 4. O ABSA
-// =====================================================================
-{
-  const s = slide({
-    eyebrow: "A instituição",
-    title: "O Absa em África e em Moçambique",
-    lede: "Grupo financeiro pan-africano, com presença própria em doze mercados do continente, e um banco moçambicano de dimensão relevante no sistema nacional.",
-    photo: IMG.field,
-  });
-
-  const facts = [
-    ["GRUPO ABSA", "16", "países", "Presença global do Grupo, dos quais doze são mercados africanos com operação bancária própria.", INK, 1.28],
-    ["GRUPO ABSA", "34%", "dos resultados", "Proporção dos resultados gerada fora da África do Sul, no conjunto das operações africanas.", INK, 1.28],
-    ["MOÇAMBIQUE", "10,6%", "do crédito nacional", "Quota de mercado do Absa Bank Moçambique no crédito, no final de 2025.", RED, 1.52],
-    ["MOÇAMBIQUE", "1,3", "mil milhões de euros de activo", "Dimensão do balanço. O Banco de Moçambique classifica a instituição como quase sistémica.", RED, 1.52],
-  ];
-  const gap = 0.30, cw = colW(4, gap);
-  facts.forEach((f, i) => {
-    const x = M + i * (cw + gap);
-    panel(s, x, 2.46, cw, 2.36);
-    pill(s, x + 0.26, 2.64, f[5], f[0], f[4]);
-    s.addText(f[1], {
-      x: x + 0.26, y: 3.00, w: cw - 0.52, h: 0.60, isTextBox: true, margin: 0,
-      fontFace: F, fontSize: 28, bold: true, color: RED, valign: "middle",
-    });
-    s.addText(f[2], {
-      x: x + 0.26, y: 3.60, w: cw - 0.52, h: 0.38, isTextBox: true, margin: 0,
-      fontFace: F, fontSize: 11, bold: true, color: INK, valign: "top", lineSpacingMultiple: 1.06,
-    });
-    s.addText(f[3], {
-      x: x + 0.26, y: 4.02, w: cw - 0.52, h: 0.74, isTextBox: true, margin: 0,
-      fontFace: F, fontSize: 9.8, color: BODY, lineSpacingMultiple: 1.16,
-    });
-  });
-
-  statement(s, 5.36,
-    "O Grupo Absa é um dos maiores financiadores de projectos agrícolas da África subsariana e mantém investigação sectorial própria, publicada com regularidade sob a designação Absa AgriTrends.",
-    { h: 0.96, size: 13.5 });
-  footnote(s, "Fontes: Absa Group Limited, resultados de 2025 · Absa Corporate and Investment Banking · Banco de Moçambique · imprensa económica moçambicana.");
-}
-
-// =====================================================================
-// 5. A PROPOSTA
-// =====================================================================
-{
-  const s = pres.addSlide();
-  s.background = { color: RED };
-  pageNo++;
-  s.addImage({ path: IMG.field, x: 8.0, y: 0, w: W - 8.0, h: H, sizing: { type: "cover", w: W - 8.0, h: H } });
-  s.addShape(pres.ShapeType.rect, { x: 0, y: 0, w: 8.5, h: H, fill: { color: RED }, line: { width: 0 } });
-
-  s.addText("A PROPOSTA", {
-    x: M, y: 0.84, w: 7.2, h: 0.30, isTextBox: true, margin: 0,
-    fontFace: F, fontSize: 10.5, bold: true, charSpacing: 1.8, color: CREAM,
-  });
-  s.addText("Três compromissos que definem\na actuação do Banco", {
-    x: M, y: 1.18, w: 7.2, h: 1.46, isTextBox: true, margin: 0,
-    fontFace: F, fontSize: 27, bold: true, color: WHITE, lineSpacingMultiple: 1.08,
-  });
-
-  const promises = [
-    ["Estruturamos em função da época agrícola",
-     "As condições de reembolso acompanham a produção prevista, os valores a receber e os contratos de compra celebrados. Não se impõe à agricultura um perfil de crédito concebido para outros sectores."],
-    ["Partilhamos o preço e o risco com terceiros",
-     "A linha concessional FINOVA e a garantia da instituição financeira de desenvolvimento norte-americana permitem deferir operações que, isoladamente, não reuniriam garantias bastantes."],
-    ["Financiamos a fileira, e não apenas a conta",
-     "Do fornecedor de insumos ao comprador final: pagamentos, cobranças e crédito ao longo de toda a cadeia de valor em que o cliente se insere."],
-  ];
-  promises.forEach((p, i) => {
-    const y = 2.78 + i * 1.42;
-    s.addShape(pres.ShapeType.ellipse, { x: M, y: y + 0.02, w: 0.46, h: 0.46, fill: { color: WHITE }, line: { width: 0 } });
-    s.addText(String(i + 1), {
-      x: M, y: y + 0.02, w: 0.46, h: 0.46, isTextBox: true, margin: 0,
-      fontFace: F, fontSize: 16, bold: true, color: RED, align: "center", valign: "middle",
-    });
-    s.addText(p[0], {
-      x: M + 0.68, y: y, w: 6.5, h: 0.36, isTextBox: true, margin: 0,
-      fontFace: F, fontSize: 15, bold: true, color: WHITE,
-    });
-    s.addText(p[1], {
-      x: M + 0.68, y: y + 0.40, w: 6.5, h: 0.92, isTextBox: true, margin: 0,
-      fontFace: F, fontSize: 11.2, color: CREAM, lineSpacingMultiple: 1.20,
-    });
-  });
-
-  s.addImage({ path: IMG.logoWhite, x: M, y: H - 0.64, w: 1.12, h: 0.33 });
-}
-
-// =====================================================================
-// 6. O DESEQUILÍBRIO
-// =====================================================================
-{
-  const s = slide({
-    eyebrow: "Fundamento comercial",
-    title: "O desequilíbrio que define a oportunidade",
-    lede: "O sector não carece de procura de financiamento. Carece de estruturas de crédito compatíveis com o modo como a agricultura gera receita.",
-    photo: IMG.tractor,
-  });
-
-  const stats = [
-    ["~23%", "do Produto Interno Bruto", "Peso da agricultura na economia nacional."],
-    ["~70%", "da população", "Depende do sector agrícola para o seu sustento."],
-    ["2% a 6%", "da carteira de crédito", "É quanto a generalidade dos bancos afecta à agricultura."],
-    ["4,5 M", "de explorações agrícolas", "Recenseadas no Inquérito Agrário Integrado de 2023."],
-  ];
-  const gap = 0.30, cw = colW(4, gap);
-  stats.forEach((st, i) => {
-    const x = M + i * (cw + gap);
-    panel(s, x, 2.46, cw, 2.06);
-    s.addText(st[0], {
-      x: x + 0.26, y: 2.66, w: cw - 0.52, h: 0.64, isTextBox: true, margin: 0,
-      fontFace: F, fontSize: i === 2 ? 28 : 34, bold: true, color: i === 2 ? RED_DK : RED, valign: "middle",
-    });
-    s.addText(st[1], {
-      x: x + 0.26, y: 3.30, w: cw - 0.52, h: 0.40, isTextBox: true, margin: 0,
-      fontFace: F, fontSize: 11.5, bold: true, color: INK, valign: "top", lineSpacingMultiple: 1.06,
-    });
-    s.addText(st[2], {
-      x: x + 0.26, y: 3.74, w: cw - 0.52, h: 0.60, isTextBox: true, margin: 0,
-      fontFace: F, fontSize: 10, color: BODY, lineSpacingMultiple: 1.16,
-    });
-  });
-
-  statement(s, 5.30,
-    "Vinte e três por cento da economia; entre dois e seis por cento do crédito. Reduzir esta distância de forma estruturada, e não por simples aumento de apetite ao risco, é o objectivo desta proposta.",
-    { h: 1.00, size: 13.5 });
-  footnote(s, "Fontes: UNU-WIDER e Inclusive Growth in Mozambique, 2025 · Observatório do Meio Rural · Banco de Moçambique · INE, Inquérito Agrário Integrado de 2023.");
-  s.addNotes("A instituição mais exposta ao sector declara 12% da carteira; um caso excepcional atinge 25%. A média situa-se, contudo, entre 2% e 6%.");
-}
-
-// =====================================================================
-// 7. ESTRUTURA DO SECTOR
-// =====================================================================
-{
-  const s = slide({
-    eyebrow: "Inquérito Agrário Integrado de 2023",
-    title: "A composição real do sector agrário",
-    lede: "Três segmentos de dimensão muito distinta, que requerem três propostas de valor diferenciadas, servidas por uma única relação bancária.",
-  });
-
-  const segs = [
-    ["SEGMENTO 3", "4.383.460", "explorações de pequena dimensão · 98,3%",
-     "Alcançadas de forma indirecta, através das cadeias das empresas âncora e da rede nacional de revendedores de insumos.",
-     "Conta bancária · pagamentos digitais · crédito de insumos ao abrigo de contrato", INK],
-    ["SEGMENTO 2", "74.706", "explorações de dimensão média · 1,6%",
-     "Constituem a fronteira de crescimento da Banca de Negócios e o segmento com maior potencial por explorar.",
-     "Capital de exploração · financiamento de activos · cobranças · seguro agrícola", INK],
-    ["SEGMENTO 1", "1.131", "explorações de grande dimensão · 0,03%",
-     "Em conjunto com as trinta e quatro empresas âncora, concentram a maior parte do fluxo exportador do país.",
-     "Financiamento estruturado · comércio internacional · câmbio · tesouraria", RED],
-  ];
-  const gap = 0.40, cw = colW(3, gap);
-  segs.forEach((sg, i) => {
-    const x = M + i * (cw + gap);
-    panel(s, x, 2.46, cw, 3.06);
-    pill(s, x + 0.28, 2.64, 1.34, sg[0], sg[5]);
-    s.addText(sg[1], {
-      x: x + 0.28, y: 3.02, w: cw - 0.56, h: 0.62, isTextBox: true, margin: 0,
-      fontFace: F, fontSize: 29, bold: true, color: RED, valign: "middle",
-    });
-    s.addText(sg[2], {
-      x: x + 0.28, y: 3.64, w: cw - 0.56, h: 0.38, isTextBox: true, margin: 0,
-      fontFace: F, fontSize: 10.8, bold: true, color: INK, valign: "top", lineSpacingMultiple: 1.06,
-    });
-    s.addText(sg[3], {
-      x: x + 0.28, y: 4.06, w: cw - 0.56, h: 0.74, isTextBox: true, margin: 0,
-      fontFace: F, fontSize: 10, color: BODY, lineSpacingMultiple: 1.18,
-    });
-    s.addText(sg[4], {
-      x: x + 0.28, y: 4.84, w: cw - 0.56, h: 0.54, isTextBox: true, margin: 0,
-      fontFace: F, fontSize: 9.6, bold: true, color: RED, lineSpacingMultiple: 1.16,
-    });
-  });
-
-  statement(s, 5.74,
-    "As 74.706 explorações de dimensão média constituem a fronteira de crescimento, e é a empresa âncora que as torna financiáveis.",
-    { h: 0.60, size: 13 });
-  footnote(s, "Fonte: Inquérito Agrário Integrado de 2023, do Instituto Nacional de Estatística e do Ministério da Agricultura, Ambiente e Pescas.");
-}
-
-// =====================================================================
-// 8. ATRITO OPERACIONAL
-// =====================================================================
-{
-  const s = slide({
-    eyebrow: "Diagnóstico",
-    title: "A limitação do cliente não é a ambição, mas o atrito operacional",
-    lede: "Seis constrangimentos recorrentes, a que a presente proposta responde de forma explícita.",
-    photo: IMG.logistics,
-  });
-
-  const fr = [
-    ["Acesso e custo do crédito", "As necessidades sazonais raramente se ajustam às estruturas de crédito convencionais."],
-    ["Risco e resiliência", "Fenómenos climáticos, pragas e volatilidade de preços interrompem os fluxos previstos."],
-    ["Mercados e escoamento", "A fragmentação das cadeias dificulta o acesso a insumos, a compradores e a preços justos."],
-    ["Circulação de numerário", "As campanhas de comercialização continuam a ser liquidadas sobretudo em numerário."],
-    ["Registo e visibilidade", "Produtores solventes permanecem invisíveis à avaliação de crédito por falta de historial."],
-    ["Infra-estruturas", "Transporte, armazenagem e energia consomem margem depois de concluída a colheita."],
-  ];
-  const gx = 0.38, gy = 0.26, cw = colW(3, gx), ch = 1.36;
-  fr.forEach((f, i) => {
-    const x = M + (i % 3) * (cw + gx), y = 2.46 + Math.floor(i / 3) * (ch + gy);
-    panel(s, x, y, cw, ch);
-    s.addShape(pres.ShapeType.ellipse, { x: x + 0.26, y: y + 0.26, w: 0.36, h: 0.36, fill: { color: RED }, line: { width: 0 } });
-    s.addText(String(i + 1).padStart(2, "0"), {
-      x: x + 0.26, y: y + 0.26, w: 0.36, h: 0.36, isTextBox: true, margin: 0,
-      fontFace: F, fontSize: 10, bold: true, color: WHITE, align: "center", valign: "middle",
-    });
-    s.addText(f[0], {
-      x: x + 0.72, y: y + 0.26, w: cw - 0.98, h: 0.36, isTextBox: true, margin: 0,
-      fontFace: F, fontSize: 12.5, bold: true, color: INK, valign: "middle",
-    });
-    s.addText(f[1], {
-      x: x + 0.26, y: y + 0.70, w: cw - 0.52, h: 0.54, isTextBox: true, margin: 0,
-      fontFace: F, fontSize: 10.2, color: BODY, lineSpacingMultiple: 1.16,
-    });
-  });
-
-  statement(s, 5.88,
-    "A resposta consiste em substituir a venda avulsa de produtos por um plano de campanha que articula financiamento, pagamentos, protecção de risco e acesso ao mercado.",
-    { h: 0.58, size: 13 });
-}
-
-// =====================================================================
-// 9. CICLO DA CAMPANHA
-// =====================================================================
-{
-  const s = slide({
-    eyebrow: "O ciclo agrícola",
-    title: "Um financiamento que acompanha a campanha",
-    lede: "Cinco fases do calendário do cliente, a que correspondem cinco conversas comerciais distintas.",
-    photo: IMG.tractor,
-  });
-
-  const ph = [
-    ["Planear", "Orçamento da campanha, plano de cultura, contratos de compra e abertura de conta."],
-    ["Plantar", "Financiamento de insumos, pagamento a fornecedores e capital de exploração."],
-    ["Cultivar", "Seguro agrícola, acompanhamento técnico e revisão periódica da tesouraria."],
-    ["Colher", "Pagamento da mão de obra, logística, armazenagem e cobranças."],
-    ["Comercializar", "Financiamento ao comércio internacional, câmbio, poupança e reinvestimento."],
-  ];
-  const gap = 0.26, cw = colW(5, gap);
-  ph.forEach((p, i) => {
-    const x = M + i * (cw + gap), last = i === 4;
-    s.addShape(pres.ShapeType.roundRect, {
-      x, y: 2.76, w: cw, h: 2.34, rectRadius: 0.06,
-      fill: { color: last ? INK : TINT }, line: { width: 0 }, shadow: soft(),
-    });
-    s.addShape(pres.ShapeType.ellipse, {
-      x: x + cw / 2 - 0.27, y: 2.49, w: 0.54, h: 0.54,
-      fill: { color: last ? WHITE : RED }, line: { color: RED, width: 2.5 },
-    });
-    s.addText(String(i + 1), {
-      x: x + cw / 2 - 0.27, y: 2.49, w: 0.54, h: 0.54, isTextBox: true, margin: 0,
-      fontFace: F, fontSize: 17, bold: true, color: last ? RED : WHITE, align: "center", valign: "middle",
-    });
-    s.addText(p[0], {
-      x: x + 0.14, y: 3.20, w: cw - 0.28, h: 0.42, isTextBox: true, margin: 0,
-      fontFace: F, fontSize: 14.5, bold: true, color: last ? WHITE : INK, align: "center",
-    });
-    s.addText(p[1], {
-      x: x + 0.18, y: 3.68, w: cw - 0.36, h: 1.24, isTextBox: true, margin: 0,
-      fontFace: F, fontSize: 10, color: last ? "D8CFCF" : BODY, align: "center", lineSpacingMultiple: 1.18,
-    });
-  });
-
-  statement(s, 5.66,
-    "A mesma facilidade de crédito passa a estruturar-se sobre a produção prevista, os valores a receber e os contratos celebrados, em lugar de impor à agricultura um perfil de reembolso genérico.",
-    { h: 0.80, size: 13 });
-  footnote(s, "As facilidades de crédito encontram-se sujeitas a elegibilidade, avaliação de crédito, documentação e requisitos regulamentares.");
-}
-
-// =====================================================================
-// 10. TRÊS INSTRUMENTOS
-// =====================================================================
-{
-  const s = slide({
-    eyebrow: "Instrumentos disponíveis em 2026",
-    title: "Três instrumentos que alteram os termos da conversa",
-    lede: "Nenhum destes mecanismos existia na versão anterior desta proposta. Em conjunto, modificam o que as equipas comerciais podem oferecer.",
-  });
-
-  const al = [
-    ["FINOVA", "33,5 M€", "Linha de crédito concessional para o agronegócio",
-     "Operacionalizada pelo Banco de Moçambique em parceria com o Absa, o Standard Bank, o BCI, a GAPI e o Microbanco Confiança, no quadro de um pacote de 45,5 milhões de euros da cooperação alemã, através do banco de desenvolvimento KfW.",
-     "Taxa até 10% ao ano · períodos de carência · prazos compatíveis com o ciclo agrícola"],
-    ["DFC E USAID", "8,25 M US$", "Garantia parcial de carteira de crédito",
-     "Acordo a dez anos com o Governo dos Estados Unidos, que mobiliza 16,5 milhões de dólares em crédito. Destina-se a 75 a 100 empresas agrícolas moçambicanas, das quais pelo menos 15% detidas por mulheres.",
-     "Partilha de risco de 50% · operação média próxima de 220 mil dólares"],
-    ["ICM", "Protocolo", "Cooperação com o Instituto de Cereais de Moçambique",
-     "Memorando de entendimento previsto para a FACIM de 2026, entre a Direcção de Banca Corporativa e de Investimento do Absa e a Direcção-Geral do Instituto, dirigido ao apoio a pequenos produtores e às operações de comércio externo.",
-     "Originação institucional de operações já qualificadas, em alternativa à prospecção directa"],
-  ];
-  const gap = 0.40, cw = colW(3, gap);
-  al.forEach((a, i) => {
-    const x = M + i * (cw + gap);
-    panel(s, x, 2.46, cw, 3.34);
-    pill(s, x + 0.28, 2.64, 1.60, a[0], RED);
-    s.addText(a[1], {
-      x: x + 0.28, y: 3.02, w: cw - 0.56, h: 0.56, isTextBox: true, margin: 0,
-      fontFace: F, fontSize: 27, bold: true, color: RED, valign: "middle",
-    });
-    s.addText(a[2], {
-      x: x + 0.28, y: 3.60, w: cw - 0.56, h: 0.46, isTextBox: true, margin: 0,
-      fontFace: F, fontSize: 11.2, bold: true, color: INK, valign: "top", lineSpacingMultiple: 1.08,
-    });
-    s.addText(a[3], {
-      x: x + 0.28, y: 4.10, w: cw - 0.56, h: 1.16, isTextBox: true, margin: 0,
-      fontFace: F, fontSize: 9.4, color: BODY, lineSpacingMultiple: 1.18,
-    });
-    s.addText(a[4], {
-      x: x + 0.28, y: 5.30, w: cw - 0.56, h: 0.46, isTextBox: true, margin: 0,
-      fontFace: F, fontSize: 9.4, bold: true, color: RED, lineSpacingMultiple: 1.14,
-    });
-  });
-
-  statement(s, 5.98,
-    "Preço concessional, partilha de risco e originação institucional: é esta combinação que permite deferir operações anteriormente inviáveis.",
-    { h: 0.54, size: 12.5 });
-  footnote(s, "Fontes: Banco de Moçambique · U.S. International Development Finance Corporation e USAID · Instituto de Cereais de Moçambique · Embaixada dos Estados Unidos em Maputo.");
-}
-
-// =====================================================================
-// 11. COMPROMISSO COMUNITÁRIO
-// =====================================================================
-{
-  const s = slide({
-    eyebrow: "Actuação junto das comunidades",
-    title: "O compromisso não se esgota no balcão",
-    lede: "Entre Outubro de 2025 e Janeiro de 2026 a época chuvosa afectou mais de 1,1 milhões de pessoas. Em Boane, mais de 450 famílias perderam as áreas de cultivo e as habitações.",
-  });
-
-  s.addImage({
-    path: IMG.processing, x: M, y: 2.54, w: 4.90, h: 2.94,
-    sizing: { type: "cover", w: 4.90, h: 2.94 },
-  });
-
-  const cx = M + 4.90 + 0.40, cw2 = CONTENT - 4.90 - 0.40;
-  const items = [
-    ["190", "kits agrícolas distribuídos", "Semente de ciclo curto e médio, fertilizante e alfaias essenciais, entregues às famílias em situação de maior vulnerabilidade na localidade de Gueguegue."],
-    ["230", "famílias apoiadas", "Apoio combinado à retoma da produção agrícola e à reconstrução habitacional, prevendo-se a reedificação de quarenta habitações."],
-    ["90", "hectares em recuperação", "Área de produção que as comunidades ficam em condições de recuperar, com efeito directo na segurança alimentar e no rendimento familiar."],
-  ];
-  items.forEach((it, i) => {
-    const y = 2.54 + i * 1.04;
-    s.addShape(pres.ShapeType.roundRect, { x: cx, y, w: cw2, h: 0.94, rectRadius: 0.06, fill: { color: TINT }, line: { width: 0 }, shadow: soft() });
-    s.addText(it[0], {
-      x: cx + 0.26, y: y + 0.10, w: 1.10, h: 0.68, isTextBox: true, margin: 0,
-      fontFace: F, fontSize: 29, bold: true, color: RED, valign: "middle",
-    });
-    s.addText(it[1], {
-      x: cx + 1.42, y: y + 0.12, w: cw2 - 1.68, h: 0.28, isTextBox: true, margin: 0,
-      fontFace: F, fontSize: 11.5, bold: true, color: INK,
-    });
-    s.addText(it[2], {
-      x: cx + 1.42, y: y + 0.40, w: cw2 - 1.68, h: 0.48, isTextBox: true, margin: 0,
-      fontFace: F, fontSize: 9, color: BODY, lineSpacingMultiple: 1.12,
-    });
-  });
-
-  statement(s, 5.72,
-    "A capacidade de acompanhar o cliente agrícola no ano difícil, e não apenas no ano favorável, é parte constitutiva desta proposta de valor.",
-    { h: 0.58, size: 13 });
-  footnote(s, "Fontes: Diário Económico · Integrity Magazine · comunicação institucional do Absa Bank Moçambique.");
-}
-
-// =====================================================================
-// 12. SEPARADOR
-// =====================================================================
-{
-  const s = pres.addSlide();
-  s.background = { color: RED };
-  pageNo++;
-  s.addImage({ path: IMG.tractor, x: 6.6, y: 0, w: W - 6.6, h: H, sizing: { type: "cover", w: W - 6.6, h: H } });
+  s.addImage({ path: photo, x: 6.6, y: 0, w: W - 6.6, h: H, sizing: { type: "cover", w: W - 6.6, h: H } });
   s.addShape(pres.ShapeType.rect, { x: 0, y: 0, w: 7.3, h: H, fill: { color: RED }, line: { width: 0 } });
 
-  s.addText("SEGUNDA PARTE", {
-    x: M, y: 2.10, w: 6.2, h: 0.30, isTextBox: true, margin: 0,
+  const dotD = 0.20, dotGap = 0.16;
+  for (let i = 0; i < 7; i++) {
+    const dx = M + i * (dotD + dotGap);
+    s.addShape(pres.ShapeType.ellipse, {
+      x: dx, y: 0.60, w: dotD, h: dotD,
+      fill: { color: i < num ? WHITE : "9E1B32" }, line: { width: 0 },
+    });
+  }
+
+  s.addText(`PERGUNTA ${num} DE 7`, {
+    x: M, y: 1.06, w: 6.2, h: 0.30, isTextBox: true, margin: 0,
     fontFace: F, fontSize: 11, bold: true, charSpacing: 1.8, color: CREAM,
   });
-  s.addText("As empresas que\nestruturam o sector", {
-    x: M, y: 2.52, w: 6.2, h: 1.80, isTextBox: true, margin: 0,
-    fontFace: F, fontSize: 37, bold: true, color: WHITE, lineSpacingMultiple: 1.06,
+  s.addText(question, {
+    x: M, y: 1.44, w: 6.3, h: 2.00, isTextBox: true, margin: 0,
+    fontFace: F, fontSize: 26, bold: true, color: WHITE, lineSpacingMultiple: 1.12, valign: "top",
   });
-  s.addText("Trinta e quatro contrapartes identificadas em nove fileiras produtivas, cada uma com a respectiva estrutura accionista, dimensão, província e oportunidade concreta de negócio para o Banco.", {
-    x: M, y: 4.44, w: 5.9, h: 1.02, isTextBox: true, margin: 0,
-    fontFace: F, fontSize: 12.5, color: CREAM, lineSpacingMultiple: 1.24,
+  s.addText(subtitle, {
+    x: M, y: 3.62, w: 5.9, h: 0.96, isTextBox: true, margin: 0,
+    fontFace: F, fontSize: 13, color: CREAM, lineSpacingMultiple: 1.24, valign: "top",
   });
 
-  const kpi = [["Açúcar", "~380 mil t/ano"], ["Tabaco", "258,3 M US$"], ["Algodão", "~50 mil t/ano"], ["Avicultura", "~135 mil t/ano"]];
-  kpi.forEach((k, i) => {
-    const x = M + (i % 2) * 3.10, y = 5.64 + Math.floor(i / 2) * 0.60;
-    s.addText(k[1], { x, y, w: 2.9, h: 0.32, isTextBox: true, margin: 0, fontFace: F, fontSize: 15.5, bold: true, color: WHITE });
-    s.addText(k[0], { x, y: y + 0.29, w: 2.9, h: 0.26, isTextBox: true, margin: 0, fontFace: F, fontSize: 10, color: PINK });
-  });
+  if (kpis) {
+    kpis.forEach((k, i) => {
+      const x = M + (i % 2) * 3.10, y = 5.64 + Math.floor(i / 2) * 0.60;
+      s.addText(k[1], { x, y, w: 2.9, h: 0.32, isTextBox: true, margin: 0, fontFace: F, fontSize: 15.5, bold: true, color: WHITE });
+      s.addText(k[0], { x, y: y + 0.29, w: 2.9, h: 0.26, isTextBox: true, margin: 0, fontFace: F, fontSize: 10, color: PINK });
+    });
+  }
+
   s.addImage({ path: IMG.logoWhite, x: W - M - 1.86, y: H - 0.90, w: 1.86, h: 0.54 });
+  s.addNotes(`Separador da pergunta ${num} de 7 do guião da proposta de valor: "${question}"`);
+  return s;
 }
 
 // =====================================================================
@@ -746,6 +261,279 @@ function companySlide(o) {
   if (o.notes) s.addNotes(o.notes);
   return s;
 }
+
+// =====================================================================
+// 1. CAPA
+// =====================================================================
+{
+  const s = pres.addSlide();
+  s.background = { color: RED };
+  pageNo++;
+  s.addImage({ path: IMG.cover, x: 6.2, y: 0, w: W - 6.2, h: H, sizing: { type: "cover", w: W - 6.2, h: H } });
+  s.addShape(pres.ShapeType.rect, { x: 0, y: 0, w: 6.9, h: H, fill: { color: RED }, line: { width: 0 } });
+
+  s.addImage({ path: IMG.logoWhite, x: M, y: 0.66, w: 1.86, h: 0.54 });
+
+  s.addText("PROPOSTA DE VALOR PARA O CLIENTE  ·  2026", {
+    x: M, y: 2.16, w: 5.7, h: 0.30, isTextBox: true, margin: 0,
+    fontFace: F, fontSize: 11, bold: true, charSpacing: 1.8, color: CREAM,
+  });
+  s.addText("O Agronegócio\nem Moçambique", {
+    x: M, y: 2.58, w: 5.7, h: 1.76, isTextBox: true, margin: 0,
+    fontFace: F, fontSize: 40, bold: true, color: WHITE, lineSpacingMultiple: 1.06,
+  });
+  s.addText("Uma proposta integrada de financiamento, pagamentos, protecção de risco e acesso ao mercado, concebida em função do calendário agrícola e das trinta e quatro empresas que estruturam o sector.", {
+    x: M, y: 4.46, w: 5.5, h: 1.22, isTextBox: true, margin: 0,
+    fontFace: F, fontSize: 13, color: CREAM, lineSpacingMultiple: 1.26,
+  });
+  s.addText("Absa Bank Moçambique, S.A.\nBanca de Negócios  ·  Banca Corporativa e de Investimento", {
+    x: M, y: 6.02, w: 5.7, h: 0.66, isTextBox: true, margin: 0,
+    fontFace: F, fontSize: 10.5, color: PINK, lineSpacingMultiple: 1.22,
+  });
+  s.addNotes("Documento institucional. Destina-se a apresentação a clientes empresariais, parceiros de desenvolvimento e interlocutores internacionais. Todos os dados citados provêm de fontes públicas identificadas no slide final.");
+}
+
+// =====================================================================
+// 2. COMO LER ESTE DOCUMENTO
+// =====================================================================
+{
+  const s = slide({
+    eyebrow: "Nota preliminar",
+    title: "Como ler este documento",
+    lede: "Dirige-se igualmente a quem conhece o sector agrícola moçambicano e a quem hoje o encontra pela primeira vez.",
+  });
+
+  const blocks = [
+    ["O que é uma Proposta de Valor",
+     "Em banca, uma Proposta de Valor para o Cliente, ou CVP, do inglês Customer Value Proposition, é o documento que estabelece o que a instituição oferece a um segmento, por que razão essa oferta é pertinente e em que se distingue da concorrência."],
+    ["A quem se dirige",
+     "A três destinatários: às equipas comerciais do Banco, que dele se servem em reunião; aos clientes empresariais do sector agrícola; e a parceiros institucionais e internacionais que avaliem a actuação do Banco neste domínio."],
+    ["Como está organizado",
+     "A primeira parte estabelece o contexto do país e do sector. A segunda apresenta, empresa a empresa, as trinta e quatro contrapartes que estruturam o agronegócio nacional. A terceira descreve a oferta do Banco e o modo de a accionar."],
+  ];
+  const gap = 0.36, cw = colW(3, gap);
+  blocks.forEach((b, i) => {
+    const x = M + i * (cw + gap);
+    panel(s, x, 2.46, cw, 2.16);
+    s.addText(b[0], {
+      x: x + 0.28, y: 2.66, w: cw - 0.56, h: 0.46, isTextBox: true, margin: 0,
+      fontFace: F, fontSize: 13.5, bold: true, color: RED, valign: "top", lineSpacingMultiple: 1.06,
+    });
+    s.addText(b[1], {
+      x: x + 0.28, y: 3.14, w: cw - 0.56, h: 1.34, isTextBox: true, margin: 0,
+      fontFace: F, fontSize: 9.8, color: BODY, valign: "top", lineSpacingMultiple: 1.18,
+    });
+  });
+
+  panel(s, M, 4.78, CONTENT, 1.68);
+  s.addText("Glossário essencial", {
+    x: M + 0.32, y: 4.92, w: 3.2, h: 0.30, isTextBox: true, margin: 0,
+    fontFace: F, fontSize: 12.5, bold: true, color: INK,
+  });
+  const gloss = [
+    ["Capital de exploração", "Financiamento do custo da campanha (semente, adubo, mão de obra) até à venda da colheita."],
+    ["Produtor integrado", "Agricultor que produz ao abrigo de contrato celebrado com uma empresa compradora."],
+    ["Financiamento de activos", "Crédito para aquisição de equipamento: tractores, sistemas de rega, câmaras de frio."],
+    ["Financiamento ao comércio", "Instrumentos que permitem importar e exportar com segurança de pagamento entre as partes."],
+    ["Crédito sobre mercadoria", "Crédito garantido por produto armazenado, libertado à medida que a mercadoria é vendida."],
+    ["Fileira, ou cadeia de valor", "O percurso completo de um produto, do insumo agrícola ao consumidor final."],
+  ];
+  const gw = (CONTENT - 0.64 - 2 * 0.30) / 3;
+  gloss.forEach((g, i) => {
+    const col = i % 3, row = Math.floor(i / 3);
+    const x = M + 0.32 + col * (gw + 0.30), y = 5.28 + row * 0.56;
+    s.addText(g[0], {
+      x, y, w: gw, h: 0.24, isTextBox: true, margin: 0,
+      fontFace: F, fontSize: 10, bold: true, color: RED,
+    });
+    s.addText(g[1], {
+      x, y: y + 0.22, w: gw, h: 0.32, isTextBox: true, margin: 0,
+      fontFace: F, fontSize: 8.8, color: BODY, lineSpacingMultiple: 1.1,
+    });
+  });
+}
+
+questionDivider(1, "Como está estruturado o sector agrícola em Moçambique?", "Um sector que sustenta 75,4% da força de trabalho, organizado em três segmentos de dimensão muito distinta.", IMG.field, null);
+
+// =====================================================================
+// 3. MOÇAMBIQUE NUM RELANCE
+// =====================================================================
+{
+  const s = slide({
+    eyebrow: "Contexto do país",
+    title: "Moçambique num relance",
+    lede: "País costeiro da África Austral, com cerca de 2.700 quilómetros de litoral e três corredores logísticos que servem o interior do continente.",
+    photo: IMG.irrigation,
+  });
+
+  const facts = [
+    ["~34 M", "habitantes", "População estimada, maioritariamente rural e jovem."],
+    ["3", "corredores logísticos", "Maputo, Beira e Nacala ligam o interior austral ao oceano Índico."],
+    ["~23%", "do Produto Interno Bruto", "É quanto a agricultura representa na economia nacional."],
+    ["75,4%", "da força de trabalho", "Proporção da população activa ocupada na agricultura."],
+  ];
+  const gap = 0.30, cw = colW(4, gap);
+  facts.forEach((f, i) => {
+    const x = M + i * (cw + gap);
+    panel(s, x, 2.46, cw, 2.06);
+    s.addText(f[0], {
+      x: x + 0.26, y: 2.66, w: cw - 0.52, h: 0.66, isTextBox: true, margin: 0,
+      fontFace: F, fontSize: 34, bold: true, color: RED, valign: "middle",
+    });
+    s.addText(f[1], {
+      x: x + 0.26, y: 3.32, w: cw - 0.52, h: 0.40, isTextBox: true, margin: 0,
+      fontFace: F, fontSize: 11.5, bold: true, color: INK, valign: "top", lineSpacingMultiple: 1.06,
+    });
+    s.addText(f[2], {
+      x: x + 0.26, y: 3.76, w: cw - 0.52, h: 0.58, isTextBox: true, margin: 0,
+      fontFace: F, fontSize: 10, color: BODY, lineSpacingMultiple: 1.16,
+    });
+  });
+
+  statement(s, 5.30,
+    "As principais fileiras de exportação, do tabaco e do açúcar ao algodão, à castanha de caju e à banana, distribuem-se por todo o território, do sul agrícola de Maputo ao norte produtivo de Nampula e do Niassa.",
+    { h: 1.00, size: 13.5 });
+  footnote(s, "Fontes: Instituto Nacional de Estatística · Banco de Moçambique · Ministério da Agricultura, Ambiente e Pescas.");
+}
+
+// =====================================================================
+// 7. ESTRUTURA DO SECTOR
+// =====================================================================
+{
+  const s = slide({
+    eyebrow: "Inquérito Agrário Integrado de 2023",
+    title: "A composição real do sector agrário",
+    lede: "Três segmentos de dimensão muito distinta, que requerem três propostas de valor diferenciadas, servidas por uma única relação bancária.",
+  });
+
+  const segs = [
+    ["SEGMENTO 3", "4.383.460", "explorações de pequena dimensão · 98,3%",
+     "Alcançadas de forma indirecta, através das cadeias das empresas âncora e da rede nacional de revendedores de insumos.",
+     "Conta bancária · pagamentos digitais · crédito de insumos ao abrigo de contrato", INK],
+    ["SEGMENTO 2", "74.706", "explorações de dimensão média · 1,6%",
+     "Constituem a fronteira de crescimento da Banca de Negócios e o segmento com maior potencial por explorar.",
+     "Capital de exploração · financiamento de activos · cobranças · seguro agrícola", INK],
+    ["SEGMENTO 1", "1.131", "explorações de grande dimensão · 0,03%",
+     "Em conjunto com as trinta e quatro empresas âncora, concentram a maior parte do fluxo exportador do país.",
+     "Financiamento estruturado · comércio internacional · câmbio · tesouraria", RED],
+  ];
+  const gap = 0.40, cw = colW(3, gap);
+  segs.forEach((sg, i) => {
+    const x = M + i * (cw + gap);
+    panel(s, x, 2.46, cw, 3.06);
+    pill(s, x + 0.28, 2.64, 1.34, sg[0], sg[5]);
+    s.addText(sg[1], {
+      x: x + 0.28, y: 3.02, w: cw - 0.56, h: 0.62, isTextBox: true, margin: 0,
+      fontFace: F, fontSize: 29, bold: true, color: RED, valign: "middle",
+    });
+    s.addText(sg[2], {
+      x: x + 0.28, y: 3.64, w: cw - 0.56, h: 0.38, isTextBox: true, margin: 0,
+      fontFace: F, fontSize: 10.8, bold: true, color: INK, valign: "top", lineSpacingMultiple: 1.06,
+    });
+    s.addText(sg[3], {
+      x: x + 0.28, y: 4.06, w: cw - 0.56, h: 0.74, isTextBox: true, margin: 0,
+      fontFace: F, fontSize: 10, color: BODY, lineSpacingMultiple: 1.18,
+    });
+    s.addText(sg[4], {
+      x: x + 0.28, y: 4.84, w: cw - 0.56, h: 0.54, isTextBox: true, margin: 0,
+      fontFace: F, fontSize: 9.6, bold: true, color: RED, lineSpacingMultiple: 1.16,
+    });
+  });
+
+  statement(s, 5.74,
+    "As 74.706 explorações de dimensão média constituem a fronteira de crescimento, e é a empresa âncora que as torna financiáveis.",
+    { h: 0.60, size: 13 });
+  footnote(s, "Fonte: Inquérito Agrário Integrado de 2023, do Instituto Nacional de Estatística e do Ministério da Agricultura, Ambiente e Pescas.");
+}
+
+questionDivider(2, "Quais os principais desafios e oportunidades enfrentados pelos clientes?", "Seis fricções recorrentes, e a distância entre o peso económico do sector e o seu peso na carteira de crédito.", IMG.logistics, null);
+
+// =====================================================================
+// 6. O DESEQUILÍBRIO
+// =====================================================================
+{
+  const s = slide({
+    eyebrow: "Fundamento comercial",
+    title: "O desequilíbrio que define a oportunidade",
+    lede: "O sector não carece de procura de financiamento. Carece de estruturas de crédito compatíveis com o modo como a agricultura gera receita.",
+    photo: IMG.tractor,
+  });
+
+  const stats = [
+    ["~23%", "do Produto Interno Bruto", "Peso da agricultura na economia nacional."],
+    ["~70%", "da população", "Depende do sector agrícola para o seu sustento."],
+    ["2% a 6%", "da carteira de crédito", "É quanto a generalidade dos bancos afecta à agricultura."],
+    ["4,5 M", "de explorações agrícolas", "Recenseadas no Inquérito Agrário Integrado de 2023."],
+  ];
+  const gap = 0.30, cw = colW(4, gap);
+  stats.forEach((st, i) => {
+    const x = M + i * (cw + gap);
+    panel(s, x, 2.46, cw, 2.06);
+    s.addText(st[0], {
+      x: x + 0.26, y: 2.66, w: cw - 0.52, h: 0.64, isTextBox: true, margin: 0,
+      fontFace: F, fontSize: i === 2 ? 28 : 34, bold: true, color: i === 2 ? RED_DK : RED, valign: "middle",
+    });
+    s.addText(st[1], {
+      x: x + 0.26, y: 3.30, w: cw - 0.52, h: 0.40, isTextBox: true, margin: 0,
+      fontFace: F, fontSize: 11.5, bold: true, color: INK, valign: "top", lineSpacingMultiple: 1.06,
+    });
+    s.addText(st[2], {
+      x: x + 0.26, y: 3.74, w: cw - 0.52, h: 0.60, isTextBox: true, margin: 0,
+      fontFace: F, fontSize: 10, color: BODY, lineSpacingMultiple: 1.16,
+    });
+  });
+
+  statement(s, 5.30,
+    "Vinte e três por cento da economia; entre dois e seis por cento do crédito. Reduzir esta distância de forma estruturada, e não por simples aumento de apetite ao risco, é o objectivo desta proposta.",
+    { h: 1.00, size: 13.5 });
+  footnote(s, "Fontes: UNU-WIDER e Inclusive Growth in Mozambique, 2025 · Observatório do Meio Rural · Banco de Moçambique · INE, Inquérito Agrário Integrado de 2023.");
+  s.addNotes("A instituição mais exposta ao sector declara 12% da carteira; um caso excepcional atinge 25%. A média situa-se, contudo, entre 2% e 6%.");
+}
+
+// =====================================================================
+// 8. ATRITO OPERACIONAL
+// =====================================================================
+{
+  const s = slide({
+    eyebrow: "Diagnóstico",
+    title: "A limitação do cliente não é a ambição, mas o atrito operacional",
+    lede: "Seis constrangimentos recorrentes, a que a presente proposta responde de forma explícita.",
+    photo: IMG.logistics,
+  });
+
+  const fr = [
+    ["Acesso e custo do crédito", "As necessidades sazonais raramente se ajustam às estruturas de crédito convencionais."],
+    ["Risco e resiliência", "Fenómenos climáticos, pragas e volatilidade de preços interrompem os fluxos previstos."],
+    ["Mercados e escoamento", "A fragmentação das cadeias dificulta o acesso a insumos, a compradores e a preços justos."],
+    ["Circulação de numerário", "As campanhas de comercialização continuam a ser liquidadas sobretudo em numerário."],
+    ["Registo e visibilidade", "Produtores solventes permanecem invisíveis à avaliação de crédito por falta de historial."],
+    ["Infra-estruturas", "Transporte, armazenagem e energia consomem margem depois de concluída a colheita."],
+  ];
+  const gx = 0.38, gy = 0.26, cw = colW(3, gx), ch = 1.36;
+  fr.forEach((f, i) => {
+    const x = M + (i % 3) * (cw + gx), y = 2.46 + Math.floor(i / 3) * (ch + gy);
+    panel(s, x, y, cw, ch);
+    s.addShape(pres.ShapeType.ellipse, { x: x + 0.26, y: y + 0.26, w: 0.36, h: 0.36, fill: { color: RED }, line: { width: 0 } });
+    s.addText(String(i + 1).padStart(2, "0"), {
+      x: x + 0.26, y: y + 0.26, w: 0.36, h: 0.36, isTextBox: true, margin: 0,
+      fontFace: F, fontSize: 10, bold: true, color: WHITE, align: "center", valign: "middle",
+    });
+    s.addText(f[0], {
+      x: x + 0.72, y: y + 0.26, w: cw - 0.98, h: 0.36, isTextBox: true, margin: 0,
+      fontFace: F, fontSize: 12.5, bold: true, color: INK, valign: "middle",
+    });
+    s.addText(f[1], {
+      x: x + 0.26, y: y + 0.70, w: cw - 0.52, h: 0.54, isTextBox: true, margin: 0,
+      fontFace: F, fontSize: 10.2, color: BODY, lineSpacingMultiple: 1.16,
+    });
+  });
+
+  statement(s, 5.88,
+    "A resposta consiste em substituir a venda avulsa de produtos por um plano de campanha que articula financiamento, pagamentos, protecção de risco e acesso ao mercado.",
+    { h: 0.58, size: 13 });
+}
+
+questionDivider(3, "Quais são os segmentos e cadeias de valor mais relevantes?", "Nove fileiras produtivas e trinta e quatro contrapartes identificadas, da produção à exportação.", IMG.tractor, [["Açúcar", "~380 mil t/ano"], ["Tabaco", "258,3 M US$"], ["Algodão", "~50 mil t/ano"], ["Avicultura", "~135 mil t/ano"]]);
 
 // ---- 13: AÇÚCAR ----
 companySlide({
@@ -1051,6 +839,8 @@ companySlide({
   footnote: "Fontes: Club of Mozambique · Export Trading Group · Feed the Future Inova · 360 Mozambique.",
 });
 
+questionDivider(4, "Que perfis de clientes queremos priorizar?", "Três segmentos de cobertura, e a lógica que liga cada empresa âncora a centenas de clientes na sua cadeia.", IMG.processing, null);
+
 // =====================================================================
 // 22. SEGMENTAÇÃO
 // =====================================================================
@@ -1097,48 +887,245 @@ companySlide({
     { h: 0.56, size: 12.5 });
 }
 
+questionDivider(5, "Quais são as necessidades financeiras e não financeiras destes clientes?", "Da campanha ao pagamento final: o que cada cliente precisa financiar, e o que precisa que o Banco lhe garanta.", IMG.cattle, null);
+
 // =====================================================================
-// 23. SUITE DE SOLUÇÕES
+// 9. CICLO DA CAMPANHA
 // =====================================================================
 {
   const s = slide({
-    eyebrow: "A oferta do Banco",
-    title: "Do insumo agrícola ao pagamento final",
-    lede: "A matriz de produtos, agora sustentada pela linha FINOVA e pela garantia norte-americana em matéria de preço e de risco.",
-    photo: IMG.fruit,
+    eyebrow: "O ciclo agrícola",
+    title: "Um financiamento que acompanha a campanha",
+    lede: "Cinco fases do calendário do cliente, a que correspondem cinco conversas comerciais distintas.",
+    photo: IMG.tractor,
   });
 
-  const rows = [
-    ["Insumos sazonais e capital de exploração", "Crédito agrícola ajustado à tesouraria, descoberto autorizado e financiamento contra ordem de compra, com recurso à linha FINOVA sempre que elegível", "Financiamento disponível quando os custos precedem as vendas"],
-    ["Equipamento e activos de eficiência climática", "Financiamento comercial de activos, financiamento verde e apoio à rega solar", "Maior produtividade e maior resiliência ao choque climático"],
-    ["Comércio, importação e exportação", "Financiamento ao comércio internacional, câmbio, contas multimoeda e transferências internacionais", "Liquidação de fluxos transfronteiriços com previsibilidade"],
-    ["Cobranças e pagamentos", "Absa Access, banca electrónica, aceitação móvel e banca de agente", "Menor circulação de numerário e reconciliação mais célere"],
-    ["Risco, aconselhamento e crescimento", "Seguro empresarial, especialistas sectoriais, garantias de parceiros e programas de acompanhamento", "Protecção da margem e melhor decisão no ciclo seguinte"],
+  const ph = [
+    ["Planear", "Orçamento da campanha, plano de cultura, contratos de compra e abertura de conta."],
+    ["Plantar", "Financiamento de insumos, pagamento a fornecedores e capital de exploração."],
+    ["Cultivar", "Seguro agrícola, acompanhamento técnico e revisão periódica da tesouraria."],
+    ["Colher", "Pagamento da mão de obra, logística, armazenagem e cobranças."],
+    ["Comercializar", "Financiamento ao comércio internacional, câmbio, poupança e reinvestimento."],
   ];
-  const cols = [3.55, 4.90, 3.38];
-  const top = 2.46, rowH = 0.68;
-
-  s.addShape(pres.ShapeType.rect, { x: M, y: top, w: CONTENT, h: 0.42, fill: { color: INK }, line: { width: 0 } });
-  ["Necessidade do cliente", "Solução Absa", "Valor para o negócio"].forEach((t, i) => {
-    const x = M + cols.slice(0, i).reduce((a, b) => a + b, 0);
-    s.addText(t.toUpperCase(), {
-      x: x + 0.20, y: top, w: cols[i] - 0.30, h: 0.42, isTextBox: true, margin: 0,
-      fontFace: F, fontSize: 9.5, bold: true, charSpacing: 1.1, color: WHITE, valign: "middle",
+  const gap = 0.26, cw = colW(5, gap);
+  ph.forEach((p, i) => {
+    const x = M + i * (cw + gap), last = i === 4;
+    s.addShape(pres.ShapeType.roundRect, {
+      x, y: 2.76, w: cw, h: 2.34, rectRadius: 0.06,
+      fill: { color: last ? INK : TINT }, line: { width: 0 }, shadow: soft(),
+    });
+    s.addShape(pres.ShapeType.ellipse, {
+      x: x + cw / 2 - 0.27, y: 2.49, w: 0.54, h: 0.54,
+      fill: { color: last ? WHITE : RED }, line: { color: RED, width: 2.5 },
+    });
+    s.addText(String(i + 1), {
+      x: x + cw / 2 - 0.27, y: 2.49, w: 0.54, h: 0.54, isTextBox: true, margin: 0,
+      fontFace: F, fontSize: 17, bold: true, color: last ? RED : WHITE, align: "center", valign: "middle",
+    });
+    s.addText(p[0], {
+      x: x + 0.14, y: 3.20, w: cw - 0.28, h: 0.42, isTextBox: true, margin: 0,
+      fontFace: F, fontSize: 14.5, bold: true, color: last ? WHITE : INK, align: "center",
+    });
+    s.addText(p[1], {
+      x: x + 0.18, y: 3.68, w: cw - 0.36, h: 1.24, isTextBox: true, margin: 0,
+      fontFace: F, fontSize: 10, color: last ? "D8CFCF" : BODY, align: "center", lineSpacingMultiple: 1.18,
     });
   });
-  rows.forEach((r, i) => {
-    const y = top + 0.42 + i * rowH;
-    s.addShape(pres.ShapeType.rect, { x: M, y, w: CONTENT, h: rowH, fill: { color: i % 2 === 0 ? WHITE : TINT }, line: { width: 0 } });
-    r.forEach((c, k) => {
-      const x = M + cols.slice(0, k).reduce((a, b) => a + b, 0);
-      s.addText(c, {
-        x: x + 0.20, y: y + 0.04, w: cols[k] - 0.36, h: rowH - 0.08, isTextBox: true, margin: 0,
-        fontFace: F, fontSize: 10, bold: k === 0, color: k === 0 ? INK : BODY,
-        valign: "middle", lineSpacingMultiple: 1.10,
+
+  statement(s, 5.66,
+    "A mesma facilidade de crédito passa a estruturar-se sobre a produção prevista, os valores a receber e os contratos celebrados, em lugar de impor à agricultura um perfil de reembolso genérico.",
+    { h: 0.80, size: 13 });
+  footnote(s, "As facilidades de crédito encontram-se sujeitas a elegibilidade, avaliação de crédito, documentação e requisitos regulamentares.");
+}
+
+// =====================================================================
+// NECESSIDADES FINANCEIRAS E NÃO FINANCEIRAS
+// =====================================================================
+{
+  const s = slide({
+    eyebrow: "O que o cliente precisa, além de crédito",
+    title: "Duas naturezas de necessidade, uma só relação",
+    lede: "O financiamento resolve o custo da campanha. O que protege o cliente do choque seguinte é, em regra, não financeiro.",
+  });
+
+  const cols = [
+    ["NECESSIDADES FINANCEIRAS", RED, [
+      ["Capital de exploração", "Cobre o custo da campanha, antes da venda da colheita."],
+      ["Financiamento de activos", "Equipamento, mecanização e infra-estrutura de rega e frio."],
+      ["Comércio internacional e câmbio", "Liquidação de fluxos de importação e de exportação."],
+      ["Crédito sobre mercadoria", "Garantido pelo produto armazenado, entre a compra e a venda."],
+      ["Cobranças e pagamentos", "Canais digitais que reduzem a circulação de numerário."],
+    ]],
+    ["NECESSIDADES NÃO FINANCEIRAS", INK, [
+      ["Aconselhamento técnico", "Especialistas agro que apoiam o planeamento da campanha."],
+      ["Gestão de risco climático", "Seguro agrícola e monitoria perante choques e pragas."],
+      ["Formalização de registos", "Historial de cobranças convertido em visibilidade de crédito."],
+      ["Acesso a mercado", "Contratos de compra e redes de parceiros que garantem escoamento."],
+      ["Acompanhamento em crise", "Apoio sustentado nos momentos difíceis, como em Boane."],
+    ]],
+  ];
+  const gap = 0.42, cw = colW(2, gap);
+  const panelTop = 2.44, panelH = 3.70;
+  cols.forEach((col, ci) => {
+    const x = M + ci * (cw + gap);
+    panel(s, x, panelTop, cw, panelH);
+    pill(s, x + 0.28, panelTop + 0.18, 2.60, col[0], col[1]);
+    col[2].forEach((row, ri) => {
+      const y = panelTop + 0.62 + ri * 0.62;
+      s.addShape(pres.ShapeType.ellipse, { x: x + 0.28, y: y + 0.02, w: 0.28, h: 0.28, fill: { color: col[1] }, line: { width: 0 } });
+      s.addText(String(ri + 1), {
+        x: x + 0.28, y: y + 0.02, w: 0.28, h: 0.28, isTextBox: true, margin: 0,
+        fontFace: F, fontSize: 10, bold: true, color: WHITE, align: "center", valign: "middle",
+      });
+      s.addText(row[0], {
+        x: x + 0.68, y: y - 0.03, w: cw - 0.96, h: 0.26, isTextBox: true, margin: 0,
+        fontFace: F, fontSize: 11, bold: true, color: INK,
+      });
+      s.addText(row[1], {
+        x: x + 0.68, y: y + 0.23, w: cw - 0.96, h: 0.36, isTextBox: true, margin: 0,
+        fontFace: F, fontSize: 9, color: BODY, lineSpacingMultiple: 1.12,
       });
     });
   });
-  footnote(s, "As facilidades de crédito encontram-se sujeitas a elegibilidade, avaliação de crédito, documentação e requisitos regulamentares.");
+
+  statement(s, panelTop + panelH + 0.16,
+    "As duas colunas convergem no mesmo gestor de relação: o crédito sem o acompanhamento técnico não protege a colheita seguinte.",
+    { h: 0.52, size: 11.8 });
+}
+
+questionDivider(6, "Como o Absa pode criar valor e diferenciar-se neste sector?", "Três compromissos, a posição do Grupo em África e a actuação do Banco quando a época corre mal.", IMG.fruit, null);
+
+// =====================================================================
+// 5. A PROPOSTA
+// =====================================================================
+{
+  const s = pres.addSlide();
+  s.background = { color: RED };
+  pageNo++;
+  s.addImage({ path: IMG.field, x: 8.0, y: 0, w: W - 8.0, h: H, sizing: { type: "cover", w: W - 8.0, h: H } });
+  s.addShape(pres.ShapeType.rect, { x: 0, y: 0, w: 8.5, h: H, fill: { color: RED }, line: { width: 0 } });
+
+  s.addText("A PROPOSTA", {
+    x: M, y: 0.84, w: 7.2, h: 0.30, isTextBox: true, margin: 0,
+    fontFace: F, fontSize: 10.5, bold: true, charSpacing: 1.8, color: CREAM,
+  });
+  s.addText("Três compromissos que definem\na actuação do Banco", {
+    x: M, y: 1.18, w: 7.2, h: 1.46, isTextBox: true, margin: 0,
+    fontFace: F, fontSize: 27, bold: true, color: WHITE, lineSpacingMultiple: 1.08,
+  });
+
+  const promises = [
+    ["Estruturamos em função da época agrícola",
+     "As condições de reembolso acompanham a produção prevista, os valores a receber e os contratos de compra celebrados. Não se impõe à agricultura um perfil de crédito concebido para outros sectores."],
+    ["Partilhamos o preço e o risco com terceiros",
+     "A linha concessional FINOVA e a garantia da instituição financeira de desenvolvimento norte-americana permitem deferir operações que, isoladamente, não reuniriam garantias bastantes."],
+    ["Financiamos a fileira, e não apenas a conta",
+     "Do fornecedor de insumos ao comprador final: pagamentos, cobranças e crédito ao longo de toda a cadeia de valor em que o cliente se insere."],
+  ];
+  promises.forEach((p, i) => {
+    const y = 2.78 + i * 1.42;
+    s.addShape(pres.ShapeType.ellipse, { x: M, y: y + 0.02, w: 0.46, h: 0.46, fill: { color: WHITE }, line: { width: 0 } });
+    s.addText(String(i + 1), {
+      x: M, y: y + 0.02, w: 0.46, h: 0.46, isTextBox: true, margin: 0,
+      fontFace: F, fontSize: 16, bold: true, color: RED, align: "center", valign: "middle",
+    });
+    s.addText(p[0], {
+      x: M + 0.68, y: y, w: 6.5, h: 0.36, isTextBox: true, margin: 0,
+      fontFace: F, fontSize: 15, bold: true, color: WHITE,
+    });
+    s.addText(p[1], {
+      x: M + 0.68, y: y + 0.40, w: 6.5, h: 0.92, isTextBox: true, margin: 0,
+      fontFace: F, fontSize: 11.2, color: CREAM, lineSpacingMultiple: 1.20,
+    });
+  });
+
+  s.addImage({ path: IMG.logoWhite, x: M, y: H - 0.64, w: 1.12, h: 0.33 });
+}
+
+// =====================================================================
+// 4. O ABSA
+// =====================================================================
+{
+  const s = slide({
+    eyebrow: "A instituição",
+    title: "O Absa em África e em Moçambique",
+    lede: "Grupo financeiro pan-africano, com presença própria em doze mercados do continente, e um banco moçambicano de dimensão relevante no sistema nacional.",
+    photo: IMG.field,
+  });
+
+  const facts = [
+    ["GRUPO ABSA", "16", "países", "Presença global do Grupo, dos quais doze são mercados africanos com operação bancária própria.", INK, 1.28],
+    ["GRUPO ABSA", "34%", "dos resultados", "Proporção dos resultados gerada fora da África do Sul, no conjunto das operações africanas.", INK, 1.28],
+    ["MOÇAMBIQUE", "10,6%", "do crédito nacional", "Quota de mercado do Absa Bank Moçambique no crédito, no final de 2025.", RED, 1.52],
+    ["MOÇAMBIQUE", "1,3", "mil milhões de euros de activo", "Dimensão do balanço. O Banco de Moçambique classifica a instituição como quase sistémica.", RED, 1.52],
+  ];
+  const gap = 0.30, cw = colW(4, gap);
+  facts.forEach((f, i) => {
+    const x = M + i * (cw + gap);
+    panel(s, x, 2.46, cw, 2.36);
+    pill(s, x + 0.26, 2.64, f[5], f[0], f[4]);
+    s.addText(f[1], {
+      x: x + 0.26, y: 3.00, w: cw - 0.52, h: 0.60, isTextBox: true, margin: 0,
+      fontFace: F, fontSize: 28, bold: true, color: RED, valign: "middle",
+    });
+    s.addText(f[2], {
+      x: x + 0.26, y: 3.60, w: cw - 0.52, h: 0.38, isTextBox: true, margin: 0,
+      fontFace: F, fontSize: 11, bold: true, color: INK, valign: "top", lineSpacingMultiple: 1.06,
+    });
+    s.addText(f[3], {
+      x: x + 0.26, y: 4.02, w: cw - 0.52, h: 0.74, isTextBox: true, margin: 0,
+      fontFace: F, fontSize: 9.8, color: BODY, lineSpacingMultiple: 1.16,
+    });
+  });
+
+  statement(s, 5.36,
+    "O Grupo Absa é um dos maiores financiadores de projectos agrícolas da África subsariana e mantém investigação sectorial própria, publicada com regularidade sob a designação Absa AgriTrends.",
+    { h: 0.96, size: 13.5 });
+  footnote(s, "Fontes: Absa Group Limited, resultados de 2025 · Absa Corporate and Investment Banking · Banco de Moçambique · imprensa económica moçambicana.");
+}
+
+// =====================================================================
+// 11. COMPROMISSO COMUNITÁRIO
+// =====================================================================
+{
+  const s = slide({
+    eyebrow: "Actuação junto das comunidades",
+    title: "O compromisso não se esgota no balcão",
+    lede: "Entre Outubro de 2025 e Janeiro de 2026 a época chuvosa afectou mais de 1,1 milhões de pessoas. Em Boane, mais de 450 famílias perderam as áreas de cultivo e as habitações.",
+  });
+
+  s.addImage({
+    path: IMG.processing, x: M, y: 2.54, w: 4.90, h: 2.94,
+    sizing: { type: "cover", w: 4.90, h: 2.94 },
+  });
+
+  const cx = M + 4.90 + 0.40, cw2 = CONTENT - 4.90 - 0.40;
+  const items = [
+    ["190", "kits agrícolas distribuídos", "Semente de ciclo curto e médio, fertilizante e alfaias essenciais, entregues às famílias em situação de maior vulnerabilidade na localidade de Gueguegue."],
+    ["230", "famílias apoiadas", "Apoio combinado à retoma da produção agrícola e à reconstrução habitacional, prevendo-se a reedificação de quarenta habitações."],
+    ["90", "hectares em recuperação", "Área de produção que as comunidades ficam em condições de recuperar, com efeito directo na segurança alimentar e no rendimento familiar."],
+  ];
+  items.forEach((it, i) => {
+    const y = 2.54 + i * 1.04;
+    s.addShape(pres.ShapeType.roundRect, { x: cx, y, w: cw2, h: 0.94, rectRadius: 0.06, fill: { color: TINT }, line: { width: 0 }, shadow: soft() });
+    s.addText(it[0], {
+      x: cx + 0.26, y: y + 0.10, w: 1.10, h: 0.68, isTextBox: true, margin: 0,
+      fontFace: F, fontSize: 29, bold: true, color: RED, valign: "middle",
+    });
+    s.addText(it[1], {
+      x: cx + 1.42, y: y + 0.12, w: cw2 - 1.68, h: 0.28, isTextBox: true, margin: 0,
+      fontFace: F, fontSize: 11.5, bold: true, color: INK,
+    });
+    s.addText(it[2], {
+      x: cx + 1.42, y: y + 0.40, w: cw2 - 1.68, h: 0.48, isTextBox: true, margin: 0,
+      fontFace: F, fontSize: 9, color: BODY, lineSpacingMultiple: 1.12,
+    });
+  });
+
+  statement(s, 5.72,
+    "A capacidade de acompanhar o cliente agrícola no ano difícil, e não apenas no ano favorável, é parte constitutiva desta proposta de valor.",
+    { h: 0.58, size: 13 });
+  footnote(s, "Fontes: Diário Económico · Integrity Magazine · comunicação institucional do Absa Bank Moçambique.");
 }
 
 // =====================================================================
@@ -1180,6 +1167,102 @@ companySlide({
   statement(s, 5.58,
     "O resultado é um acesso mais transparente ao financiamento, sustentado por registos empresariais mais sólidos e por protecções efectivas contra os choques próprios da agricultura.",
     { h: 0.84, size: 13 });
+  footnote(s, "As facilidades de crédito encontram-se sujeitas a elegibilidade, avaliação de crédito, documentação e requisitos regulamentares.");
+}
+
+questionDivider(7, "Que produtos, soluções e parcerias devemos promover?", "Os instrumentos concessionais de 2026, a suite de produtos e o primeiro passo para os activar.", IMG.poultry, null);
+
+// =====================================================================
+// 10. TRÊS INSTRUMENTOS
+// =====================================================================
+{
+  const s = slide({
+    eyebrow: "Instrumentos disponíveis em 2026",
+    title: "Três instrumentos que alteram os termos da conversa",
+    lede: "Nenhum destes mecanismos existia na versão anterior desta proposta. Em conjunto, modificam o que as equipas comerciais podem oferecer.",
+  });
+
+  const al = [
+    ["FINOVA", "33,5 M€", "Linha de crédito concessional para o agronegócio",
+     "Operacionalizada pelo Banco de Moçambique em parceria com o Absa, o Standard Bank, o BCI, a GAPI e o Microbanco Confiança, no quadro de um pacote de 45,5 milhões de euros da cooperação alemã, através do banco de desenvolvimento KfW.",
+     "Taxa até 10% ao ano · períodos de carência · prazos compatíveis com o ciclo agrícola"],
+    ["DFC E USAID", "8,25 M US$", "Garantia parcial de carteira de crédito",
+     "Acordo a dez anos com o Governo dos Estados Unidos, que mobiliza 16,5 milhões de dólares em crédito. Destina-se a 75 a 100 empresas agrícolas moçambicanas, das quais pelo menos 15% detidas por mulheres.",
+     "Partilha de risco de 50% · operação média próxima de 220 mil dólares"],
+    ["ICM", "Protocolo", "Cooperação com o Instituto de Cereais de Moçambique",
+     "Memorando de entendimento previsto para a FACIM de 2026, entre a Direcção de Banca Corporativa e de Investimento do Absa e a Direcção-Geral do Instituto, dirigido ao apoio a pequenos produtores e às operações de comércio externo.",
+     "Originação institucional de operações já qualificadas, em alternativa à prospecção directa"],
+  ];
+  const gap = 0.40, cw = colW(3, gap);
+  al.forEach((a, i) => {
+    const x = M + i * (cw + gap);
+    panel(s, x, 2.46, cw, 3.34);
+    pill(s, x + 0.28, 2.64, 1.60, a[0], RED);
+    s.addText(a[1], {
+      x: x + 0.28, y: 3.02, w: cw - 0.56, h: 0.56, isTextBox: true, margin: 0,
+      fontFace: F, fontSize: 27, bold: true, color: RED, valign: "middle",
+    });
+    s.addText(a[2], {
+      x: x + 0.28, y: 3.60, w: cw - 0.56, h: 0.46, isTextBox: true, margin: 0,
+      fontFace: F, fontSize: 11.2, bold: true, color: INK, valign: "top", lineSpacingMultiple: 1.08,
+    });
+    s.addText(a[3], {
+      x: x + 0.28, y: 4.10, w: cw - 0.56, h: 1.16, isTextBox: true, margin: 0,
+      fontFace: F, fontSize: 9.4, color: BODY, lineSpacingMultiple: 1.18,
+    });
+    s.addText(a[4], {
+      x: x + 0.28, y: 5.30, w: cw - 0.56, h: 0.46, isTextBox: true, margin: 0,
+      fontFace: F, fontSize: 9.4, bold: true, color: RED, lineSpacingMultiple: 1.14,
+    });
+  });
+
+  statement(s, 5.98,
+    "Preço concessional, partilha de risco e originação institucional: é esta combinação que permite deferir operações anteriormente inviáveis.",
+    { h: 0.54, size: 12.5 });
+  footnote(s, "Fontes: Banco de Moçambique · U.S. International Development Finance Corporation e USAID · Instituto de Cereais de Moçambique · Embaixada dos Estados Unidos em Maputo.");
+}
+
+// =====================================================================
+// 23. SUITE DE SOLUÇÕES
+// =====================================================================
+{
+  const s = slide({
+    eyebrow: "A oferta do Banco",
+    title: "Do insumo agrícola ao pagamento final",
+    lede: "A matriz de produtos, agora sustentada pela linha FINOVA e pela garantia norte-americana em matéria de preço e de risco.",
+    photo: IMG.fruit,
+  });
+
+  const rows = [
+    ["Insumos sazonais e capital de exploração", "Crédito agrícola ajustado à tesouraria, descoberto autorizado e financiamento contra ordem de compra, com recurso à linha FINOVA sempre que elegível", "Financiamento disponível quando os custos precedem as vendas"],
+    ["Equipamento e activos de eficiência climática", "Financiamento comercial de activos, financiamento verde e apoio à rega solar", "Maior produtividade e maior resiliência ao choque climático"],
+    ["Comércio, importação e exportação", "Financiamento ao comércio internacional, câmbio, contas multimoeda e transferências internacionais", "Liquidação de fluxos transfronteiriços com previsibilidade"],
+    ["Cobranças e pagamentos", "Absa Access, banca electrónica, aceitação móvel e banca de agente", "Menor circulação de numerário e reconciliação mais célere"],
+    ["Risco, aconselhamento e crescimento", "Seguro empresarial, especialistas sectoriais, garantias de parceiros e programas de acompanhamento", "Protecção da margem e melhor decisão no ciclo seguinte"],
+  ];
+  const cols = [3.55, 4.90, 3.38];
+  const top = 2.46, rowH = 0.68;
+
+  s.addShape(pres.ShapeType.rect, { x: M, y: top, w: CONTENT, h: 0.42, fill: { color: INK }, line: { width: 0 } });
+  ["Necessidade do cliente", "Solução Absa", "Valor para o negócio"].forEach((t, i) => {
+    const x = M + cols.slice(0, i).reduce((a, b) => a + b, 0);
+    s.addText(t.toUpperCase(), {
+      x: x + 0.20, y: top, w: cols[i] - 0.30, h: 0.42, isTextBox: true, margin: 0,
+      fontFace: F, fontSize: 9.5, bold: true, charSpacing: 1.1, color: WHITE, valign: "middle",
+    });
+  });
+  rows.forEach((r, i) => {
+    const y = top + 0.42 + i * rowH;
+    s.addShape(pres.ShapeType.rect, { x: M, y, w: CONTENT, h: rowH, fill: { color: i % 2 === 0 ? WHITE : TINT }, line: { width: 0 } });
+    r.forEach((c, k) => {
+      const x = M + cols.slice(0, k).reduce((a, b) => a + b, 0);
+      s.addText(c, {
+        x: x + 0.20, y: y + 0.04, w: cols[k] - 0.36, h: rowH - 0.08, isTextBox: true, margin: 0,
+        fontFace: F, fontSize: 10, bold: k === 0, color: k === 0 ? INK : BODY,
+        valign: "middle", lineSpacingMultiple: 1.10,
+      });
+    });
+  });
   footnote(s, "As facilidades de crédito encontram-se sujeitas a elegibilidade, avaliação de crédito, documentação e requisitos regulamentares.");
 }
 
@@ -1290,6 +1373,7 @@ companySlide({
     fontFace: F, fontSize: 9.4, valign: "middle", lineSpacingMultiple: 1.18,
   });
 }
+
 
 pres.writeFile({ fileName: "CVP_Agronegocios_Absa_Mocambique_2026.pptx" })
   .then(() => console.log("Deck escrito."));
