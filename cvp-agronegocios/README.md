@@ -28,12 +28,23 @@ actualização mantém a arquitectura narrativa mas reconstrói o conteúdo:
 - **[`DOSSIER-empresas-agro-mocambique.md`](DOSSIER-empresas-agro-mocambique.md)** — o dossier
   completo: macro actualizado, as três alavancas Absa, as 34 empresas por sector com escala,
   accionista e oportunidade de negócio, e a segmentação de cobertura.
-- **`CVP_Agronegocios_Absa_Mocambique_2026.pptx`** — a apresentação em 26 slides, editável,
+- **`CVP_Agronegocios_Absa_Mocambique_2026.pptx`** — a apresentação em 33 slides, editável,
   em português institucional. Herda do deck original a paleta (`DC0037` / `3A3535` / `5D5757`),
-  a tipografia (Brave Sans), o logótipo e as fotografias, para que assente na mesma identidade.
-  O vermelho pleno está reservado aos quatro momentos do documento — capa, proposta, separador
-  de secção e fecho; os restantes 22 slides são de fundo claro, com o vermelho nos títulos de
-  secção, nos números-âncora e nas etiquetas de segmento.
+  a tipografia (Brave Sans), o logótipo e as fotografias. O vermelho pleno está reservado à capa,
+  aos sete separadores de pergunta, à proposta e ao fecho; os restantes slides são de fundo claro,
+  com o vermelho nos títulos de secção, nos números-âncora e nas etiquetas de segmento.
+
+  **A estrutura é, agora, explicitamente as sete perguntas do guião.** Cada uma é um separador
+  de página inteira, com indicador de progresso (1 de 7 a 7 de 7), imediatamente antes do
+  conjunto de slides que a responde:
+
+  1. Como está estruturado o sector agrícola em Moçambique?
+  2. Quais os principais desafios e oportunidades enfrentados pelos clientes?
+  3. Quais são os segmentos e cadeias de valor mais relevantes?
+  4. Que perfis de clientes queremos priorizar?
+  5. Quais são as necessidades financeiras e não financeiras destes clientes?
+  6. Como o Absa pode criar valor e diferenciar-se neste sector?
+  7. Que produtos, soluções e parcerias devemos promover?
 - **`build_deck.js`** — o gerador do deck (`node build_deck.js`). Editar aqui e voltar a correr
   é mais fiável do que editar o `.pptx` à mão quando os dados mudarem. Lê as imagens de
   `unpacked/ppt/media/`, obtido descompactando o deck original.
@@ -58,7 +69,7 @@ python render_pptx.py saida.pptx render s     # QA visual e de transbordo
 
 - **Aplicação web interactiva (Lovable)** — explorador das 34 empresas com pesquisa e filtros por
   sector, segmento e província: <https://cvp-agronegocios-absa-mocambique.lovable.app>
-- **Apresentação (PowerPoint)** — 26 slides em português institucional, neste directório.
+- **Apresentação (PowerPoint)** — 33 slides em português institucional, neste directório.
 
 ## Material publicado pelo Absa integrado nesta versão
 
