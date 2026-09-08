@@ -2,7 +2,7 @@ const pptxgen = require("pptxgenjs");
 const path = require("path");
 
 // ---------------------------------------------------------------------
-// Sistema visual — cores e tipografia lidas do próprio deck de origem.
+// Sistema visual: cores e tipografia lidas do próprio deck de origem.
 // Nesta versão o vermelho passa de acento a fundo dominante.
 // ---------------------------------------------------------------------
 const RED = "DC0037";
@@ -50,8 +50,8 @@ const colW = (n, gap, avail = CONTENT) => (avail - (n - 1) * gap) / n;
 const soft = () => ({ type: "outer", color: "000000", blur: 12, offset: 2, angle: 90, opacity: 0.10 });
 
 // Slide de conteúdo: fundo claro, título a carvão, vermelho nos acentos.
-// O vermelho pleno fica reservado aos quatro momentos do documento — capa,
-// proposta, separador de secção e fecho — que são construídos à parte.
+// O vermelho pleno fica reservado aos quatro momentos do documento (capa,
+// proposta, separador de secção e fecho), construídos à parte.
 function slide(o) {
   const s = pres.addSlide();
   s.background = { color: WHITE };
@@ -127,7 +127,7 @@ function pill(s, x, y, w, text, fill) {
 }
 
 // =====================================================================
-// 1 — CAPA
+// 1. CAPA
 // =====================================================================
 {
   const s = pres.addSlide();
@@ -158,7 +158,7 @@ function pill(s, x, y, w, text, fill) {
 }
 
 // =====================================================================
-// 2 — COMO LER ESTE DOCUMENTO
+// 2. COMO LER ESTE DOCUMENTO
 // =====================================================================
 {
   const s = slide({
@@ -169,7 +169,7 @@ function pill(s, x, y, w, text, fill) {
 
   const blocks = [
     ["O que é uma Proposta de Valor",
-     "Em banca, uma Proposta de Valor para o Cliente — CVP, do inglês Customer Value Proposition — é o documento que estabelece o que a instituição oferece a um segmento, por que razão essa oferta é pertinente e em que se distingue da concorrência."],
+     "Em banca, uma Proposta de Valor para o Cliente, ou CVP, do inglês Customer Value Proposition, é o documento que estabelece o que a instituição oferece a um segmento, por que razão essa oferta é pertinente e em que se distingue da concorrência."],
     ["A quem se dirige",
      "A três destinatários: às equipas comerciais do Banco, que dele se servem em reunião; aos clientes empresariais do sector agrícola; e a parceiros institucionais e internacionais que avaliem a actuação do Banco neste domínio."],
     ["Como está organizado",
@@ -195,7 +195,7 @@ function pill(s, x, y, w, text, fill) {
     fontFace: F, fontSize: 12.5, bold: true, color: INK,
   });
   const gloss = [
-    ["Capital de exploração", "Financiamento do custo da campanha — semente, adubo, mão de obra — até à venda da colheita."],
+    ["Capital de exploração", "Financiamento do custo da campanha (semente, adubo, mão de obra) até à venda da colheita."],
     ["Produtor integrado", "Agricultor que produz ao abrigo de contrato celebrado com uma empresa compradora."],
     ["Financiamento de activos", "Crédito para aquisição de equipamento: tractores, sistemas de rega, câmaras de frio."],
     ["Financiamento ao comércio", "Instrumentos que permitem importar e exportar com segurança de pagamento entre as partes."],
@@ -218,7 +218,7 @@ function pill(s, x, y, w, text, fill) {
 }
 
 // =====================================================================
-// 3 — MOÇAMBIQUE NUM RELANCE
+// 3. MOÇAMBIQUE NUM RELANCE
 // =====================================================================
 {
   const s = slide({
@@ -253,13 +253,13 @@ function pill(s, x, y, w, text, fill) {
   });
 
   statement(s, 5.30,
-    "As principais fileiras de exportação — tabaco, açúcar, algodão, castanha de caju e banana — distribuem-se por todo o território, do sul agrícola de Maputo ao norte produtivo de Nampula e do Niassa.",
+    "As principais fileiras de exportação, do tabaco e do açúcar ao algodão, à castanha de caju e à banana, distribuem-se por todo o território, do sul agrícola de Maputo ao norte produtivo de Nampula e do Niassa.",
     { h: 1.00, size: 13.5 });
   footnote(s, "Fontes: Instituto Nacional de Estatística · Banco de Moçambique · Ministério da Agricultura, Ambiente e Pescas.");
 }
 
 // =====================================================================
-// 4 — O ABSA
+// 4. O ABSA
 // =====================================================================
 {
   const s = slide({
@@ -301,7 +301,7 @@ function pill(s, x, y, w, text, fill) {
 }
 
 // =====================================================================
-// 5 — A PROPOSTA
+// 5. A PROPOSTA
 // =====================================================================
 {
   const s = pres.addSlide();
@@ -348,7 +348,7 @@ function pill(s, x, y, w, text, fill) {
 }
 
 // =====================================================================
-// 6 — O DESEQUILÍBRIO
+// 6. O DESEQUILÍBRIO
 // =====================================================================
 {
   const s = slide({
@@ -390,7 +390,7 @@ function pill(s, x, y, w, text, fill) {
 }
 
 // =====================================================================
-// 7 — ESTRUTURA DO SECTOR
+// 7. ESTRUTURA DO SECTOR
 // =====================================================================
 {
   const s = slide({
@@ -434,13 +434,13 @@ function pill(s, x, y, w, text, fill) {
   });
 
   statement(s, 5.74,
-    "As 74.706 explorações de dimensão média constituem a fronteira de crescimento — e é a empresa âncora que as torna financiáveis.",
+    "As 74.706 explorações de dimensão média constituem a fronteira de crescimento, e é a empresa âncora que as torna financiáveis.",
     { h: 0.60, size: 13 });
-  footnote(s, "Fonte: Inquérito Agrário Integrado de 2023 — Instituto Nacional de Estatística e Ministério da Agricultura, Ambiente e Pescas.");
+  footnote(s, "Fonte: Inquérito Agrário Integrado de 2023, do Instituto Nacional de Estatística e do Ministério da Agricultura, Ambiente e Pescas.");
 }
 
 // =====================================================================
-// 8 — ATRITO OPERACIONAL
+// 8. ATRITO OPERACIONAL
 // =====================================================================
 {
   const s = slide({
@@ -483,7 +483,7 @@ function pill(s, x, y, w, text, fill) {
 }
 
 // =====================================================================
-// 9 — CICLO DA CAMPANHA
+// 9. CICLO DA CAMPANHA
 // =====================================================================
 {
   const s = slide({
@@ -532,7 +532,7 @@ function pill(s, x, y, w, text, fill) {
 }
 
 // =====================================================================
-// 10 — TRÊS INSTRUMENTOS
+// 10. TRÊS INSTRUMENTOS
 // =====================================================================
 {
   const s = slide({
@@ -582,7 +582,7 @@ function pill(s, x, y, w, text, fill) {
 }
 
 // =====================================================================
-// 11 — COMPROMISSO COMUNITÁRIO
+// 11. COMPROMISSO COMUNITÁRIO
 // =====================================================================
 {
   const s = slide({
@@ -626,7 +626,7 @@ function pill(s, x, y, w, text, fill) {
 }
 
 // =====================================================================
-// 12 — SEPARADOR
+// 12. SEPARADOR
 // =====================================================================
 {
   const s = pres.addSlide();
@@ -735,7 +735,7 @@ function companySlide(o) {
       fill: { color: INK }, line: { width: 0 },
     });
     s.addText([
-      { text: "Nota de risco — ", options: { bold: true, color: ROSE } },
+      { text: "Nota de risco: ", options: { bold: true, color: ROSE } },
       { text: o.note, options: { color: "E4DEDE" } },
     ], {
       x: M + 0.30, y: top + ch + 0.16, w: CONTENT - 0.60, h: 0.58, isTextBox: true, margin: 0,
@@ -966,7 +966,7 @@ companySlide({
   });
 
   statement(s, 5.90,
-    "Nampula reduziu-se de 37 para 6 unidades activas: quem subsistiu tenderá a consolidar — e a consolidação requer crédito.",
+    "Nampula reduziu-se de 37 para 6 unidades activas: quem subsistiu tenderá a consolidar, e a consolidação requer crédito.",
     { h: 0.54, size: 12.5 });
   footnote(s, "Fontes: Ministério da Agricultura, Ambiente e Pescas · Diário Económico · Agência de Informação de Moçambique.");
 }
@@ -1052,7 +1052,7 @@ companySlide({
 });
 
 // =====================================================================
-// 22 — SEGMENTAÇÃO
+// 22. SEGMENTAÇÃO
 // =====================================================================
 {
   const s = slide({
@@ -1063,13 +1063,13 @@ companySlide({
   });
 
   const tiers = [
-    ["SEGMENTO 1", "Empresas âncora — Banca Corporativa e de Investimento",
+    ["SEGMENTO 1", "Empresas âncora, na Banca Corporativa e de Investimento",
      "Xinavane · Mafambisse · Sena · Maragra · Mozambique Leaf Tobacco · Portucel · Merec · Companhia Industrial da Matola · Olam Agri · Export Trading Group",
      "Financiamento estruturado · câmbio · comércio internacional · tesouraria de grupo", RED],
     ["SEGMENTO 2", "Empresas de média dimensão",
      "JFS · Mozaco · Higest · Abílio Antunes · Novos Horizontes · Bananalândia · Jacaranda · Vanduzi · SANAM · SAM · SAN · Plexus · Condor · Pembe · Wanbao · Green Resources · IFLOMA · Madal · AQI",
      "Capital de exploração · financiamento de activos · cobranças · seguro agrícola", INK],
-    ["SEGMENTO 3", "Pequenas empresas e cadeia de fornecimento — com FINOVA e garantia norte-americana",
+    ["SEGMENTO 3", "Pequenas empresas e cadeia de fornecimento, com FINOVA e garantia norte-americana",
      "Produtores integrados das empresas âncora · os 250 revendedores da AQI · transportadores · prestadores de mecanização · processadoras de caju em reestruturação · as 74.706 explorações de dimensão média",
      "Conta bancária · pagamentos digitais · crédito de insumos ao abrigo de contrato", INK],
   ];
@@ -1098,7 +1098,7 @@ companySlide({
 }
 
 // =====================================================================
-// 23 — SUITE DE SOLUÇÕES
+// 23. SUITE DE SOLUÇÕES
 // =====================================================================
 {
   const s = slide({
@@ -1142,7 +1142,7 @@ companySlide({
 }
 
 // =====================================================================
-// 24 — ACESSO COM DISCIPLINA
+// 24. ACESSO COM DISCIPLINA
 // =====================================================================
 {
   const s = slide({
@@ -1184,7 +1184,7 @@ companySlide({
 }
 
 // =====================================================================
-// 25 — PASSO SEGUINTE
+// 25. PASSO SEGUINTE
 // =====================================================================
 {
   const s = pres.addSlide();
@@ -1247,7 +1247,7 @@ companySlide({
 }
 
 // =====================================================================
-// 26 — FONTES
+// 26. FONTES
 // =====================================================================
 {
   const s = slide({
@@ -1258,9 +1258,9 @@ companySlide({
 
   const groups = [
     ["Fontes oficiais e estatísticas",
-     "Banco de Moçambique — crédito por finalidade, Relatório de Inclusão Financeira de 2025 e projecto FINOVA\nInstituto Nacional de Estatística e Ministério da Agricultura, Ambiente e Pescas — Inquérito Agrário Integrado de 2023\nInstituto do Algodão e Oleaginosas\nInstituto de Cereais de Moçambique\nIGEPE e Autoridade Reguladora da Concorrência"],
+     "Banco de Moçambique: crédito por finalidade, Relatório de Inclusão Financeira de 2025 e projecto FINOVA\nInstituto Nacional de Estatística e Ministério da Agricultura, Ambiente e Pescas: Inquérito Agrário Integrado de 2023\nInstituto do Algodão e Oleaginosas\nInstituto de Cereais de Moçambique\nIGEPE e Autoridade Reguladora da Concorrência"],
     ["Investigação e cooperação",
-     "UNU-WIDER e Inclusive Growth in Mozambique — Desenvolvimento Agrário em Moçambique, 2025\nObservatório do Meio Rural — Crédito Interno ao Sector Agrário\nInternational Growth Centre e Ministério da Economia e Finanças\nBanco Mundial — The Plantation Forestry Sector in Mozambique\nU.S. International Development Finance Corporation, USAID e Feed the Future Inova"],
+     "UNU-WIDER e Inclusive Growth in Mozambique: Desenvolvimento Agrário em Moçambique, 2025\nObservatório do Meio Rural: Crédito Interno ao Sector Agrário\nInternational Growth Centre e Ministério da Economia e Finanças\nBanco Mundial: The Plantation Forestry Sector in Mozambique\nU.S. International Development Finance Corporation, USAID e Feed the Future Inova"],
     ["Absa, imprensa e empresas",
      "Absa Group Limited, resultados de 2025 · Absa Corporate and Investment Banking · Absa AgriTrends\nAgência de Informação de Moçambique · Club of Mozambique · Diário Económico · Integrity Magazine · Sugaronline · Rádio Moçambique\nSítios institucionais das empresas citadas"],
   ];
@@ -1283,7 +1283,7 @@ companySlide({
     fill: { color: INK }, line: { width: 0 },
   });
   s.addText([
-    { text: "Advertência — ", options: { bold: true, color: ROSE } },
+    { text: "Advertência: ", options: { bold: true, color: ROSE } },
     { text: "As dimensões e volumes indicados reportam-se ao exercício mais recente publicado por cada fonte e podem divergir do desempenho corrente. As facilidades de crédito encontram-se sujeitas a elegibilidade, avaliação de crédito, documentação e requisitos regulamentares. O presente material destina-se a orientação comercial e não constitui aconselhamento de investimento nem recomendação relativa a qualquer das contrapartes identificadas.", options: { color: "E4DEDE" } },
   ], {
     x: M + 0.32, y: 5.52, w: CONTENT - 0.64, h: 0.94, isTextBox: true, margin: 0,
