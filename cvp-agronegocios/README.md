@@ -29,9 +29,11 @@ actualização mantém a arquitectura narrativa mas reconstrói o conteúdo:
   completo: macro actualizado, as três alavancas Absa, as 34 empresas por sector com escala,
   accionista e oportunidade de negócio, e a segmentação de cobertura.
 - **`CVP_Agronegocios_Absa_Mocambique_2026.pptx`** — a apresentação em 26 slides, editável,
-  em português institucional e com fundo vermelho Absa dominante. Herda do deck original a
-  paleta (`DC0037` / `3A3535` / `5D5757`), a tipografia (Brave Sans), o logótipo e as
-  fotografias, para que assente na mesma identidade.
+  em português institucional. Herda do deck original a paleta (`DC0037` / `3A3535` / `5D5757`),
+  a tipografia (Brave Sans), o logótipo e as fotografias, para que assente na mesma identidade.
+  O vermelho pleno está reservado aos quatro momentos do documento — capa, proposta, separador
+  de secção e fecho; os restantes 22 slides são de fundo claro, com o vermelho nos títulos de
+  secção, nos números-âncora e nas etiquetas de segmento.
 - **`build_deck.js`** — o gerador do deck (`node build_deck.js`). Editar aqui e voltar a correr
   é mais fiável do que editar o `.pptx` à mão quando os dados mudarem. Lê as imagens de
   `unpacked/ppt/media/`, obtido descompactando o deck original.

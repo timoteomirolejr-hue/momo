@@ -14,6 +14,7 @@ const RULE = "E6E6E6";
 const WHITE = "FFFFFF";
 const CREAM = "FFF1F3";   // branco rosado, para texto secundário sobre vermelho
 const PINK = "F3B9C4";    // texto terciário sobre vermelho
+const MUTED = "9A9494";   // texto terciário sobre fundo claro
 const ROSE = "FF8FA3";    // acento claro sobre fundo escuro
 const F = "Brave Sans";
 
@@ -46,12 +47,14 @@ pres.title = "Proposta de Valor para o Agronegócio · Moçambique 2026";
 let pageNo = 0;
 
 const colW = (n, gap, avail = CONTENT) => (avail - (n - 1) * gap) / n;
-const soft = () => ({ type: "outer", color: "7A0020", blur: 14, offset: 3, angle: 90, opacity: 0.32 });
+const soft = () => ({ type: "outer", color: "000000", blur: 12, offset: 2, angle: 90, opacity: 0.10 });
 
-// Slide de fundo vermelho: título a branco, conteúdo em cartões brancos.
+// Slide de conteúdo: fundo claro, título a carvão, vermelho nos acentos.
+// O vermelho pleno fica reservado aos quatro momentos do documento — capa,
+// proposta, separador de secção e fecho — que são construídos à parte.
 function slide(o) {
   const s = pres.addSlide();
-  s.background = { color: RED };
+  s.background = { color: WHITE };
   pageNo++;
 
   const hasPhoto = !!o.photo;
@@ -60,17 +63,17 @@ function slide(o) {
   if (o.eyebrow) {
     s.addText(o.eyebrow.toUpperCase(), {
       x: M, y: 0.44, w: tw, h: 0.28, isTextBox: true, margin: 0,
-      fontFace: F, fontSize: 10.5, bold: true, charSpacing: 1.8, color: CREAM,
+      fontFace: F, fontSize: 10.5, bold: true, charSpacing: 1.8, color: RED,
     });
   }
   s.addText(o.title, {
     x: M, y: 0.76, w: tw, h: 1.02, isTextBox: true, margin: 0,
-    fontFace: F, fontSize: o.titleSize || 27, bold: true, color: WHITE, valign: "top",
+    fontFace: F, fontSize: o.titleSize || 27, bold: true, color: INK, valign: "top",
   });
   if (o.lede) {
     s.addText(o.lede, {
       x: M, y: 1.82, w: tw, h: 0.52, isTextBox: true, margin: 0,
-      fontFace: F, fontSize: 13, color: CREAM, lineSpacingMultiple: 1.14,
+      fontFace: F, fontSize: 13, color: BODY, lineSpacingMultiple: 1.14,
     });
   }
   if (hasPhoto) {
@@ -80,10 +83,10 @@ function slide(o) {
     });
   }
 
-  s.addImage({ path: IMG.logoWhite, x: M, y: H - 0.64, w: 1.12, h: 0.33 });
+  s.addImage({ path: IMG.logoRed, x: M, y: H - 0.64, w: 1.12, h: 0.33 });
   s.addText(String(pageNo), {
     x: W - M - 0.6, y: H - 0.56, w: 0.6, h: 0.26, isTextBox: true, margin: 0,
-    fontFace: F, fontSize: 10, color: PINK, align: "right",
+    fontFace: F, fontSize: 10, color: MUTED, align: "right",
   });
   return s;
 }
@@ -91,7 +94,7 @@ function slide(o) {
 function footnote(s, text) {
   s.addText(text, {
     x: M + 1.32, y: H - 0.62, w: CONTENT - 2.2, h: 0.30, isTextBox: true, margin: 0,
-    fontFace: F, fontSize: 8.5, color: PINK, valign: "middle",
+    fontFace: F, fontSize: 8.5, color: MUTED, valign: "middle",
   });
 }
 
@@ -111,7 +114,7 @@ function statement(s, y, text, opts = {}) {
 function panel(s, x, y, w, h) {
   s.addShape(pres.ShapeType.roundRect, {
     x, y, w, h, rectRadius: 0.06,
-    fill: { color: WHITE }, line: { width: 0 }, shadow: soft(),
+    fill: { color: TINT }, line: { width: 0 }, shadow: soft(),
   });
 }
 
@@ -249,9 +252,9 @@ function pill(s, x, y, w, text, fill) {
     });
   });
 
-  statement(s, 4.82,
+  statement(s, 5.30,
     "As principais fileiras de exportação — tabaco, açúcar, algodão, castanha de caju e banana — distribuem-se por todo o território, do sul agrícola de Maputo ao norte produtivo de Nampula e do Niassa.",
-    { h: 0.88, size: 13.5 });
+    { h: 1.00, size: 13.5 });
   footnote(s, "Fontes: Instituto Nacional de Estatística · Banco de Moçambique · Ministério da Agricultura, Ambiente e Pescas.");
 }
 
@@ -291,9 +294,9 @@ function pill(s, x, y, w, text, fill) {
     });
   });
 
-  statement(s, 5.06,
+  statement(s, 5.36,
     "O Grupo Absa é um dos maiores financiadores de projectos agrícolas da África subsariana e mantém investigação sectorial própria, publicada com regularidade sob a designação Absa AgriTrends.",
-    { h: 0.92, size: 13.5 });
+    { h: 0.96, size: 13.5 });
   footnote(s, "Fontes: Absa Group Limited, resultados de 2025 · Absa Corporate and Investment Banking · Banco de Moçambique · imprensa económica moçambicana.");
 }
 
@@ -379,9 +382,9 @@ function pill(s, x, y, w, text, fill) {
     });
   });
 
-  statement(s, 4.82,
+  statement(s, 5.30,
     "Vinte e três por cento da economia; entre dois e seis por cento do crédito. Reduzir esta distância de forma estruturada, e não por simples aumento de apetite ao risco, é o objectivo desta proposta.",
-    { h: 0.88, size: 13.5 });
+    { h: 1.00, size: 13.5 });
   footnote(s, "Fontes: UNU-WIDER e Inclusive Growth in Mozambique, 2025 · Observatório do Meio Rural · Banco de Moçambique · INE, Inquérito Agrário Integrado de 2023.");
   s.addNotes("A instituição mais exposta ao sector declara 12% da carteira; um caso excepcional atinge 25%. A média situa-se, contudo, entre 2% e 6%.");
 }
@@ -502,7 +505,7 @@ function pill(s, x, y, w, text, fill) {
     const x = M + i * (cw + gap), last = i === 4;
     s.addShape(pres.ShapeType.roundRect, {
       x, y: 2.76, w: cw, h: 2.34, rectRadius: 0.06,
-      fill: { color: last ? INK : WHITE }, line: { width: 0 }, shadow: soft(),
+      fill: { color: last ? INK : TINT }, line: { width: 0 }, shadow: soft(),
     });
     s.addShape(pres.ShapeType.ellipse, {
       x: x + cw / 2 - 0.27, y: 2.49, w: 0.54, h: 0.54,
@@ -522,9 +525,9 @@ function pill(s, x, y, w, text, fill) {
     });
   });
 
-  statement(s, 5.40,
+  statement(s, 5.66,
     "A mesma facilidade de crédito passa a estruturar-se sobre a produção prevista, os valores a receber e os contratos celebrados, em lugar de impor à agricultura um perfil de reembolso genérico.",
-    { h: 0.68, size: 13 });
+    { h: 0.80, size: 13 });
   footnote(s, "As facilidades de crédito encontram-se sujeitas a elegibilidade, avaliação de crédito, documentação e requisitos regulamentares.");
 }
 
@@ -601,7 +604,7 @@ function pill(s, x, y, w, text, fill) {
   ];
   items.forEach((it, i) => {
     const y = 2.54 + i * 1.04;
-    s.addShape(pres.ShapeType.roundRect, { x: cx, y, w: cw2, h: 0.94, rectRadius: 0.06, fill: { color: WHITE }, line: { width: 0 }, shadow: soft() });
+    s.addShape(pres.ShapeType.roundRect, { x: cx, y, w: cw2, h: 0.94, rectRadius: 0.06, fill: { color: TINT }, line: { width: 0 }, shadow: soft() });
     s.addText(it[0], {
       x: cx + 0.26, y: y + 0.10, w: 1.10, h: 0.68, isTextBox: true, margin: 0,
       fontFace: F, fontSize: 29, bold: true, color: RED, valign: "middle",
@@ -815,7 +818,7 @@ companySlide({
   ];
   opps.forEach((op, i) => {
     const y = 2.46 + i * 0.86;
-    s.addShape(pres.ShapeType.roundRect, { x: ox, y, w: ow, h: 0.78, rectRadius: 0.06, fill: { color: WHITE }, line: { width: 0 }, shadow: soft() });
+    s.addShape(pres.ShapeType.roundRect, { x: ox, y, w: ow, h: 0.78, rectRadius: 0.06, fill: { color: TINT }, line: { width: 0 }, shadow: soft() });
     s.addText(op[0], {
       x: ox + 0.24, y: y + 0.08, w: ow - 0.48, h: 0.26, isTextBox: true, margin: 0,
       fontFace: F, fontSize: 11.2, bold: true, color: RED,
@@ -938,7 +941,7 @@ companySlide({
   ];
   rows.forEach((r, i) => {
     const y = 2.48 + i * 1.74;
-    s.addShape(pres.ShapeType.roundRect, { x: cx, y, w: cw2, h: 1.58, rectRadius: 0.06, fill: { color: WHITE }, line: { width: 0 }, shadow: soft() });
+    s.addShape(pres.ShapeType.roundRect, { x: cx, y, w: cw2, h: 1.58, rectRadius: 0.06, fill: { color: TINT }, line: { width: 0 }, shadow: soft() });
     pill(s, cx + 0.28, y + 0.18, 1.18, "SEGMENTO " + r.tier, r.tier === 1 ? RED : INK);
     s.addText(r.name, {
       x: cx + 1.56, y: y + 0.10, w: cw2 - 1.84, h: 0.52, isTextBox: true, margin: 0,
@@ -1174,9 +1177,9 @@ companySlide({
     });
   });
 
-  statement(s, 5.30,
+  statement(s, 5.58,
     "O resultado é um acesso mais transparente ao financiamento, sustentado por registos empresariais mais sólidos e por protecções efectivas contra os choques próprios da agricultura.",
-    { h: 0.68, size: 13 });
+    { h: 0.84, size: 13 });
   footnote(s, "As facilidades de crédito encontram-se sujeitas a elegibilidade, avaliação de crédito, documentação e requisitos regulamentares.");
 }
 
