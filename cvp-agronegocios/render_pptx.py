@@ -182,7 +182,39 @@ def render(path, outdir, prefix):
         img.save(p, quality=88)
         made.append(p)
 
+    # Text that spills past the card it sits on: the box itself may be fine,
+    # but the panel behind it is too short. Only the render shows this, so
+    # check it here rather than by eye.
+    prs2 = Presentation(path)
+    spill = []
+    for idx, slide in enumerate(prs2.slides, 1):
+        panels = []
+        for sh in slide.shapes:
+            if sh.left is None or sh.has_text_frame and sh.text_frame.text.strip():
+                continue
+            try:
+                if sh.fill.type == 1 and sh.width > Emu(600000) and sh.height > Emu(600000):
+                    panels.append((sh.left, sh.top, sh.left + sh.width, sh.top + sh.height))
+            except Exception:
+                pass
+        for sh in slide.shapes:
+            if sh.left is None or not sh.has_text_frame or not sh.text_frame.text.strip():
+                continue
+            l, t, r, b = sh.left, sh.top, sh.left + sh.width, sh.top + sh.height
+            for pl, pt, pr, pb in panels:
+                inside_x = l >= pl - Emu(20000) and r <= pr + Emu(20000)
+                starts_in = pt <= t <= pb
+                if inside_x and starts_in and b > pb + Emu(20000):
+                    spill.append(
+                        f"  slide {idx}: text box ends {(b - pb) / 914400:.2f}in below its card"
+                        f" — \"{sh.text_frame.text.strip()[:40]}\""
+                    )
+                    break
+
     print(f"Rendered {len(made)} slides -> {outdir}")
+    if spill:
+        print("TEXT SPILLING PAST ITS CARD:")
+        print("\n".join(spill))
     if overflow:
         print("TEXT OVERFLOW (approximate — fonts substituted):")
         print("\n".join(overflow))
