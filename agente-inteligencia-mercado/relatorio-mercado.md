@@ -1,38 +1,48 @@
-# Relatório de Inteligência de Mercado
+# Relatório de Inteligência de Mercado — Avanza Group Solutions
 
 > **Estado: modelo (template) — por preencher.**
-> Este relatório será preenchido depois da integração de dados (AIsa e/ou fontes
-> complementares), conforme descrito em `plano-do-agente.md`. Não usar para decisões comerciais
-> enquanto as secções abaixo não estiverem completas.
+> Este relatório cobre as tarefas de descoberta 1-3 pedidas pela Avanza (clientes,
+> oportunidades sazonais e concorrência — ver `briefing.md`, secção 6). Será preenchido depois
+> da integração de dados (AIsa, blog da Avanza, dados internos de WhatsApp e/ou fontes
+> complementares), conforme descrito em `plano-do-agente.md`. Não usar para decisões
+> comerciais enquanto as secções abaixo não estiverem completas. Os temas de campanha,
+> argumentos de venda, conteúdo, lead magnets, mensagens de WhatsApp e próximos passos de
+> marketing (tarefas 4-9) ficam em `plano-campanha.md`.
 
 - **Data do relatório:** [a preencher]
-- **Período analisado:** [a preencher]
+- **Período analisado:** [a preencher — deve cobrir o horizonte de 3 a 6 meses definido pela Avanza]
 - **Autor/agente responsável:** [a preencher]
 - **Fontes utilizadas:** [a preencher]
 
 ## 1. Sumário executivo
 
-[a preencher — 3 a 5 frases com as principais conclusões e recomendações]
+[a preencher — 3 a 5 frases com os segmentos de cliente prioritários, principais oportunidades
+sazonais e conclusões sobre a concorrência]
 
-## 2. Oportunidades de mercado
+## 2. Clientes — segmentos prioritários de PMEs e Singulares
 
-[a preencher — lista de oportunidades identificadas, com justificação e nível de prioridade]
+[a preencher — quais segmentos de PME/Singulares em Moçambique estão mais propensos a comprar
+pacotes da Avanza agora, e porquê]
 
-| Oportunidade | Justificação | Prioridade | Fonte |
-|---|---|---|---|
-| [a preencher] | [a preencher] | [a preencher] | [a preencher] |
+| Segmento | Perfil (dimensão, sector, fase do negócio) | Porque é prioritário agora | Dor dominante | Fonte |
+|---|---|---|---|---|
+| [a preencher] | [a preencher] | [a preencher] | [a preencher] | [a preencher] |
 
-## 3. Tendências de destinos nacionais
+## 3. Oportunidades sazonais
 
-[a preencher — destinos em ascensão, destinos em queda, sazonalidade, novos nichos]
+[a preencher — momentos do calendário de negócio moçambicano (ex.: início/fim de ano fiscal,
+épocas de maior abertura de negócios, campanhas governamentais de formalização) relevantes
+para os próximos 3-6 meses]
 
-| Destino | Tendência | Sazonalidade | Observações |
-|---|---|---|---|
-| [a preencher] | [a preencher] | [a preencher] | [a preencher] |
+| Momento/época | Janela temporal | Porque é relevante | Serviço da Avanza associado | Fonte |
+|---|---|---|---|---|
+| [a preencher] | [a preencher] | [a preencher] | [a preencher] | [a preencher] |
 
 ## 4. Análise da concorrência
 
-[a preencher — uma ficha por concorrente relevante]
+[a preencher — uma ficha por concorrente relevante: outras consultoras, contabilistas,
+advogados ou plataformas que ofereçam serviços de formalização/consultoria a PMEs em
+Moçambique]
 
 ### Concorrente: [nome]
 
@@ -43,15 +53,18 @@
 - **Pontos fracos:** [a preencher]
 - **Campanhas/ações recentes observadas:** [a preencher]
 
-## 5. Perfil do cliente / segmento
+## 5. Perfil do cliente / dores confirmadas no terreno
 
-[a preencher — cruzamento entre o público-alvo do briefing e o que os dados de mercado
-confirmam ou contrariam]
+[a preencher — cruzamento entre as dores documentadas em `briefing.md` (secção 4) e o que a
+equipa comercial da Avanza confirma nas conversas reais de WhatsApp: quais dores aparecem mais,
+quais objeções são mais frequentes antes do fecho]
 
 ## 6. Conclusões e recomendações
 
-[a preencher — recomendações acionáveis, ligadas ao `plano-campanha.md`]
+[a preencher — recomendações acionáveis sobre clientes-alvo, timing e concorrência, ligadas
+diretamente ao `plano-campanha.md`]
 
 ## 7. Limitações do relatório
 
-[a preencher — lacunas de dados, fontes não disponíveis, período de validade da informação]
+[a preencher — lacunas de dados, fontes não disponíveis (ex.: blog da Avanza inacessível nesta
+sessão), período de validade da informação]

@@ -1,94 +1,127 @@
-# Biblioteca de Prompts do Agente
+# Biblioteca de Prompts do Agente — Avanza Group Solutions
 
-Prompts organizados por tarefa, para usar com o agente (Claude Code + AIsa, quando integrada).
-Cada prompt tem campos entre `[colchetes]` para preencher antes de o executar. Os resultados
-devem alimentar `relatorio-mercado.md` ou `plano-campanha.md`, conforme aplicável.
+Prompts organizados pelas 8 tarefas de descoberta pedidas pela Avanza (ver `briefing.md`,
+secção 6), para usar com o agente (Claude Code + AIsa, quando integrada). Cada prompt tem
+campos entre `[colchetes]` para preencher antes de o executar. Os resultados das tarefas 1-3
+devem alimentar `relatorio-mercado.md`; os das tarefas 4-9, `plano-campanha.md`.
 
 ## Como usar
 
 1. Copiar o prompt pretendido.
-2. Preencher os campos entre `[colchetes]` com o contexto concreto (destino, período, cliente).
+2. Preencher os campos entre `[colchetes]` com o contexto concreto (segmento de cliente,
+   período, concorrente).
 3. Executar com o agente.
 4. Rever o resultado e transcrever para o ficheiro de destino correto.
 
 ---
 
-## 1. Oportunidades de mercado
+## 1. Clientes — segmentos prioritários
 
 ```
-Atua como analista de mercado do sector do turismo em Portugal, especializado em pacotes
-nacionais personalizados. Com base nas fontes disponíveis (AIsa e fontes públicas), identifica
-[número] oportunidades de mercado para os próximos [período], para o segmento
-[segmento de cliente]. Para cada oportunidade, indica: descrição, porque é relevante agora,
-nível de prioridade (alta/média/baixa) e a fonte da informação. Responde em português de
-Portugal, em formato de tabela.
+Atua como analista de mercado especializado em pequenas e médias empresas (PMEs) e
+empresários em nome individual em Moçambique. A Avanza Group Solutions vende pacotes
+nacionais personalizados de consultoria (do diagnóstico da ideia de negócio à construção de
+um roteiro/plano de ação realista). Com base nas fontes disponíveis (AIsa, blog da Avanza e
+fontes públicas sobre PMEs moçambicanas), identifica [número] segmentos de cliente mais
+propensos a comprar estes pacotes nos próximos [período]. Para cada segmento, indica: perfil
+(dimensão, sector, fase do negócio), porque é prioritário agora, a dor dominante desse
+segmento, e a fonte da informação. Responde em português de Portugal, em formato de tabela.
 ```
 
-## 2. Tendências de destinos
+## 2. Oportunidades sazonais
 
 ```
-Pesquisa tendências de procura para destinos nacionais em Portugal para [época/período],
-relevantes para pacotes personalizados no segmento [segmento de cliente]. Identifica: destinos
-em ascensão, destinos em queda, sazonalidade a considerar, e nichos emergentes (ex.: turismo de
-natureza, gastronomia, bem-estar). Responde em português de Portugal, em formato de tabela, com
-fonte para cada afirmação.
+Pesquisa momentos do calendário de negócio moçambicano (ex.: início/fim de ano fiscal, épocas
+de maior abertura de negócios, campanhas governamentais de formalização ou licenciamento)
+relevantes para a venda de pacotes de consultoria a PMEs/Singulares nos próximos
+[3 a 6 meses]. Para cada oportunidade, indica: janela temporal, porque é relevante, e a que
+serviço da Avanza (formalização, plano de negócio, licenciamento, etc.) se associa melhor.
+Responde em português de Portugal, em formato de tabela, com fonte para cada afirmação.
 ```
 
 ## 3. Análise de concorrência
 
 ```
-Analisa o concorrente [nome do concorrente / site] no mercado de pacotes nacionais
-personalizados em Portugal. Com base em informação publicamente disponível, produz uma ficha
+Analisa o concorrente [nome do concorrente / site] no mercado de consultoria a PMEs e
+Singulares em Moçambique. Com base em informação publicamente disponível, produz uma ficha
 com: posicionamento de marca, gama de preços aproximada, canais de venda e comunicação usados,
-pontos fortes, pontos fracos, e campanhas ou promoções recentes observadas. Sinaliza claramente
-quando a informação não puder ser confirmada. Responde em português de Portugal.
+pontos fortes, pontos fracos, e campanhas ou promoções recentes observadas. Sinaliza
+claramente quando a informação não puder ser confirmada. Responde em português de Portugal.
 ```
 
-## 4. Ideias de campanha
+## 4. Temas de campanha
 
 ```
-Com base neste resumo de oportunidades de mercado: [colar resumo do relatorio-mercado.md],
-gera [número] ideias de campanha de marketing para [empresa/marca], dirigidas a
-[segmento de cliente], para o período [período]. Para cada ideia, indica: objetivo, mensagem-chave,
-canal(is) recomendados, e uma justificação de porque encaixa no público-alvo. Responde em
+Com base neste resumo do relatório de mercado: [colar resumo do relatorio-mercado.md], gera
+[número] temas de campanha de marketing para a Avanza Group Solutions, dirigidos a
+[segmento de cliente], para o período [período]. Cada tema deve atacar diretamente uma destas
+dores do público: medo de errar no roteiro/plano de negócio, medo de gastar mal, insegurança
+com o idioma, falta de tempo para planear, medo de cair numa cilada ou comprar um pacote ruim,
+excesso de informação na internet. Para cada tema, indica: a dor que ataca, a mensagem-chave,
+o objetivo, e o(s) canal(is) recomendados. Responde em português de Portugal.
+```
+
+## 5. Argumentos de venda
+
+```
+Gera [número] argumentos de venda para os pacotes nacionais personalizados da Avanza Group
+Solutions, dirigidos a [segmento de cliente], que respondam diretamente à dor
+"[dor específica, ex.: medo de cair numa cilada ou comprar um pacote ruim]". Cada argumento
+deve ligar-se a um diferencial real da Avanza (atendimento consultivo, roteiro personalizado,
+suporte constante, foco no perfil do cliente) e sugerir que tipo de prova ou evidência o
+reforça (ex.: caso de sucesso, garantia, transparência sobre o processo). Responde em
 português de Portugal.
 ```
 
-## 5. Ideias de conteúdo
+## 6. Ideias de conteúdo
 
 ```
-Gera [número] ideias de conteúdo para [canal: Instagram / blog / newsletter] sobre pacotes
-nacionais personalizados, dirigidas a [segmento de cliente], relacionadas com [destino ou tema].
-Para cada ideia, indica: título/gancho, formato (ex.: carrossel, vídeo curto, artigo), e objetivo
-(atrair, educar, converter). Responde em português de Portugal.
+Gera [número] ideias de conteúdo para [canal: Facebook / Instagram / blog / newsletter] sobre
+consultoria e pacotes nacionais personalizados para PMEs/Singulares em Moçambique, dirigidas a
+[segmento de cliente], relacionadas com o tema/dor [tema ou dor específica]. Para cada ideia,
+indica: título/gancho, formato (ex.: carrossel, vídeo curto, artigo, post de bastidores), e
+objetivo (atrair, educar, converter). Responde em português de Portugal.
 ```
 
-## 6. Lead magnets
+## 7. Lead magnets
 
 ```
-Propõe [número] ideias de lead magnet para captar contactos de potenciais clientes interessados
-em pacotes nacionais personalizados, para o segmento [segmento de cliente]. Para cada ideia,
-indica: formato (ex.: guia PDF, checklist, simulador de orçamento), a oferta/gancho principal, e
-como se distribuiria (ex.: anúncio, bio de Instagram, WhatsApp). Responde em português de
+Propõe [número] ideias de lead magnet para captar contactos de PMEs/Singulares interessados
+nos serviços da Avanza Group Solutions, para o segmento [segmento de cliente]. Para cada
+ideia, indica: formato (ex.: checklist de formalização, guia PDF "do zero ao roteiro de
+negócio", simulador de custos/prazos), a oferta/gancho principal, a dor que resolve, e como se
+distribuiria (ex.: anúncio, bio de Instagram/Facebook, WhatsApp). Responde em português de
 Portugal.
 ```
 
-## 7. Mensagens para WhatsApp
+## 8. Mensagens para WhatsApp
 
 ```
-Escreve [número] variações de mensagem de WhatsApp para a etapa [primeiro contacto / follow-up /
-envio de orçamento / fecho de venda / reativação] do funil de vendas de pacotes nacionais
-personalizados. O tom de voz deve ser [tom de voz definido no briefing]. As mensagens devem ser
-curtas, naturais para WhatsApp, e incluir uma chamada à ação clara. Responde em português de
-Portugal.
+Escreve [número] variações de mensagem de WhatsApp para a etapa [primeiro contacto / follow-up
+/ envio de orçamento / fecho de venda / reativação] do funil de vendas da Avanza Group
+Solutions. O tom deve ser tranquilizador, claro e direto, sem jargão técnico, para reduzir o
+receio do lead de "cair numa cilada". As mensagens devem ser curtas, naturais para WhatsApp, e
+incluir uma chamada à ação clara. Responde em português de Portugal.
+```
+
+## 9. Próximos passos de marketing
+
+```
+Com base neste plano de campanha: [colar resumo do plano-campanha.md até à secção de lead
+magnets], organiza um plano de ação sequencial de marketing para os próximos [3 a 6 meses]
+para a Avanza Group Solutions, mês a mês. Para cada mês, indica: ação principal, objetivo, e
+como se liga aos temas de campanha, conteúdo, lead magnets e mensagens de WhatsApp já
+definidos. Responde em português de Portugal, em formato de tabela.
 ```
 
 ---
 
 ## Notas
 
-- Ajustar os prompts assim que o âmbito exato da AIsa estiver definido em `plano-do-agente.md`
-  (ex.: referenciar diretamente os dados que a AIsa devolve).
+- Ajustar os prompts assim que o âmbito exato da AIsa estiver definido em
+  `plano-do-agente.md` (ex.: referenciar diretamente os dados que a AIsa devolve).
+- Assim que o blog da Avanza (<https://avanzagroupsolutions.blogspot.com/>) puder ser
+  consultado, incorporar o catálogo real de pacotes e o tom de voz observado nos prompts 4-8.
 - Manter sempre a indicação "português de Portugal" nos prompts para evitar respostas em
   português do Brasil.
 - Prompts novos devem ser adicionados a este ficheiro, mantendo a mesma estrutura.
