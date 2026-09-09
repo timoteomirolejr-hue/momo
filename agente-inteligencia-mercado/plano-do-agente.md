@@ -15,7 +15,7 @@ personalizados da Avanza para PMEs e Singulares em Moçambique, combinando:
 
 ## 2. Objetivos funcionais
 
-Os objetivos seguem diretamente as 8 tarefas de descoberta pedidas pela Avanza (ver secção 6
+Os objetivos seguem diretamente as 8 tarefas de descoberta pedidas pela Avanza (ver secção 11
 do `briefing.md`):
 
 | # | Função | Output esperado | Ficheiro de destino |
@@ -67,7 +67,7 @@ Prompts    AIsa API        Fontes públicas / dados internos
 - **Limitações conhecidas (quotas, cobertura geográfica moçambicana, idioma):** [a definir]
 
 > Enquanto esta secção não estiver fechada, o agente pode operar com pesquisa manual/assistida
-> e fontes públicas sobre o mercado moçambicano (ver `briefing.md`, secção 4.2), documentando
+> e fontes públicas sobre o mercado moçambicano (ver `briefing.md`, secção 10.2), documentando
 > essa limitação no relatório final.
 
 ## 5. Fluxo de trabalho (pipeline)
@@ -109,8 +109,10 @@ Prompts    AIsa API        Fontes públicas / dados internos
 
 - Sem acesso confirmado à AIsa, os dados de mercado dependem de fontes públicas sobre PMEs
   moçambicanas e da experiência da equipa comercial da Avanza.
-- O blog oficial da Avanza não pôde ser consultado neste ambiente (bloqueio de rede) — o
-  catálogo exato de pacotes e o tom de voz ainda não estão confirmados.
+- O site da Avanza já foi analisado (catálogo de serviços, diferenciais e contactos
+  confirmados — ver `briefing.md`), mas o blog não tem artigos publicados e o próprio site
+  tem inconsistências de contacto (morada, telefone, email) por resolver antes de investir em
+  tráfego pago.
 - Informação sobre concorrentes (outras consultoras/contabilistas em Moçambique) pode estar
   limitada ao que é publicamente visível (sites, redes sociais).
 - O agente não substitui a validação humana antes do envio de mensagens de WhatsApp ou

@@ -24,14 +24,18 @@ isso, o agente ajuda a descobrir:
 ## Estado atual do projeto
 
 **Fase 1 — Estruturação e briefing.** O briefing da Avanza está preenchido em `briefing.md`,
-com base na informação fornecida pelo cliente e em pesquisa sobre o mercado moçambicano de
-PMEs. Ainda não há integração com nenhuma API (incluindo a AIsa) nem pesquisa de mercado
-concluída — `relatorio-mercado.md` e `plano-campanha.md` continuam por preencher.
+com base na informação fornecida pelo cliente, no conteúdo real do site (catálogo de serviços,
+diferenciais, contactos) e em pesquisa sobre o mercado moçambicano de PMEs. Ainda não há
+integração com nenhuma API (incluindo a AIsa) nem pesquisa de mercado concluída —
+`relatorio-mercado.md` e `plano-campanha.md` continuam por preencher.
 
-> **Nota:** o blog oficial da Avanza (<https://avanzagroupsolutions.blogspot.com/>) não pôde
-> ser consultado neste ambiente por bloqueio de rede. Vários pontos do briefing (catálogo
-> exato de pacotes, tom de voz, publicações existentes) ficam marcados como "a validar no
-> site" até alguém confirmar diretamente.
+> **Notas:** o domínio `avanzagroupsolutions.blogspot.com` continua bloqueado pelo proxy de
+> rede deste ambiente, mas o cliente forneceu o ficheiro de tema (template) do site, que
+> contém toda a página inicial — já incorporada no briefing. Falta apenas o blog (ainda sem
+> artigos publicados). O briefing também identifica **inconsistências reais no site**
+> (morada, telefone/WhatsApp, email e Instagram diferentes consoante o bloco de dados) e uma
+> **promoção já em curso** (site profissional, válida até 25/11/2026) que pode alimentar
+> desde já o plano de campanha.
 
 ## Estrutura de ficheiros
 
@@ -45,8 +49,8 @@ concluída — `relatorio-mercado.md` e `plano-campanha.md` continuam por preenc
 
 ## Fluxo de trabalho previsto
 
-1. **Briefing** — ✅ preenchido; validar pontos em aberto com a Avanza (ver secção 10 do
-   `briefing.md`), sobretudo o catálogo exato de pacotes.
+1. **Briefing** — ✅ preenchido; validar pontos em aberto com a Avanza (ver secção 15 do
+   `briefing.md`), sobretudo as inconsistências de contacto e a validade da Mega Promoção.
 2. **Desenho do agente** — fechar `plano-do-agente.md` (âmbito, fontes de dados, arquitetura).
 3. **Integração de API(s)** — ligar o agente à AIsa e a outras fontes de dados necessárias.
 4. **Pesquisa e relatório** — correr os prompts de `prompts.md` e preencher

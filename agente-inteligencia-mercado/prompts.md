@@ -1,7 +1,7 @@
 # Biblioteca de Prompts do Agente — Avanza Group Solutions
 
 Prompts organizados pelas 8 tarefas de descoberta pedidas pela Avanza (ver `briefing.md`,
-secção 6), para usar com o agente (Claude Code + AIsa, quando integrada). Cada prompt tem
+secção 11), para usar com o agente (Claude Code + AIsa, quando integrada). Cada prompt tem
 campos entre `[colchetes]` para preencher antes de o executar. Os resultados das tarefas 1-3
 devem alimentar `relatorio-mercado.md`; os das tarefas 4-9, `plano-campanha.md`.
 
@@ -19,13 +19,14 @@ devem alimentar `relatorio-mercado.md`; os das tarefas 4-9, `plano-campanha.md`.
 
 ```
 Atua como analista de mercado especializado em pequenas e médias empresas (PMEs) e
-empresários em nome individual em Moçambique. A Avanza Group Solutions vende pacotes
-nacionais personalizados de consultoria (do diagnóstico da ideia de negócio à construção de
-um roteiro/plano de ação realista). Com base nas fontes disponíveis (AIsa, blog da Avanza e
-fontes públicas sobre PMEs moçambicanas), identifica [número] segmentos de cliente mais
-propensos a comprar estes pacotes nos próximos [período]. Para cada segmento, indica: perfil
-(dimensão, sector, fase do negócio), porque é prioritário agora, a dor dominante desse
-segmento, e a fonte da informação. Responde em português de Portugal, em formato de tabela.
+empresários em nome individual em Moçambique. A Avanza Group Solutions é uma consultoria
+empresarial com 5 linhas de serviço: Formalização e Legalização, Planos de Negócio,
+Contabilidade e Fiscalidade, Acesso a Financiamento, e Formação Empresarial. Com base nas
+fontes disponíveis (AIsa e fontes públicas sobre PMEs moçambicanas), identifica [número]
+segmentos de cliente mais propensos a comprar estes serviços nos próximos [período]. Para
+cada segmento, indica: perfil (dimensão, sector, fase do negócio), a que serviço(s) da Avanza
+se aplica melhor, porque é prioritário agora, a dor dominante desse segmento, e a fonte da
+informação. Responde em português de Portugal, em formato de tabela.
 ```
 
 ## 2. Oportunidades sazonais
@@ -64,21 +65,23 @@ o objetivo, e o(s) canal(is) recomendados. Responde em português de Portugal.
 ## 5. Argumentos de venda
 
 ```
-Gera [número] argumentos de venda para os pacotes nacionais personalizados da Avanza Group
-Solutions, dirigidos a [segmento de cliente], que respondam diretamente à dor
-"[dor específica, ex.: medo de cair numa cilada ou comprar um pacote ruim]". Cada argumento
-deve ligar-se a um diferencial real da Avanza (atendimento consultivo, roteiro personalizado,
-suporte constante, foco no perfil do cliente) e sugerir que tipo de prova ou evidência o
-reforça (ex.: caso de sucesso, garantia, transparência sobre o processo). Responde em
-português de Portugal.
+Gera [número] argumentos de venda para o serviço [serviço específico, ex.: Formalização e
+Legalização] da Avanza Group Solutions, dirigidos a [segmento de cliente], que respondam
+diretamente à dor "[dor específica, ex.: medo de cair numa cilada ou comprar um pacote ruim]".
+Cada argumento deve ligar-se a um diferencial real da Avanza (conhecimento do terreno com a
+Autoridade Tributária/conservatórias/bancos, consultor de referência por cliente, rede de
+parceiros, "pacotes sem letras miúdas") e sugerir que tipo de prova ou evidência o reforça
+(ex.: a parceria com a Prato Fino, garantia, transparência sobre o processo — nunca inventar
+casos ou depoimentos). Responde em português de Portugal.
 ```
 
 ## 6. Ideias de conteúdo
 
 ```
 Gera [número] ideias de conteúdo para [canal: Facebook / Instagram / blog / newsletter] sobre
-consultoria e pacotes nacionais personalizados para PMEs/Singulares em Moçambique, dirigidas a
-[segmento de cliente], relacionadas com o tema/dor [tema ou dor específica]. Para cada ideia,
+consultoria empresarial (formalização, planos de negócio, contabilidade, financiamento ou
+formação) para PMEs/Singulares em Moçambique, dirigidas a [segmento de cliente], relacionadas
+com o tema/dor [tema ou dor específica]. Para cada ideia,
 indica: título/gancho, formato (ex.: carrossel, vídeo curto, artigo, post de bastidores), e
 objetivo (atrair, educar, converter). Responde em português de Portugal.
 ```
@@ -100,8 +103,10 @@ Portugal.
 Escreve [número] variações de mensagem de WhatsApp para a etapa [primeiro contacto / follow-up
 / envio de orçamento / fecho de venda / reativação] do funil de vendas da Avanza Group
 Solutions. O tom deve ser tranquilizador, claro e direto, sem jargão técnico, para reduzir o
-receio do lead de "cair numa cilada". As mensagens devem ser curtas, naturais para WhatsApp, e
-incluir uma chamada à ação clara. Responde em português de Portugal.
+receio do lead de "cair numa cilada" — no estilo da mensagem já usada no site: "Olá! Vi a
+página da Avanza e gostaria de saber mais sobre os vossos serviços." As mensagens devem ser
+curtas, naturais para WhatsApp, e incluir uma chamada à ação clara. Responde em português de
+Portugal.
 ```
 
 ## 9. Próximos passos de marketing
@@ -120,8 +125,11 @@ definidos. Responde em português de Portugal, em formato de tabela.
 
 - Ajustar os prompts assim que o âmbito exato da AIsa estiver definido em
   `plano-do-agente.md` (ex.: referenciar diretamente os dados que a AIsa devolve).
-- Assim que o blog da Avanza (<https://avanzagroupsolutions.blogspot.com/>) puder ser
-  consultado, incorporar o catálogo real de pacotes e o tom de voz observado nos prompts 4-8.
+- Nunca inventar casos de sucesso ou depoimentos de clientes nos resultados dos prompts 4-8 —
+  os "cases" e "depoimentos" atualmente no site são ilustrativos, não reais (ver `briefing.md`,
+  secção 6). Usar apenas a parceria real com a Prato Fino como prova social.
+- Ao gerar conteúdo/campanhas de curto prazo, considerar a Mega Promoção já ativa no site
+  (site profissional, válida até 25/11/2026 — ver `briefing.md`, secção 3).
 - Manter sempre a indicação "português de Portugal" nos prompts para evitar respostas em
   português do Brasil.
 - Prompts novos devem ser adicionados a este ficheiro, mantendo a mesma estrutura.

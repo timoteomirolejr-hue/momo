@@ -2,12 +2,18 @@
 
 > **Estado: modelo (template) — por preencher.**
 > Este relatório cobre as tarefas de descoberta 1-3 pedidas pela Avanza (clientes,
-> oportunidades sazonais e concorrência — ver `briefing.md`, secção 6). Será preenchido depois
-> da integração de dados (AIsa, blog da Avanza, dados internos de WhatsApp e/ou fontes
-> complementares), conforme descrito em `plano-do-agente.md`. Não usar para decisões
-> comerciais enquanto as secções abaixo não estiverem completas. Os temas de campanha,
-> argumentos de venda, conteúdo, lead magnets, mensagens de WhatsApp e próximos passos de
-> marketing (tarefas 4-9) ficam em `plano-campanha.md`.
+> oportunidades sazonais e concorrência — ver `briefing.md`, secção 11). Será preenchido depois
+> da integração de dados (AIsa, dados internos de WhatsApp e/ou fontes complementares),
+> conforme descrito em `plano-do-agente.md`. Não usar para decisões comerciais enquanto as
+> secções abaixo não estiverem completas. Os temas de campanha, argumentos de venda, conteúdo,
+> lead magnets, mensagens de WhatsApp e próximos passos de marketing (tarefas 4-9) ficam em
+> `plano-campanha.md`.
+>
+> **Inputs já confirmados no site** (ver `briefing.md`, secções 2-3): catálogo de 5 serviços
+> (Formalização e Legalização, Planos de Negócio, Contabilidade e Fiscalidade, Acesso a
+> Financiamento, Formação Empresarial) e uma promoção ativa de criação/melhoria de sites,
+> válida até 25/11/2026. O que falta preencher abaixo é a pesquisa de segmentos, timing
+> sazonal mais amplo e concorrência.
 
 - **Data do relatório:** [a preencher]
 - **Período analisado:** [a preencher — deve cobrir o horizonte de 3 a 6 meses definido pela Avanza]
@@ -55,7 +61,7 @@ Moçambique]
 
 ## 5. Perfil do cliente / dores confirmadas no terreno
 
-[a preencher — cruzamento entre as dores documentadas em `briefing.md` (secção 4) e o que a
+[a preencher — cruzamento entre as dores documentadas em `briefing.md` (secção 10) e o que a
 equipa comercial da Avanza confirma nas conversas reais de WhatsApp: quais dores aparecem mais,
 quais objeções são mais frequentes antes do fecho]
 
@@ -66,5 +72,5 @@ diretamente ao `plano-campanha.md`]
 
 ## 7. Limitações do relatório
 
-[a preencher — lacunas de dados, fontes não disponíveis (ex.: blog da Avanza inacessível nesta
-sessão), período de validade da informação]
+[a preencher — lacunas de dados, fontes não disponíveis (ex.: blog da Avanza ainda sem
+artigos publicados), período de validade da informação]
