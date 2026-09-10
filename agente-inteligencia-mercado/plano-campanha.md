@@ -14,6 +14,80 @@
 
 ---
 
+## 📦 Pacotes de campanha sugeridos
+
+Quatro pacotes de campanha, prontos a lançar, cada um construído à volta de um tema
+estratégico diferente para a Avanza. Cada pacote junta, num só bloco, o ângulo, o público, o
+gancho de anúncio, uma ideia de vídeo, um lead magnet e a primeira mensagem de WhatsApp —
+tudo o que é preciso para arrancar sem ter de ir buscar peças soltas ao resto do documento.
+
+| Pacote | Tema | Público ideal |
+|---|---|---|
+| 🏖️ Época Alta Sem Sustos | Legalização de turismo/hotelaria em Inhambane | Pousadas, restaurantes, centros de mergulho, operadores turísticos |
+| 💼 Dossier Que Convence | Plano de negócio + financiamento (FDEL / Fundo de Garantia) | PME e Singulares à procura de capital para crescer |
+| 🧾 Em Dia Com o Fisco | Contabilidade e fiscalidade, prazos de IVA (25/set e 25/nov) | PME já formalizadas com contabilidade atrasada |
+| 🏛️ Pronta Para o Estado | Formalização avançada + Cadastro Único de Fornecedores | Comerciantes/prestadores de serviços a querer concorrer ao Estado |
+
+---
+
+### 🏖️ Pacote 1 — Época Alta Sem Sustos
+
+| | |
+|---|---|
+| **1. Nome do pacote** | Época Alta Sem Sustos |
+| **2. Destino/tema principal** | Legalização e licenciamento de negócios de turismo e hotelaria em Inhambane, antes do pico de procura |
+| **3. Público ideal** | Donos de pousadas, restaurantes, centros de mergulho e operadores turísticos em Inhambane — muitas vezes informais ou com licenciamento incompleto |
+| **4. Dor que resolve** | Medo de ser fiscalizado ou multado em plena época alta; sensação de que o licenciamento turístico é complicado demais para tratar sozinho |
+| **5. Promessa central** | *"Legalize o seu negócio de turismo antes da época alta, com um consultor que conhece Inhambane por dentro — sem correrias de última hora."* |
+| **6. Gancho para anúncio** | *"Faltam meses para a época alta em Inhambane. O seu negócio já está em regra?"* |
+| **7. Ideia de vídeo curto** | *"Um dia no escritório: o que verificamos antes de legalizar uma pousada ou restaurante em Inhambane"* — bastidores reais, sem atores |
+| **8. Lead magnet relacionado** | Checklist *"5 documentos que todo o negócio de turismo em Inhambane precisa ter em dia"* |
+| **9. Mensagem inicial WhatsApp** | *"Olá! Vi que tem um negócio ligado ao turismo em Inhambane — quer que verifiquemos juntos, sem compromisso, se está tudo em regra antes da época alta?"* |
+
+### 💼 Pacote 2 — Dossier Que Convence
+
+| | |
+|---|---|
+| **1. Nome do pacote** | Dossier Que Convence |
+| **2. Destino/tema principal** | Preparação de plano de negócio e documentação para financiamento público (FDEL, Fundo de Garantia PME) ou bancário |
+| **3. Público ideal** | PME e Singulares com um negócio a funcionar (ou uma ideia concreta) que precisam de capital para crescer |
+| **4. Dor que resolve** | Medo de errar no plano de negócio; insegurança sobre os requisitos; medo de ser recusado por falta de preparação |
+| **5. Promessa central** | *"Transformamos a sua ideia ou negócio num dossier que os bancos e fundos públicos aceitam — sem jargão, sem adivinhas."* |
+| **6. Gancho para anúncio** | *"O FDEL já recebeu mais de 112 mil candidaturas. A sua está pronta para competir?"* |
+| **7. Ideia de vídeo curto** | *"3 erros que fazem um banco recusar um plano de negócio (e como evitá-los)"* |
+| **8. Lead magnet relacionado** | Guia rápido *"Os 5 documentos que todo o dossier de financiamento precisa ter"* |
+| **9. Mensagem inicial WhatsApp** | *"Olá! Está a pensar candidatar-se a financiamento — banco, FDEL ou outro fundo? Posso ajudá-lo a perceber, em 5 minutos, o que falta no seu dossier."* |
+
+### 🧾 Pacote 3 — Em Dia Com o Fisco
+
+| | |
+|---|---|
+| **1. Nome do pacote** | Em Dia Com o Fisco |
+| **2. Destino/tema principal** | Regularização contabilística e fiscal antes dos prazos trimestrais de IVA (25 de setembro e 25 de novembro de 2026) |
+| **3. Público ideal** | PME já formalizadas, mas com a contabilidade desorganizada ou atrasada |
+| **4. Dor que resolve** | Falta de tempo para tratar da contabilidade sozinho; medo de multas ou penalizações fiscais |
+| **5. Promessa central** | *"Ponha a contabilidade em dia antes do próximo prazo do IVA — nós tratamos, o senhor foca-se no negócio."* |
+| **6. Gancho para anúncio** | *"Faltam poucos dias para o prazo do IVA trimestral. A sua contabilidade está pronta?"* |
+| **7. Ideia de vídeo curto** | *"Calendário fiscal 2026 em 30 segundos: as datas que não pode esquecer"* |
+| **8. Lead magnet relacionado** | *"Calendário fiscal 2026 para PME"* — imagem/PDF para guardar no telemóvel |
+| **9. Mensagem inicial WhatsApp** | *"Olá! O próximo prazo do IVA trimestral aproxima-se (25 de novembro). Quer que vejamos rapidamente se está tudo em dia?"* |
+
+### 🏛️ Pacote 4 — Pronta Para o Estado
+
+| | |
+|---|---|
+| **1. Nome do pacote** | Pronta Para o Estado |
+| **2. Destino/tema principal** | Preparação documental para concorrer a concursos públicos (fornecimento de bens/serviços ao Estado) |
+| **3. Público ideal** | Pequenos comerciantes e prestadores de serviços com alguma estrutura, ainda de fora do mercado de contratos públicos |
+| **4. Dor que resolve** | Excesso de burocracia percebida; sensação de estar "de fora" das grandes oportunidades; não saber que documentos precisa |
+| **5. Promessa central** | *"Ajudamos a reunir os documentos certos para poder concorrer a contratos do Estado — passo a passo, sem se perder na burocracia."* |
+| **6. Gancho para anúncio** | *"Sabia que pode fornecer bens ou serviços ao Estado moçambicano? Descubra que documentos precisa."* |
+| **7. Ideia de vídeo curto** | *"O que é o Cadastro Único de Fornecedores (e porque pode mudar o seu negócio)"* |
+| **8. Lead magnet relacionado** | Checklist *"Estás pronta para concorrer a um concurso público?"* — 6 perguntas de autoavaliação rápida |
+| **9. Mensagem inicial WhatsApp** | *"Olá! Sabia que muitos concursos públicos em Moçambique são reservados a empresas nacionais? Quer saber se já reúne as condições para concorrer?"* |
+
+---
+
 ## 1. Cinco ângulos de campanha para os pacotes nacionais
 
 | # | Ângulo | Serviço | Público-alvo | Dor real que ataca |
