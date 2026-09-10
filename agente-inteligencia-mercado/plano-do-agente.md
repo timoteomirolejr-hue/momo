@@ -151,7 +151,10 @@ cabeçalho `Authorization: Bearer $AISA_API_KEY`.
   Code on the web — testado diretamente (`curl` a `api.aisa.one` devolve erro 403 no túnel
   CONNECT). Ou seja, **a AIsa está configurada mas não pode ser chamada a partir deste
   sandbox tal como está**. É necessário correr o agente noutro ambiente sem essa restrição, ou
-  pedir que o domínio seja adicionado à allowlist de rede deste ambiente.
+  pedir que o domínio seja adicionado à allowlist de rede deste ambiente. Para validar a
+  ligação assim que isso acontecer, usar `scripts/testar-ligacao-aisa.sh` — carrega a chave
+  do `.env`, nunca a imprime por inteiro, e testa alcance de rede e autenticação em dois
+  passos separados.
 - A documentação da AIsa foi consultada indiretamente (pesquisa web), não o `llms.txt`
   diretamente — detalhes exatos (formato dos headers de rate limit, nomes exatos de endpoints
   em `/apis/v1/...`) devem ser confirmados na documentação oficial antes de codificar chamadas

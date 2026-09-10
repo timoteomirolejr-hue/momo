@@ -46,6 +46,8 @@ integração com nenhuma API (incluindo a AIsa) nem pesquisa de mercado concluí
 | [`relatorio-mercado.md`](relatorio-mercado.md) | Modelo (template) do relatório de mercado: segmentos de clientes, oportunidades sazonais e análise da concorrência. Ainda vazio. |
 | [`plano-campanha.md`](plano-campanha.md) | Modelo do plano de campanha: temas de campanha, argumentos de venda, conteúdo, lead magnets, mensagens de WhatsApp e próximos passos. Ainda por preencher. |
 | [`prompts.md`](prompts.md) | Biblioteca de prompts organizados pelas 8 tarefas de descoberta pedidas pela Avanza, prontos a usar assim que o agente estiver ligado às fontes de dados. |
+| [`scripts/testar-ligacao-aisa.sh`](scripts/testar-ligacao-aisa.sh) | Script de teste de ligação à AIsa (carrega `AISA_API_KEY` do `.env`, nunca a expõe). A correr fora deste ambiente — ver `plano-do-agente.md`, secção 4.5. |
+| `.env` / `.env.example` | Variáveis de ambiente (chave da AIsa). O `.env` real nunca é commitado (ver `.gitignore` na raiz do repositório). |
 
 ## Fluxo de trabalho previsto
 
