@@ -69,40 +69,35 @@ integração com nenhuma API (incluindo a AIsa) nem pesquisa de mercado concluí
 
 ---
 
-> **Nota de idioma:** as seções abaixo foram escritas em português do Brasil, a pedido
-> explícito de quem solicitou esta atualização — por isso o restante deste README (em
-> português de Portugal) e as seções a seguir convivem em variantes diferentes do português
-> dentro do mesmo arquivo. Se preferir tudo num só padrão, é só pedir.
-
 ## Como adaptar este agente para qualquer negócio
 
 Este projeto foi construído para a Avanza Group Solutions, uma consultoria empresarial em
-Moçambique — mas **nada aqui é exclusivo de consultoria, de Moçambique ou de PME**. A estrutura
-inteira (os seis arquivos, o fluxo de trabalho, os prompts) foi desenhada para funcionar com
-qualquer negócio que precise de duas coisas: entender melhor o próprio mercado e transformar
-esse entendimento em campanhas de marketing e vendas.
+Moçambique — mas **nada aqui é exclusivo de consultoria, de Moçambique ou de PME**. Toda a
+estrutura (os seis ficheiros, o fluxo de trabalho, os prompts) foi desenhada para funcionar com
+qualquer negócio que precise de duas coisas: perceber melhor o próprio mercado e transformar
+esse conhecimento em campanhas de marketing e vendas.
 
-**O que permanece sempre igual, não importa o nicho:**
+**O que se mantém sempre igual, seja qual for o nicho:**
 
-- A estrutura de arquivos (`briefing.md` → `plano-do-agente.md` → `relatorio-mercado.md` →
+- A estrutura de ficheiros (`briefing.md` → `plano-do-agente.md` → `relatorio-mercado.md` →
   `plano-campanha.md` → `prompts.md`).
 - O fluxo de trabalho: briefing → pesquisa → relatório → plano de campanha.
 - A lógica dos prompts em `prompts.md` (cada um resolve uma tarefa de descoberta específica:
   clientes, sazonalidade, concorrência, temas de campanha, argumentos de venda, conteúdo, lead
   magnets, mensagens e próximos passos).
-- O princípio de nunca inventar dados: tudo o que é fato deve vir de uma fonte real e citável;
-  tudo o que é suposição fica marcado como tal.
+- O princípio de nunca inventar dados: tudo o que é facto deve vir de uma fonte real e citável;
+  tudo o que é suposição fica assinalado como tal.
 
 **O que muda de negócio para negócio é só isto:**
 
-1. **O briefing** — quem é a empresa, o que ela vende, para quem, e quais são as dores reais do
-   público (em vez de "PME em Moçambique que temem burocracia", pode ser "pais de São Paulo que
-   temem escolher a escola errada para o filho").
-2. **O mercado pesquisado** — as fontes mudam de acordo com o setor (um restaurante pesquisa
-   iFood e Google Meu Negócio; uma empresa de energia solar pesquisa ANEEL e associações do
-   setor).
-3. **Os objetivos do negócio** — o que conta como sucesso muda (uma escola quer matrículas; um
-   e-commerce quer vendas recorrentes; uma clínica quer agendamentos).
+1. **O briefing** — quem é a empresa, o que vende, para quem, e quais são as dores reais do
+   público (em vez de "PME em Moçambique com receio de burocracia", pode ser "pais em Lisboa
+   com receio de escolher a escola errada para o filho").
+2. **O mercado pesquisado** — as fontes mudam consoante o sector (um restaurante pesquisa o
+   Uber Eats e o Perfil da Empresa no Google; uma empresa de energia solar pesquisa a ERSE e
+   associações do sector).
+3. **Os objetivos do negócio** — o que conta como sucesso muda (uma escola quer matrículas;
+   uma loja online quer vendas recorrentes; uma clínica quer marcações).
 
 Tudo o resto — a forma como o agente organiza a pesquisa, estrutura o relatório e transforma
 isso em campanhas — é reutilizável sem qualquer alteração.
@@ -111,14 +106,14 @@ isso em campanhas — é reutilizável sem qualquer alteração.
 
 | Nicho | Objetivo principal (resumo) | Público-alvo (resumo) |
 |---|---|---|
-| 🏠 Imobiliária | Gerar leads qualificados de compra/locação | Compradores de primeiro imóvel, investidores, locatários |
-| 🎓 Escola Particular | Gerar matrículas para o próximo ano letivo | Pais/responsáveis de crianças em idade escolar |
-| 🦷 Clínica Odontológica | Gerar agendamentos de avaliação/tratamento | Pacientes com dor, estética dental ou necessidade infantil |
-| 🛒 E-commerce | Aumentar vendas recorrentes e ticket médio | Consumidores online do nicho específico da loja |
-| ☀️ Energia Solar | Gerar leads para instalação de sistemas fotovoltaicos | Donos de imóveis/empresas com conta de luz alta |
-| 💻 Infoproduto | Validar a dor do público e gerar vendas do curso | Pessoas buscando resolver um problema específico |
-| 🍽️ Restaurante | Aumentar fluxo de clientes e ticket médio | Moradores da região, famílias, casais, empresas |
-| 📈 Agência de Marketing | Gerar leads (empresas) e posicionar um nicho de especialização | Donos de PME sem equipe de marketing interna |
+| 🏠 Imobiliária | Gerar leads qualificados de compra/arrendamento | Compradores de primeira casa, investidores, arrendatários |
+| 🎓 Escola Particular | Gerar matrículas para o próximo ano letivo | Pais/encarregados de educação de crianças em idade escolar |
+| 🦷 Clínica Dentária | Gerar marcações de consulta/avaliação | Pacientes com dor, interesse em estética dentária ou necessidade infantil |
+| 🛒 E-commerce | Aumentar vendas recorrentes e o valor médio de compra | Consumidores online do nicho específico da loja |
+| ☀️ Energia Solar | Gerar leads para instalação de sistemas fotovoltaicos | Proprietários de imóveis/empresas com fatura de eletricidade elevada |
+| 💻 Infoproduto | Validar a dor do público e gerar vendas do curso | Pessoas à procura de resolver um problema específico |
+| 🍽️ Restaurante | Aumentar a afluência de clientes e o valor médio de consumo | Moradores da zona, famílias, casais, empresas |
+| 📈 Agência de Marketing | Gerar leads (empresas) e posicionar um nicho de especialização | Donos de PME sem equipa de marketing interna |
 
 A seguir, o detalhe completo de cada nicho, com os 10 pontos obrigatórios.
 
@@ -126,156 +121,156 @@ A seguir, o detalhe completo de cada nicho, com os 10 pontos obrigatórios.
 
 | | |
 |---|---|
-| **Objetivo principal do agente** | Gerar leads qualificados para captação e venda/locação de imóveis, identificando regiões com maior potencial de valorização e demanda |
-| **Público-alvo** | Compradores de primeiro imóvel, investidores, famílias buscando aluguel, proprietários que querem vender ou alugar |
-| **Perguntas de mercado a responder** | Quais bairros estão valorizando mais? Qual o ticket médio por região? Quais imobiliárias concorrentes dominam quais bairros? Que tipo de imóvel está em falta na oferta local? |
-| **Fontes de informação** | Portais imobiliários (Viva Real, ZAP Imóveis, QuintoAndar), dados do IBGE/prefeitura sobre crescimento urbano, CRECI regional, grupos de bairro no Facebook, Google Trends |
-| **Tipo de relatório** | Relatório de mercado imobiliário local: bairros em alta, ticket médio, concorrência por região, sazonalidade de mudanças |
-| **Oportunidades a identificar** | Bairros sub-explorados pela concorrência, tipos de imóvel com demanda reprimida (studios, imóveis pet-friendly), sazonalidade de mudanças (início de ano letivo, fim de contrato) |
-| **Exemplos de campanhas** | "Descubra o bairro que mais valorizou este ano"; campanha de captação de imóveis para vender; campanha de leads para financiamento facilitado |
-| **Exemplos de conteúdos** | Vídeo "Tour pelo bairro X: vale a pena morar aqui?"; post comparativo de preços por bairro; e-book "Guia do primeiro imóvel" |
-| **Exemplos de lead magnets** | Simulador de financiamento; checklist "O que verificar antes de comprar um imóvel usado"; relatório de valorização do bairro |
-| **Próximos passos recomendados** | Confirmar em quais bairros a imobiliária já atua, levantar corretores parceiros, validar os dados dos portais com o CRECI local |
+| **Objetivo principal do agente** | Gerar leads qualificados para captação e venda/arrendamento de imóveis, identificando zonas com maior potencial de valorização e procura |
+| **Público-alvo** | Compradores de primeira casa, investidores, famílias à procura de arrendamento, proprietários que querem vender ou arrendar |
+| **Perguntas de mercado a responder** | Que zonas estão a valorizar mais? Qual o valor médio por m² em cada zona? Que agências concorrentes dominam que zonas? Que tipo de imóvel está em falta na oferta local? |
+| **Fontes de informação** | Portais imobiliários (Idealista, Imovirtual, Casa Sapo), dados do INE sobre crescimento urbano, IMPIC (entidade que emite a licença AMI, obrigatória para mediação imobiliária), grupos de bairro no Facebook, Google Trends |
+| **Tipo de relatório** | Relatório de mercado imobiliário local: zonas em alta, valor médio por m², concorrência por zona, sazonalidade de mudanças |
+| **Oportunidades a identificar** | Zonas sub-exploradas pela concorrência, tipos de imóvel com procura reprimida (T0/T1 para jovens, imóveis pet-friendly), sazonalidade de mudanças (início de ano letivo, fim de contrato de arrendamento) |
+| **Exemplos de campanhas** | "Descubra a zona que mais valorizou este ano"; campanha de captação de imóveis para venda; campanha de leads para crédito habitação facilitado |
+| **Exemplos de conteúdos** | Vídeo "Visita guiada ao bairro X: vale a pena viver aqui?"; publicação comparativa de preços por zona; e-book "Guia da primeira casa" |
+| **Exemplos de lead magnets** | Simulador de crédito habitação; checklist "O que verificar antes de comprar um imóvel usado"; relatório de valorização da zona |
+| **Próximos passos recomendados** | Confirmar em que zonas a imobiliária já atua, levantar mediadores parceiros, validar os dados dos portais junto do IMPIC |
 
 ### 🎓 Escola Particular
 
 | | |
 |---|---|
-| **Objetivo principal do agente** | Gerar matrículas qualificadas para o próximo período letivo |
-| **Público-alvo** | Pais/responsáveis de crianças em idade escolar buscando trocar de escola ou matricular pela primeira vez |
-| **Perguntas de mercado a responder** | Quais escolas concorrentes existem na região e quais são seus diferenciais/preços? Quais as insatisfações mais comuns dos pais com a escola atual? Quando os pais tomam a decisão de matrícula? |
-| **Fontes de informação** | Avaliações no Google Meu Negócio de escolas concorrentes, grupos de pais no Facebook/WhatsApp do bairro, censo escolar do INEP, redes sociais de escolas concorrentes |
-| **Tipo de relatório** | Mapeamento da concorrência escolar local, calendário de matrículas e principais dores dos pais |
-| **Oportunidades a identificar** | Nichos mal atendidos (bilíngue, período integral, apoio a crianças neurodivergentes), datas-chave de decisão de matrícula, insatisfações recorrentes com concorrentes |
-| **Exemplos de campanhas** | "Já garantiu a vaga do seu filho para o próximo ano?"; campanha de portas abertas (open house); campanha de indicação com desconto |
-| **Exemplos de conteúdos** | Vídeo institucional "Um dia na escola X"; depoimentos reais de pais; posts educativos sobre desenvolvimento infantil |
-| **Exemplos de lead magnets** | Checklist "Como escolher a escola certa para o seu filho"; e-book sobre a proposta pedagógica; agendamento de visita guiada gratuita |
-| **Próximos passos recomendados** | Levantar o calendário oficial de matrículas, mapear concorrentes diretos no raio de atuação, coletar depoimentos reais de famílias atuais |
+| **Objetivo principal do agente** | Gerar matrículas qualificadas para o próximo ano letivo |
+| **Público-alvo** | Pais/encarregados de educação de crianças em idade escolar, à procura de trocar de escola ou matricular pela primeira vez |
+| **Perguntas de mercado a responder** | Que escolas concorrentes existem na zona e quais são os seus diferenciais/preços? Quais as insatisfações mais comuns dos pais com a escola atual? Quando é que os pais tomam a decisão de matrícula? |
+| **Fontes de informação** | Avaliações no Perfil da Empresa no Google de escolas concorrentes, grupos de pais no Facebook/WhatsApp do bairro, dados da DGEEC (Direção-Geral de Estatísticas da Educação e Ciência), redes sociais de escolas concorrentes |
+| **Tipo de relatório** | Mapeamento da concorrência escolar local, calendário de matrículas e principais receios dos pais |
+| **Oportunidades a identificar** | Nichos mal servidos (bilingue, período prolongado, apoio a crianças com necessidades educativas especiais), datas-chave de decisão de matrícula, insatisfações recorrentes com concorrentes |
+| **Exemplos de campanhas** | "Já garantiu a vaga do seu filho para o próximo ano?"; campanha de portas abertas (open day); campanha de indicação com desconto |
+| **Exemplos de conteúdos** | Vídeo institucional "Um dia na escola X"; testemunhos reais de pais; publicações educativas sobre desenvolvimento infantil |
+| **Exemplos de lead magnets** | Checklist "Como escolher a escola certa para o seu filho"; e-book sobre o projeto pedagógico; marcação de visita guiada gratuita |
+| **Próximos passos recomendados** | Levantar o calendário oficial de matrículas, mapear concorrentes diretos na área de influência, recolher testemunhos reais de famílias atuais |
 
-### 🦷 Clínica Odontológica
+### 🦷 Clínica Dentária
 
 | | |
 |---|---|
-| **Objetivo principal do agente** | Gerar agendamentos de consulta/avaliação para tratamentos de maior valor (implante, ortodontia, estética) |
-| **Público-alvo** | Pacientes adultos com dor ou desconforto, pais buscando tratamento para filhos, pessoas buscando estética dental |
-| **Perguntas de mercado a responder** | Quais tratamentos têm maior demanda na região? Quais os preços médios da concorrência? Quais convênios são mais aceitos? Quais são os medos/objeções mais comuns dos pacientes? |
-| **Fontes de informação** | Avaliações no Google Meu Negócio de clínicas concorrentes, Conselho Federal de Odontologia (CFO), grupos de bairro, Google Trends para termos como "medo de dentista" |
-| **Tipo de relatório** | Mapeamento da concorrência local, ticket médio por tratamento, principais dores e objeções dos pacientes |
-| **Oportunidades a identificar** | Tratamentos sub-oferecidos na região, convênios pouco explorados pela concorrência, sazonalidade (clareamento antes de casamentos/formaturas) |
-| **Exemplos de campanhas** | "Avaliação gratuita: descubra o sorriso que você merece"; campanha de saúde bucal infantil; campanha sazonal "sorriso de noiva" |
-| **Exemplos de conteúdos** | Vídeo "O que esperar na primeira consulta" (reduz o medo); antes/depois de tratamentos estéticos; mitos e verdades sobre implante dentário |
-| **Exemplos de lead magnets** | Checklist "5 sinais de que você precisa de um implante"; agendamento de avaliação gratuita; guia "Quanto custa realmente um tratamento ortodôntico" |
-| **Próximos passos recomendados** | Levantar tabela de preços e convênios aceitos, mapear concorrentes na região, confirmar disponibilidade de agenda para a campanha |
+| **Objetivo principal do agente** | Gerar marcações de consulta/avaliação para tratamentos de maior valor (implantes, ortodontia, estética) |
+| **Público-alvo** | Pacientes adultos com dor ou desconforto, pais à procura de tratamento para os filhos, pessoas interessadas em estética dentária |
+| **Perguntas de mercado a responder** | Que tratamentos têm maior procura na zona? Quais os preços médios da concorrência? Que seguros/acordos são mais aceites? Quais os receios e objeções mais comuns dos pacientes? |
+| **Fontes de informação** | Avaliações no Perfil da Empresa no Google de clínicas concorrentes, Ordem dos Médicos Dentistas, grupos de bairro, Google Trends para termos como "medo do dentista" |
+| **Tipo de relatório** | Mapeamento da concorrência local, valor médio por tratamento, principais receios e objeções dos pacientes |
+| **Oportunidades a identificar** | Tratamentos pouco oferecidos na zona, acordos com seguradoras pouco explorados pela concorrência, sazonalidade (branqueamento antes de casamentos) |
+| **Exemplos de campanhas** | "Avaliação gratuita: descubra o sorriso que merece"; campanha de saúde oral infantil; campanha sazonal "sorriso de noiva" |
+| **Exemplos de conteúdos** | Vídeo "O que esperar na primeira consulta" (reduz o receio); antes/depois de tratamentos estéticos; mitos e verdades sobre implantes dentários |
+| **Exemplos de lead magnets** | Checklist "5 sinais de que precisa de um implante"; marcação de avaliação gratuita; guia "Quanto custa realmente um tratamento ortodôntico" |
+| **Próximos passos recomendados** | Levantar tabela de preços e acordos aceites, mapear concorrentes na zona, confirmar disponibilidade de agenda para a campanha |
 
 ### 🛒 E-commerce
 
 | | |
 |---|---|
-| **Objetivo principal do agente** | Aumentar vendas online identificando produtos com maior potencial e otimizando a aquisição de clientes |
-| **Público-alvo** | Consumidores online do nicho específico da loja (moda, eletrônicos, casa, etc.) |
-| **Perguntas de mercado a responder** | Quais produtos estão em alta agora? Quais concorrentes dominam o nicho e com que preços? Qual o CAC médio do setor? Quais os principais motivos de abandono de carrinho? |
-| **Fontes de informação** | Google Trends, Google Shopping e marketplaces (Mercado Livre, Amazon) para benchmarking de preço, redes sociais (TikTok Shop, Instagram Shopping), avaliações de produtos concorrentes |
-| **Tipo de relatório** | Relatório de tendências de produto, benchmarking de preço/concorrência e funil de conversão do setor |
-| **Oportunidades a identificar** | Produtos com alta busca e baixa oferta local, sazonalidades de compra (Black Friday, Dia das Mães, Natal), nichos de personalização |
-| **Exemplos de campanhas** | Campanha de lançamento de produto sazonal; remarketing para carrinho abandonado; "frete grátis por tempo limitado" |
-| **Exemplos de conteúdos** | Vídeos de unboxing/demonstração; comparativo "por que escolher X em vez de Y"; conteúdo de prova social com avaliações reais |
-| **Exemplos de lead magnets** | Cupom de desconto na primeira compra; guia de tamanhos/como escolher o produto certo; quiz "qual produto é ideal para você" |
-| **Próximos passos recomendados** | Levantar catálogo de produtos e margens, mapear concorrentes diretos, configurar rastreamento de CAC, ticket médio e taxa de abandono |
+| **Objetivo principal do agente** | Aumentar as vendas online identificando produtos com maior potencial e otimizando a captação de clientes |
+| **Público-alvo** | Consumidores online do nicho específico da loja (moda, eletrónica, casa, etc.) |
+| **Perguntas de mercado a responder** | Que produtos estão em alta neste momento? Que concorrentes dominam o nicho e a que preços? Qual o custo médio de aquisição de cliente (CAC) do sector? Quais os principais motivos de abandono de carrinho? |
+| **Fontes de informação** | Google Trends, Google Shopping e marketplaces (Amazon, Worten) para comparação de preços, redes sociais (TikTok Shop, Instagram Shopping), avaliações de produtos concorrentes |
+| **Tipo de relatório** | Relatório de tendências de produto, comparação de preços/concorrência e funil de conversão do sector |
+| **Oportunidades a identificar** | Produtos com muita procura e pouca oferta local, sazonalidades de compra (Black Friday, Dia da Mãe, Natal), nichos de personalização |
+| **Exemplos de campanhas** | Campanha de lançamento de produto sazonal; remarketing para carrinho abandonado; "portes grátis por tempo limitado" |
+| **Exemplos de conteúdos** | Vídeos de unboxing/demonstração; comparativo "porque escolher X em vez de Y"; conteúdo de prova social com avaliações reais |
+| **Exemplos de lead magnets** | Cupão de desconto na primeira compra; guia de tamanhos/como escolher o produto certo; questionário "qual o produto ideal para si" |
+| **Próximos passos recomendados** | Levantar o catálogo de produtos e margens, mapear concorrentes diretos, configurar o registo de CAC, valor médio de compra e taxa de abandono |
 
 ### ☀️ Empresa de Energia Solar
 
 | | |
 |---|---|
 | **Objetivo principal do agente** | Gerar leads qualificados para instalação de sistemas fotovoltaicos residenciais e comerciais |
-| **Público-alvo** | Proprietários de imóveis com conta de luz alta, empresas buscando reduzir custos operacionais |
-| **Perguntas de mercado a responder** | Qual o tempo médio de retorno do investimento (payback) na região? Que incentivos fiscais ou linhas de financiamento existem? Quais as objeções mais comuns? Quem são os concorrentes e como precificam? |
-| **Fontes de informação** | ANEEL (regulação do setor), ABSOLAR (associação do setor), simuladores de economia de concorrentes, Reclame Aqui de instaladoras concorrentes, grupos sobre energia solar |
-| **Tipo de relatório** | Relatório de mercado local de energia solar: regiões com maior potencial, concorrência e financiamento disponível |
-| **Oportunidades a identificar** | Linhas de crédito com juros baixos, regiões com tarifas de energia mais altas, o nicho comercial/industrial ainda pouco explorado |
-| **Exemplos de campanhas** | "Descubra quanto pode economizar com energia solar"; campanha de financiamento facilitado; campanha para empresas ("reduza o custo operacional") |
-| **Exemplos de conteúdos** | Vídeo "Quanto tempo leva para o sistema se pagar?"; calculadora de economia; cases reais com antes/depois da conta de luz |
-| **Exemplos de lead magnets** | Simulador de economia personalizado; e-book "Guia completo de energia solar"; checklist "O sistema solar é viável para minha casa?" |
-| **Próximos passos recomendados** | Levantar as tarifas da concessionária local, mapear linhas de financiamento disponíveis, validar o payback médio com casos reais |
+| **Público-alvo** | Proprietários de imóveis com fatura de eletricidade elevada, empresas à procura de reduzir custos operacionais |
+| **Perguntas de mercado a responder** | Qual o tempo médio de retorno do investimento (payback) na zona? Que incentivos fiscais ou linhas de financiamento existem? Quais as objeções mais comuns? Quem são os concorrentes e como praticam preços? |
+| **Fontes de informação** | ERSE (Entidade Reguladora dos Serviços Energéticos), DGEG (Direção-Geral de Energia e Geologia), APREN (Associação de Energias Renováveis), simuladores de poupança de concorrentes, Portal da Queixa |
+| **Tipo de relatório** | Relatório de mercado local de energia solar: zonas com maior potencial, concorrência e financiamento disponível |
+| **Oportunidades a identificar** | Linhas de crédito com juros baixos, zonas com tarifas de eletricidade mais altas, o nicho comercial/industrial ainda pouco explorado |
+| **Exemplos de campanhas** | "Descubra quanto pode poupar com energia solar"; campanha de financiamento facilitado; campanha para empresas ("reduza o custo operacional") |
+| **Exemplos de conteúdos** | Vídeo "Quanto tempo demora o sistema a pagar-se?"; calculadora de poupança; casos reais com antes/depois da fatura de eletricidade |
+| **Exemplos de lead magnets** | Simulador de poupança personalizado; e-book "Guia completo de energia solar"; checklist "O sistema solar é viável para a minha casa?" |
+| **Próximos passos recomendados** | Levantar as tarifas do fornecedor de eletricidade local, mapear linhas de financiamento disponíveis, validar o payback médio com casos reais |
 
 ### 💻 Infoproduto
 
 | | |
 |---|---|
 | **Objetivo principal do agente** | Validar a dor real do público e gerar leads/vendas para um curso ou produto digital antes de escalar tráfego pago |
-| **Público-alvo** | Pessoas buscando aprender uma habilidade específica ou resolver um problema concreto (depende do nicho) |
-| **Perguntas de mercado a responder** | Qual a dor real que o público quer resolver? Quem já atende esse público e a que preço? Que objeções impedem a compra? Que formato de conteúdo o público mais consome? |
-| **Fontes de informação** | Rankings de produtos em plataformas como Hotmart/Eduzz/Kiwify, comunidades e grupos do nicho, comentários em vídeos concorrentes no YouTube, AnswerThePublic/Google para dúvidas do público |
+| **Público-alvo** | Pessoas à procura de aprender uma competência específica ou resolver um problema concreto (depende do nicho) |
+| **Perguntas de mercado a responder** | Qual a dor real que o público quer resolver? Quem já serve esse público e a que preço? Que objeções impedem a compra? Que formato de conteúdo o público mais consome? |
+| **Fontes de informação** | Catálogos de plataformas como Hotmart e Udemy, comunidades e grupos do nicho, comentários em vídeos concorrentes no YouTube, Google/AnswerThePublic para dúvidas do público |
 | **Tipo de relatório** | Relatório de validação de nicho: dor confirmada, concorrência direta, faixa de preço praticada, formato de conteúdo preferido |
-| **Oportunidades a identificar** | Dores não atendidas pela concorrência, formatos sub-explorados (mentoria em grupo vs. curso gravado), públicos adjacentes ao nicho principal |
-| **Exemplos de campanhas** | Lançamento com webinar gratuito; "desafio gratuito" de alguns dias; campanha de prova social com depoimentos de alunos |
-| **Exemplos de conteúdos** | Série de vídeos curtos ensinando uma parte do método; lives tirando dúvidas; posts desmistificando objeções comuns |
-| **Exemplos de lead magnets** | Aula gratuita ou mini-curso; e-book/checklist do primeiro passo do método; desafio gratuito de alguns dias |
-| **Próximos passos recomendados** | Validar a dor com uma pesquisa direta ao público, mapear a concorrência de preço, testar o lead magnet antes de escalar anúncios |
+| **Oportunidades a identificar** | Dores não servidas pela concorrência, formatos pouco explorados (mentoria em grupo vs. curso gravado), públicos adjacentes ao nicho principal |
+| **Exemplos de campanhas** | Lançamento com webinar gratuito; "desafio gratuito" de alguns dias; campanha de prova social com testemunhos de alunos |
+| **Exemplos de conteúdos** | Série de vídeos curtos a ensinar uma parte do método; diretos (lives) a esclarecer dúvidas; publicações a desmistificar objeções comuns |
+| **Exemplos de lead magnets** | Aula gratuita ou minicurso; e-book/checklist do primeiro passo do método; desafio gratuito de alguns dias |
+| **Próximos passos recomendados** | Validar a dor com um inquérito direto ao público, mapear a concorrência de preço, testar o lead magnet antes de escalar anúncios |
 
 ### 🍽️ Restaurante
 
 | | |
 |---|---|
-| **Objetivo principal do agente** | Aumentar o fluxo de clientes (presencial e delivery) e o ticket médio, em horários e datas estratégicas |
-| **Público-alvo** | Moradores e trabalhadores da região, famílias, casais, empresas buscando eventos corporativos |
-| **Perguntas de mercado a responder** | Quais horários/dias têm menor movimento? Quais concorrentes têm melhor avaliação e por quê? Que tipo de prato/experiência está em alta na região? Qual o ticket médio local? |
-| **Fontes de informação** | Google Meu Negócio e iFood (avaliações e cardápios de concorrentes), Instagram de restaurantes concorrentes, Google Trends para tendências gastronômicas, calendário de eventos locais |
-| **Tipo de relatório** | Relatório de concorrência gastronômica local, horários de menor movimento e tendências de cardápio |
+| **Objetivo principal do agente** | Aumentar a afluência de clientes (presencial e entregas ao domicílio) e o valor médio de consumo, em horários e datas estratégicas |
+| **Público-alvo** | Moradores e trabalhadores da zona, famílias, casais, empresas à procura de eventos corporativos |
+| **Perguntas de mercado a responder** | Que horários/dias têm menos movimento? Que concorrentes têm melhor avaliação e porquê? Que tipo de prato/experiência está em alta na zona? Qual o valor médio de consumo local? |
+| **Fontes de informação** | Perfil da Empresa no Google e Uber Eats/Glovo (avaliações e ementas de concorrentes), Instagram de restaurantes concorrentes, Google Trends para tendências gastronómicas, calendário de eventos locais |
+| **Tipo de relatório** | Relatório de concorrência gastronómica local, horários de menor movimento e tendências de ementa |
 | **Oportunidades a identificar** | Horários ociosos (happy hour, almoço executivo), datas comemorativas locais, parcerias com eventos do bairro |
-| **Exemplos de campanhas** | "Happy hour" para horário de menor movimento; campanha de datas comemorativas (Dia dos Namorados, Dia das Mães); clube de fidelidade/cashback |
-| **Exemplos de conteúdos** | Vídeo de bastidores da cozinha; prato do dia em destaque; depoimentos de clientes fiéis |
-| **Exemplos de lead magnets** | Cupom de desconto na primeira visita; reserva antecipada com brinde; cardápio digital exclusivo por WhatsApp |
-| **Próximos passos recomendados** | Levantar dados de ocupação por horário/dia, mapear concorrentes no raio de entrega, definir as datas comemorativas prioritárias |
+| **Exemplos de campanhas** | "Happy hour" para horário de menor movimento; campanha de datas comemorativas (Dia dos Namorados, Dia da Mãe); clube de fidelização/cashback |
+| **Exemplos de conteúdos** | Vídeo de bastidores da cozinha; prato do dia em destaque; testemunhos de clientes fiéis |
+| **Exemplos de lead magnets** | Cupão de desconto na primeira visita; reserva antecipada com oferta; ementa digital exclusiva por WhatsApp |
+| **Próximos passos recomendados** | Levantar dados de ocupação por horário/dia, mapear concorrentes na área de entrega, definir as datas comemorativas prioritárias |
 
 ### 📈 Agência de Marketing
 
 | | |
 |---|---|
-| **Objetivo principal do agente** | Gerar leads qualificados (empresas) interessadas em terceirizar marketing digital e posicionar a agência como especialista em um nicho |
-| **Público-alvo** | Donos de pequenas e médias empresas sem equipe de marketing interna, ou insatisfeitos com a agência atual |
-| **Perguntas de mercado a responder** | Que setores estão investindo mais em marketing digital agora? Quais as reclamações mais comuns sobre agências? Quem são as concorrentes e em que se especializam? Qual o ticket médio praticado por serviço? |
-| **Fontes de informação** | LinkedIn (empresas contratando gestores de tráfego/social media), Reclame Aqui e avaliações de agências concorrentes, relatórios setoriais (ex.: IAB Brasil), grupos de empreendedores |
-| **Tipo de relatório** | Relatório de posicionamento: nichos com demanda insatisfeita, benchmarking de preço por serviço, dores recorrentes com agências concorrentes |
-| **Oportunidades a identificar** | Nichos verticais sub-atendidos (ex.: marketing para clínicas, para imobiliárias), pacotes mais transparentes que a concorrência, upsell entre serviços |
-| **Exemplos de campanhas** | "Diagnóstico gratuito de marketing"; campanha de autoridade com cases reais; campanha de nicho (ex.: "marketing para clínicas odontológicas") |
-| **Exemplos de conteúdos** | Estudo de caso real com números; vídeo "3 erros que sua empresa comete no Instagram"; webinar gratuito sobre um tema do nicho-alvo |
-| **Exemplos de lead magnets** | Auditoria gratuita das redes sociais/site do prospect; checklist "sua empresa está pronta para tráfego pago?"; planilha de cálculo de ROI de marketing |
-| **Próximos passos recomendados** | Escolher um nicho vertical para se especializar, levantar cases reais de clientes atuais, mapear 5 agências concorrentes diretas |
+| **Objetivo principal do agente** | Gerar leads qualificados (empresas) interessadas em subcontratar marketing digital e posicionar a agência como especialista num nicho |
+| **Público-alvo** | Donos de pequenas e médias empresas sem equipa de marketing interna, ou insatisfeitos com a agência atual |
+| **Perguntas de mercado a responder** | Que sectores estão a investir mais em marketing digital agora? Quais as reclamações mais comuns sobre agências? Quem são as concorrentes e em que se especializam? Qual o valor médio praticado por serviço? |
+| **Fontes de informação** | LinkedIn (empresas a contratar gestão de tráfego pago/redes sociais), Portal da Queixa e avaliações de agências concorrentes, relatórios sectoriais (ex.: IAB Portugal), grupos de empreendedores |
+| **Tipo de relatório** | Relatório de posicionamento: nichos com procura por satisfazer, comparação de preços por serviço, receios recorrentes com agências concorrentes |
+| **Oportunidades a identificar** | Nichos verticais pouco servidos (ex.: marketing para clínicas, para imobiliárias), pacotes mais transparentes do que a concorrência, upsell entre serviços |
+| **Exemplos de campanhas** | "Diagnóstico gratuito de marketing"; campanha de autoridade com casos reais; campanha de nicho (ex.: "marketing para clínicas dentárias") |
+| **Exemplos de conteúdos** | Caso de estudo real com números; vídeo "3 erros que a sua empresa comete no Instagram"; webinar gratuito sobre um tema do nicho-alvo |
+| **Exemplos de lead magnets** | Auditoria gratuita das redes sociais/site do potencial cliente; checklist "a sua empresa está pronta para tráfego pago?"; folha de cálculo de ROI de marketing |
+| **Próximos passos recomendados** | Escolher um nicho vertical para se especializar, levantar casos reais de clientes atuais, mapear 5 agências concorrentes diretas |
 
 ## Como criar um novo agente em menos de 5 minutos
 
-O processo é sempre o mesmo, independentemente do negócio. Veja o passo a passo:
+O processo é sempre o mesmo, independentemente do negócio. Eis o passo a passo:
 
-1. **Criar uma pasta para o novo projeto.** Dentro do repositório (ou em um novo repositório),
-   crie uma pasta com o nome do novo negócio — por exemplo, `clinica-sorriso-agente-mercado/`.
-2. **Copiar a estrutura de arquivos existente.** Copie os seis arquivos deste projeto
+1. **Criar uma pasta para o novo projeto.** Dentro do repositório (ou num novo repositório),
+   cria uma pasta com o nome do novo negócio — por exemplo, `clinica-sorriso-agente-mercado/`.
+2. **Copiar a estrutura de ficheiros existente.** Copia os seis ficheiros deste projeto
    (`README.md`, `briefing.md`, `plano-do-agente.md`, `relatorio-mercado.md`,
    `plano-campanha.md`, `prompts.md`) e a pasta `scripts/` para a nova pasta. Nada na estrutura
-   precisa ser reinventado.
+   precisa de ser reinventado.
    ```bash
    cp -r agente-inteligencia-mercado/ clinica-sorriso-agente-mercado/
    ```
-3. **Alterar apenas o briefing.** Apague o conteúdo específico da Avanza em `briefing.md` e
-   preencha com o **Modelo Universal de Briefing** (próxima seção deste README), com os dados
-   reais do novo negócio. Nenhum outro arquivo precisa ser tocado nesta etapa.
-4. **Executar novamente os prompts.** Use `prompts.md` como está — os prompts já são genéricos
-   o suficiente para funcionar com qualquer negócio, desde que os `[colchetes]` sejam
-   preenchidos com o contexto do novo briefing.
-5. **Validar os dados encontrados.** Toda informação levantada por pesquisa (concorrência,
-   preços, comportamento do público) deve ser revisada por alguém que conheça o negócio ou o
-   mercado real, antes de virar decisão comercial.
-6. **Gerar um novo relatório.** Preencha `relatorio-mercado.md` com os achados validados,
+3. **Alterar apenas o briefing.** Apaga o conteúdo específico da Avanza em `briefing.md` e
+   preenche com o **Modelo Universal de Briefing** (secção seguinte deste README), com os
+   dados reais do novo negócio. Nenhum outro ficheiro precisa de ser tocado nesta etapa.
+4. **Executar novamente os prompts.** Usa `prompts.md` tal como está — os prompts já são
+   suficientemente genéricos para funcionar com qualquer negócio, desde que os `[colchetes]`
+   sejam preenchidos com o contexto do novo briefing.
+5. **Validar os dados encontrados.** Toda a informação levantada por pesquisa (concorrência,
+   preços, comportamento do público) deve ser revista por alguém que conheça o negócio ou o
+   mercado real, antes de se transformar em decisão comercial.
+6. **Gerar um novo relatório.** Preenche `relatorio-mercado.md` com os resultados validados,
    seguindo a mesma estrutura já usada neste projeto (clientes, oportunidades sazonais,
    concorrência).
-7. **Transformar o relatório em plano de campanha.** Preencha `plano-campanha.md` a partir do
+7. **Transformar o relatório em plano de campanha.** Preenche `plano-campanha.md` a partir do
    relatório — exatamente como foi feito neste projeto: ângulos de campanha, anúncios, vídeos
-   curtos, conteúdo profundo, lead magnets, mensagens de WhatsApp e um funil simples.
+   curtos, conteúdo mais profundo, lead magnets, mensagens de WhatsApp e um funil simples.
 
 ## Modelo Universal de Briefing
 
-Copie o bloco abaixo para um novo `briefing.md` e preencha cada campo com os dados reais do
+Copia o bloco abaixo para um novo `briefing.md` e preenche cada campo com os dados reais do
 negócio. Nenhum campo deve ficar genérico — quanto mais específica a resposta, melhor o
-resultado de todo o processo que vem depois.
+resultado de todo o processo que se segue.
 
 ```markdown
 # Briefing do Projeto — [Nome da Empresa]
@@ -296,7 +291,7 @@ resultado de todo o processo que vem depois.
 
 
 ## 6. Persona
-(Descreva 1-2 personas: idade, contexto de vida, comportamento de compra)
+(Descreve 1-2 personas: idade, contexto de vida, comportamento de compra)
 
 
 ## 7. Principais dores
@@ -309,18 +304,18 @@ resultado de todo o processo que vem depois.
 
 
 ## 10. Concorrentes
-(Liste pelo menos 3, com nome e o que sabe sobre cada um)
+(Lista pelo menos 3, com nome e o que sabes sobre cada um)
 
 
 ## 11. Região de atuação
 
 
 ## 12. Posicionamento da marca
-(Como a marca quer ser vista pelo público?)
+(Como é que a marca quer ser vista pelo público?)
 
 
 ## 13. Canais de aquisição
-(Onde a empresa já vende ou capta clientes hoje?)
+(Onde é que a empresa já vende ou capta clientes hoje?)
 
 
 ## 14. Metas comerciais
@@ -335,20 +330,20 @@ resultado de todo o processo que vem depois.
 
 
 ## 17. Restrições do projeto
-(Orçamento, prazo, o que está fora de escopo)
+(Orçamento, prazo, o que está fora do âmbito)
 
 
 ## 18. Resultado esperado
-(Que arquivo/decisão este projeto deve produzir no final?)
+(Que ficheiro/decisão este projeto deve produzir no final?)
 ```
 
 ## Conclusão
 
 Este agente nasceu para a Avanza Group Solutions, mas **não é — e nunca foi — uma ferramenta
 exclusiva para consultoria empresarial, muito menos para uma agência de viagens**. É uma
-estrutura reutilizável para praticamente qualquer negócio que precise responder a três
-perguntas: quem é o meu cliente, o que o mercado está me dizendo agora, e como transformo isso
-em campanhas de marketing e vendas que realmente convertem. Troque o briefing, troque as
-fontes de pesquisa, mantenha o resto — e o mesmo processo que gerou o relatório de mercado e o
+estrutura reutilizável para praticamente qualquer negócio que precise de responder a três
+perguntas: quem é o meu cliente, o que é que o mercado me está a dizer agora, e como transformo
+isso em campanhas de marketing e vendas que realmente convertem. Troca o briefing, troca as
+fontes de pesquisa, mantém o resto — e o mesmo processo que gerou o relatório de mercado e o
 plano de campanha da Avanza pode gerar o de uma imobiliária, uma escola, uma clínica, uma loja
-online ou qualquer outro negócio que precise vender melhor.
+online ou qualquer outro negócio que precise de vender melhor.

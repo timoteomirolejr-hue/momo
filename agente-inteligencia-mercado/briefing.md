@@ -148,7 +148,7 @@ imediato para `plano-campanha.md`, dentro do horizonte de 3-6 meses da Avanza:
 
 | Dor | Implicação para marketing |
 |---|---|
-| Medo de errar no roteiro/plano de negócio | Mensagens devem reforçar acompanhamento consultivo, não "faça você mesmo" |
+| Medo de errar no roteiro/plano de negócio | Mensagens devem reforçar acompanhamento consultivo, não "faça tudo sozinho" |
 | Medo de gastar mal o dinheiro | Justificar valor/retorno do investimento, não só o preço |
 | Insegurança com o idioma | Comunicação simples, sem jargão técnico/legal |
 | Falta de tempo para planear | Vender "poupança de tempo" e acompanhamento feito por especialistas |
